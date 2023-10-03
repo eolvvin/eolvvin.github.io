@@ -1,0 +1,12 @@
+body {
+    height:100%;
+    overflow:hidden;
+}
+
+iframe {
+    height:100vh;
+}
+
+#site-nav {
+    background-color:black;
+}

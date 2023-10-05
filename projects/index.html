@@ -1,67 +1,295 @@
-<!doctype html>
-<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
-<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<title>Projects | ~eolvvin/</title>
-<meta name="description" content="— a terminal dweller">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="../css/ui.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .project {
+            width: calc(33.33% - 20px);
+            margin-bottom: 40px;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+        
+        .thumbnail {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+        }
+        
+        .title {
+            margin-top: 10px;
+            font-size: 18px;
+        }
 
+        @media (max-width: 768px) {
+            .project {
+                width: calc(50% - 20px);
+            }
+        }
 
-<link href="https://eolvvin.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="~eolvvin/ Feed">
-
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- For all browsers -->
-<link rel="stylesheet" href="../css/ui.css">
-<link rel="stylesheet" href="../css/projects.css">
-<link rel="stylesheet" href="../css/common.css">
-<!-- Webfonts -->
-<script src="//use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
-
-<meta http-equiv="cleartype" content="on">
-
-<!-- Load Modernizr -->
-<script src="assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
-
-<!-- Load highlight.js -->
-<link rel="stylesheet" href="assets/css/styles/googlecode.css">
-<script src="assets/js/vendor/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-
-<!-- Icons -->
-<!-- 16x16 -->
-<link rel="shortcut icon" href="favicon.ico">
-<!-- 32x32 -->
-<link rel="shortcut icon" href="favicon.png">
+        @media (max-width: 576px) {
+            .project {
+                width: 100%;
+            }
+        }
+    </style>
+    
 </head>
-
-<body id="page">
-
+<body>
 <div class="navigation-wrapper">
     <nav role="navigation" id="site-nav">
         <div class="main-nav">
             <span class="nav-item">
-                    <a href="../index.html"><span class="nav-icon">☆</span> About</a>
+                    <a href="./index.html"><span class="nav-icon">☆</span> About</a>
             </span>
             <span class="nav-item">
-					<a href="../projects/index.html" title="Atom/RSS feed"><span class="nav-icon">⚙</span> Projects</a>
+					<a href="./projects/index.html" title="Atom/RSS feed"><span class="nav-icon">⚙</span> Projects</a>
 			</span>
             <span class="nav-item">
-					<a href="../folio/index.html"><span class="nav-icon">☰</span> Past</a>
+					<a href="./folio/index.html"><span class="nav-icon">☰</span> Past</a>
             </span>
             <span class="nav-item">
-                    <a href="../blog/index.html"><span class="nav-icon">✎</span> Blog</a>
+                    <a href="./blog/index.html"><span class="nav-icon">✎</span> Blog</a>
             </span>
         </div>
     </nav>
 </div><!-- /.navigation-wrapper -->
-<!--iframe src="../../../Projects Website/index.html" width="100%" height="100%" frameborder="0"></iframe-->
-<iframe src="https://psynogen.github.io/projects/index.html" width="100%" height="100%" frameborder="0"></iframe>
-
-
+    <div class="container">
+        <div class="project">
+			<a id="starcommand" href="https://p5yb14d3.github.io/starcommand/index.html">
+            <img class="thumbnail" src="./imgs/starexplorer.png" alt="Star Explorer">
+			</a>
+            <div class="title">StarCommand - Solar System Explorer - Built with Javscript and ThreeJS</div>
+        </div>
+        <div class="project">
+			<a id="terminal3d" href="https://p5yb14d3.github.io/terminal3d/T3.html">
+            <img class="thumbnail" src="./imgs/terminal3d.png" alt="3D Terminal">
+			</a>
+            <div class="title">T3 3D Terminal (Concept)</div>
+        </div>
+        <div class="project">
+			<a id="chatbotedgar" href="https://p5yb14d3.github.io/chatbot/T1.html">
+            <img class="thumbnail" src="./imgs/chatbotedgar.png" alt="Chatbot Edgar">
+			</a>
+            <div class="title">Chatbot Edgar (Web+PC)</div>
+        </div>
+        <div class="project">
+            <a id="gravitygraphics" href="https://gravitygraphics.github.io/">
+			<img class="thumbnail" src="./imgs/gravitygraphics.png" alt="Gravity Graphics">
+			</a>
+            <div class="title">Learn Computer Programing with Gravity Graphics. Usable on codepen.io with Gravity's CDN</div>
+        </div>
+        <div class="project">
+			<a id="alienarchitects" href="https://alienarchitects.github.io/">
+            <img class="thumbnail" src="./imgs/alienarchitects.png" alt="Alien Architects">
+			</a>
+            <div class="title">Alien Architects - AI Generated SciFi Documentaries</div>
+        </div>
+        <div class="project">
+			<a id="adventuron" href="https://p5yb14d3.github.io/adventuron">
+            <img class="thumbnail" src="./imgs/adventuron.png" alt="Adventuron">
+			</a>
+            <div class="title">Adventure Game with Adventuron Classroom [PC, mobile, ZXSpectrum, etc]</div>
+        </div>
+        <!--div class="project">
+			<a id="asciiartgenerator" href="https://p5yb14d3.github.io/adventuron">
+            <img class="thumbnail" src="./imgs/asciiart.png" alt="ASCII Art Generator">
+			</a>
+            <div class="title">ASCII Art Generator Web Utility</div>
+        </div>
+        <div class="project">
+			<a id="weather" href="https://p5yb14d3.github.io/weathersystem">
+            <img class="thumbnail" src="./imgs/weathersystem.png" alt="Weather System">
+			</a>
+            <div class="title">Weather System for Game</div>
+        </div>
+        <div class="project">
+			<a id="mazegenerator" href="https://p5yb14d3.github.io/mazegenerator">
+            <img class="thumbnail" src="./imgs/mazegenerator.png" alt="Maze Generator">
+			</a>
+            <div class="title">Maze Generator for Game (Python, Jupiter Notebook)</div>
+        </div-->
+        <div class="project">
+			<a id="cyberpunkdreams" href="http://cyberpunkdreams2084.github.io">
+            <img class="thumbnail" src="./imgs/cyberpunkdreams.png" alt="cyberpunkdreams">
+			</a>
+            <div class="title">CyberpunkDreams AI Art, WebStory, & Merchendize</div>
+        </div>
+        <div class="project">
+			<a id="outrunners" href="https://psyoutrunners.github.io/">
+            <img class="thumbnail" src="./imgs/outrunners.png" alt="Outrunners">
+			</a>
+            <div class="title">Outrunners - AI Generated 80s Concept Supercars and Hotwheels.</div>
+        </div>
+        <div class="project">
+			<a id="forgottentract" href="https://www.youtube.com/watch?v=VPbY034pEZ4">
+            <img class="thumbnail" src="./imgs/forgottentract.png" alt="Forgotten Tract">
+			</a>
+            <div class="title">Twilight Zone Inspired AI Generated Story Telling</div>
+        </div>
+        <div class="project">
+			<a id="aimmagicspace" href="https://aimagicspace.github.io">
+            <img class="thumbnail" src="./imgs/aimagicspace.png" alt="AI Magic Space">
+			</a>
+            <div class="title">AI Art Generation Services (Self Portraits, Logos, Cards, etc.)</div>
+        </div>
+        <div class="project">
+			<a id="logos" href="https://aimagicspace.github.io/logos.html">
+            <img class="thumbnail" src="./imgs/logodesigns.png" alt="Logo Designs">
+			</a>
+            <div class="title">AI Assisted Logo Designs</div>
+        </div>
+        <div class="project">
+			<a id="psyart" href="https://dribbble.com/psyart">
+            <img class="thumbnail" src="./imgs/psyart.png" alt="Art Portfolio">
+			</a>
+            <div class="title">AI Art Portfolio</div>
+        </div>
+        <!--div class="project">
+			<a id="psygengirls" href="https://psygengirls.github.io">
+            <img class="thumbnail" src="./imgs/psygirls.png" alt="Psy Girls">
+			</a>
+            <div class="title">AI Art - The Art of Fantasy Girls</div>
+        </div-->
+        <div class="project">
+			<a id="minilittlepixelcafe" href="https://minilittlepixelcafe.github.io">
+            <img class="thumbnail" src="./imgs/minilittlepixelcafe.png" alt="Mini Little Pixel Cafe">
+			</a>
+            <div class="title">Pixel Art - Mini Little Pixel Cafe</div>
+        </div>
+        <div class="project">
+			<a id="infinityprynts" href="https://infinityprynts.etsy.com/">
+            <img class="thumbnail" src="./imgs/infinityprynts.png" alt="Art Portfolio">
+			</a>
+            <div class="title">InfinityPrynts - Etsy Shop Selling AI Art</div>
+        </div>
+        <div class="project">
+			<a id="videodrome" href="https://p5yb14d3.github.io/videodrome/home/">
+            <img class="thumbnail" src="./imgs/videodrome.png" alt="Psy Girls">
+			</a>
+            <div class="title">Videodrome - Python CLI Media Center Generator For Your Local Videos. <a href="https://p5yb14d3.github.io/videodrome/demo/">Demo</a></div>
+        </div>
+		<div class="project">
+			<a id="soundcloud" href="https://soundcloud.com/p5yb14d3/imperial-space-hallways-demo-1?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing">
+            <img class="thumbnail" src="./imgs/soundcloud.png" alt="Psy Music">
+			</a>
+            <div class="title">Spacewave Music written using Fruity Loops</div>
+        </div>
+		
+        <div class="project">
+			<a id="icons" href="https://p5yb14d3.github.io/icons/">
+            <img class="thumbnail" src="./imgs/psyfi-font.png" alt="Psyfi Icons Glyphs">
+			</a>
+            <div class="title">Psyfi-Fonts: Open Source Icon Glyphs</div>
+        </div>
+		
+        <div class="project">
+			<a id="robloxhorror" href="https://youtube.com/p5yb14d3">
+            <img class="thumbnail" src="./imgs/robloxhorror.png" alt="Roblox Horror">
+			</a>
+            <div class="title">Roblox Horror Games Walkthruoghs</div>
+        </div>
+		
+        <div class="project">
+			<a id="keynavjs" href="https://p5yb14d3.github.io/keynav/demo.html">
+            <img class="thumbnail" src="./imgs/keynav-demo.jpg" alt="Keynav">
+			</a>
+            <div class="title">KeynavJS Web UI Component - Open Source MIT License</div>
+        </div>
+        <div class="project">
+			<a id="cssanimation" href="https://p5yb14d3.github.io/intro-end-credits/intro.html">
+            <img class="thumbnail" src="./imgs/css-keyframe-animation.png" alt="Keyframe Animation">
+			</a>
+            <div class="title">Game Intro + Credits - Javascript and CSS Keyframe Animation</div>
+        </div>
+        <!--div class="project">
+			<a id="qwrapper" href="https://github.com/p5yb14d3/Q">
+            <img class="thumbnail" src="./imgs/Q.png" alt="Q ThreeJS Wrapper">
+			</a>
+            <div class="title">Q - ThreeJS Wrapper (Javascript Library)</div>
+        </div-->
+		
+        <!-- Add more project entries as needed -->
+    </div>
+    
+    <script>
+        document.getElementById('starcommand').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the link from actually navigating
+            window.top.location.href = 'https://p5yb14d3.github.io/starcommand/index.html'; 
+        });
+        document.getElementById('terminal3d').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the link from actually navigating
+            window.top.location.href = 'https://p5yb14d3.github.io/terminal3d/T3.html'; 
+        });
+        document.getElementById('chatbotedgar').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the link from actually navigating
+            window.top.location.href = 'https://p5yb14d3.github.io/chatbot/T1.html'; 
+        });
+        document.getElementById('gravitygraphics').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the link from actually navigating
+            window.top.location.href = 'https://gravitygraphics.github.io/'; 
+        });
+        document.getElementById('adventuron').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the link from actually navigating
+            window.top.location.href = 'https://p5yb14d3.github.io/adventuron'; 
+        });
+        document.getElementById('cyberpunkdreams').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the link from actually navigating
+            window.top.location.href = 'http://cyberpunkdreams2084.github.io'; 
+        });
+        document.getElementById('outrunners').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the link from actually navigating
+            window.top.location.href = 'https://psyoutrunners.github.io'; 
+        });
+        document.getElementById('forgottentract').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the link from actually navigating
+            window.top.location.href = 'https://www.youtube.com/watch?v=VPbY034pEZ4'; 
+        });
+        document.getElementById('psyart').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the link from actually navigating
+            window.top.location.href = 'https://dribbble.com/psyart'; 
+        });
+        document.getElementById('minilittlepixelcafe').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the link from actually navigating
+            window.top.location.href = 'https://minilittlepixelcafe.github.io'; 
+        });
+        document.getElementById('infinityprynts').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the link from actually navigating
+            window.top.location.href = 'https://infinityprynts.etsy.com'; 
+        });
+        document.getElementById('soundcloud').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the link from actually navigating
+            window.top.location.href = 'https://soundcloud.com/p5yb14d3/imperial-space-hallways-demo-1?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing'; 
+        });
+        document.getElementById('robloxhorror').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the link from actually navigating
+            window.top.location.href = 'https://youtube.com/p5yb14d3'; 
+        });
+        document.getElementById('cssanimation').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the link from actually navigating
+            window.top.location.href = 'https://p5yb14d3.github.io/intro-end-credits/intro.html'; 
+        });
+    </script>
 </body>
 </html>

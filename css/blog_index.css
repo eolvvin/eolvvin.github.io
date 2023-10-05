@@ -1,0 +1,11 @@
+body {
+    background-color:white;
+}
+
+
+
+@media all and (min-width: 800px) {
+    #home {
+        margin-left:15%;
+    }
+}

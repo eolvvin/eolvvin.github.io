@@ -17,7 +17,6 @@ body {
   -webkit-font-smoothing: antialiased;
   background: #fff;
   /* background: $background url('http://.jpg') repeat fixed center; */
-  overflow-y: scroll;
 }
 
 article {

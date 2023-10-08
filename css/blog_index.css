@@ -9,3 +9,15 @@ body {
 time {
 	color:#898989;
 }
+
+li {
+  line-height: 2; /* 1.5 times the font size */
+}
+
+/*
+@media all and (min-width: 800px) {
+    #home {
+        margin-left:15%;
+    }
+}
+*/

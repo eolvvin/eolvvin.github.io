@@ -2,35 +2,35 @@
 // Framework page content
 
 const featureComparisonData = [
-    { feature: "Derives other frameworks", canvas: "✓", string: "✗", gr: "✗", qft: "✗", lqg: "✗", causal: "✗" },
-    { feature: "50 phenomena compatible with", canvas: "50/50", string: "50/50", gr: "28/50", qft: "43/50", lqg: "25/50", causal: "22/50" },
-    { feature: "50 phenomena derived", canvas: "50/50", string: "0/50", gr: "0/50", qft: "0/50", lqg: "0/50", causal: "0/50" },
-    { feature: "Solves century-scale open problems", canvas: "✓", string: "✗", gr: "✗", qft: "✗", lqg: "✗", causal: "✗" },
-    { feature: "Discrete spacetime", canvas: "✓", string: "✗", gr: "✗", qft: "✗", lqg: "✓", causal: "✓" },
-    { feature: "Background independence", canvas: "✓", string: "✗", gr: "✓", qft: "✗", lqg: "✓", causal: "✓" },
-    { feature: "Testable predictions", canvas: "✓", string: "✗", gr: "✓", qft: "✓", lqg: "✗", causal: "✗" },
-    { feature: "Resolves singularities", canvas: "✓", string: "?", gr: "✗", qft: "✗", lqg: "?", causal: "?" },
-    { feature: "Resolves information paradox", canvas: "✓", string: "?", gr: "✗", qft: "✗", lqg: "?", causal: "?" },
-    { feature: "Unifies all forces", canvas: "✓", string: "✓", gr: "✗", qft: "✗", lqg: "✗", causal: "✗" },
-    { feature: "Quantum + Gravity unified", canvas: "✓", string: "✓", gr: "✗", qft: "✗", lqg: "✓", causal: "✗" },
-    { feature: "Dark matter candidate", canvas: "✓", string: "✓", gr: "✗", qft: "✗", lqg: "✗", causal: "✗" },
-    { feature: "Derives dimensionality of space", canvas: "✓", string: "✗", gr: "✗", qft: "✗", lqg: "✗", causal: "✗" },
-    { feature: "Derives number of generations", canvas: "✓", string: "✗", gr: "✗", qft: "✗", lqg: "✗", causal: "✗" },
-    { feature: "Derives spin-statistics", canvas: "✓", string: "✗", gr: "✗", qft: "✗", lqg: "✗", causal: "✗" },
-    { feature: "Derives spectral classification", canvas: "✓", string: "✗", gr: "✗", qft: "✗", lqg: "✗", causal: "✗" },
-    { feature: "Derives cosmological constant", canvas: "✓", string: "✗", gr: "✗", qft: "✗", lqg: "✗", causal: "✗" },
-    { feature: "Derives fine-structure constant", canvas: "✓", string: "✗", gr: "✗", qft: "✗", lqg: "✗", causal: "✗" },
-    { feature: "Derives Born rule", canvas: "✓", string: "✗", gr: "✗", qft: "✗", lqg: "✗", causal: "✗" },
-    { feature: "Derives gauge group", canvas: "✓", string: "✗", gr: "✗", qft: "✗", lqg: "✗", causal: "✗" },
-    { feature: "Derives left-handed weak force", canvas: "✓", string: "✗", gr: "✗", qft: "✗", lqg: "✗", causal: "✗" },
-    { feature: "Derives neutrino masses", canvas: "✓", string: "✗", gr: "✗", qft: "✗", lqg: "✗", causal: "✗" },
-    { feature: "Derives baryon asymmetry", canvas: "✓", string: "✗", gr: "✗", qft: "✗", lqg: "✗", causal: "✗" },
-    { feature: "Resolves measurement problem", canvas: "✓", string: "✗", gr: "✗", qft: "✗", lqg: "✗", causal: "✗" },
-    { feature: "Explains dark energy", canvas: "✓", string: "✗", gr: "✗", qft: "✗", lqg: "✗", causal: "✗" },
-    { feature: "Explains inflation mechanism", canvas: "✓", string: "✗", gr: "✗", qft: "✗", lqg: "✗", causal: "✗" },
-    { feature: "Resolves hierarchy problem", canvas: "✓", string: "✗", gr: "✗", qft: "✗", lqg: "✗", causal: "✗" },
-    { feature: "Resolves strong CP problem", canvas: "✓", string: "✗", gr: "✗", qft: "✗", lqg: "✗", causal: "✗" },
-    { feature: "Finite, well-posed classical dynamics", canvas: "✓", string: "✗", gr: "✗", qft: "✗", lqg: "✗", causal: "✗" }
+    { feature: "Derives other frameworks", canvas: "✓", qft: "✗", qm: "✗", gr: "✗", string: "✗", lqg: "✗", causal: "✗" },
+    { feature: "50 phenomena derived", canvas: "50/50", qft: "2/50", qm: "5/50", gr: "5/50", string: "1/50", lqg: "2/50", causal: "1/50" },
+    { feature: "50 phenomena compatible with", canvas: "50/50", qft: "50/50", qm: "30/50", gr: "25/50", string: "15/50", lqg: "10/50", causal: "8/50" },
+    { feature: "Solves century-scale open problems", canvas: "✓", qft: "✗", qm: "✗", gr: "✗", string: "✗", lqg: "✗", causal: "✗" },
+    { feature: "Discrete spacetime", canvas: "✓", qft: "✗", qm: "✗", gr: "✗", string: "✗", lqg: "✓", causal: "✓" },
+    { feature: "Background independence", canvas: "✓", qft: "✗", qm: "✗", gr: "✓", string: "✗", lqg: "✓", causal: "✓" },
+    { feature: "Testable predictions", canvas: "✓", qft: "✓", qm: "✓", gr: "✓", string: "✗", lqg: "✗", causal: "✗" },
+    { feature: "Resolves singularities", canvas: "✓", qft: "✗", qm: "✗", gr: "✗", string: "?", lqg: "?", causal: "?" },
+    { feature: "Resolves information paradox", canvas: "✓", qft: "✗", qm: "✗", gr: "✗", string: "?", lqg: "?", causal: "?" },
+    { feature: "Unifies all forces", canvas: "✓", qft: "✗", qm: "✗", gr: "✗", string: "✓", lqg: "✗", causal: "✗" },
+    { feature: "Quantum + Gravity unified", canvas: "✓", qft: "✗", qm: "✗", gr: "✗", string: "✓", lqg: "✓", causal: "✗" },
+    { feature: "Dark matter candidate", canvas: "✓", qft: "✗", qm: "✗", gr: "✗", string: "✓", lqg: "✗", causal: "✗" },
+    { feature: "Derives dimensionality of space", canvas: "✓", qft: "✗", qm: "✗", gr: "✗", string: "✗", lqg: "✗", causal: "✗" },
+    { feature: "Derives number of generations", canvas: "✓", qft: "✗", qm: "✗", gr: "✗", string: "✗", lqg: "✗", causal: "✗" },
+    { feature: "Derives spin-statistics", canvas: "✓", qft: "✗", qm: "✗", gr: "✗", string: "✗", lqg: "✗", causal: "✗" },
+    { feature: "Derives spectral classification", canvas: "✓", qft: "✗", qm: "✗", gr: "✗", string: "✗", lqg: "✗", causal: "✗" },
+    { feature: "Derives cosmological constant", canvas: "✓", qft: "✗", qm: "✗", gr: "✗", string: "✗", lqg: "✗", causal: "✗" },
+    { feature: "Derives fine-structure constant", canvas: "✓", qft: "✗", qm: "✗", gr: "✗", string: "✗", lqg: "✗", causal: "✗" },
+    { feature: "Derives Born rule", canvas: "✓", qft: "✗", qm: "✗", gr: "✗", string: "✗", lqg: "✗", causal: "✗" },
+    { feature: "Derives gauge group", canvas: "✓", qft: "✗", qm: "✗", gr: "✗", string: "✗", lqg: "✗", causal: "✗" },
+    { feature: "Derives left-handed weak force", canvas: "✓", qft: "✗", qm: "✗", gr: "✗", string: "✗", lqg: "✗", causal: "✗" },
+    { feature: "Derives neutrino masses", canvas: "✓", qft: "✗", qm: "✗", gr: "✗", string: "✗", lqg: "✗", causal: "✗" },
+    { feature: "Derives baryon asymmetry", canvas: "✓", qft: "✗", qm: "✗", gr: "✗", string: "✗", lqg: "✗", causal: "✗" },
+    { feature: "Resolves measurement problem", canvas: "✓", qft: "✗", qm: "✗", gr: "✗", string: "✗", lqg: "✗", causal: "✗" },
+    { feature: "Explains dark energy", canvas: "✓", qft: "✗", qm: "✗", gr: "✗", string: "✗", lqg: "✗", causal: "✗" },
+    { feature: "Explains inflation mechanism", canvas: "✓", qft: "✗", qm: "✗", gr: "✗", string: "✗", lqg: "✗", causal: "✗" },
+    { feature: "Resolves hierarchy problem", canvas: "✓", qft: "✗", qm: "✗", gr: "✗", string: "✗", lqg: "✗", causal: "✗" },
+    { feature: "Resolves strong CP problem", canvas: "✓", qft: "✗", qm: "✗", gr: "✗", string: "✗", lqg: "✗", causal: "✗" },
+    { feature: "Finite, well-posed classical dynamics", canvas: "✓", qft: "✗", qm: "✗", gr: "✗", string: "✗", lqg: "✗", causal: "✗" }
 ];
 
 function getMarkClass(value) {
@@ -47,9 +47,10 @@ function generateFeatureTable() {
         rows += `<tr>
             <td>${row.feature}</td>
             <td><span class="${getMarkClass(row.canvas)}">${row.canvas}</span></td>
-            <td><span class="${getMarkClass(row.string)}">${row.string}</span></td>
-            <td><span class="${getMarkClass(row.gr)}">${row.gr}</span></td>
             <td><span class="${getMarkClass(row.qft)}">${row.qft}</span></td>
+            <td><span class="${getMarkClass(row.qm)}">${row.qm}</span></td>
+            <td><span class="${getMarkClass(row.gr)}">${row.gr}</span></td>
+            <td><span class="${getMarkClass(row.string)}">${row.string}</span></td>
             <td><span class="${getMarkClass(row.lqg)}">${row.lqg}</span></td>
             <td><span class="${getMarkClass(row.causal)}">${row.causal}</span></td>
         </tr>`;
@@ -62,9 +63,10 @@ function generateFeatureTable() {
             <tr>
                 <th>Feature</th>
                 <th>Canvas</th>
-                <th>String Theory</th>
-                <th>GR</th>
                 <th>QFT</th>
+                <th>QM</th>
+                <th>GR</th>
+                <th>String Theory</th>
                 <th>LQG</th>
                 <th>Causal Sets</th>
             </tr>

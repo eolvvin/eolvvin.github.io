@@ -82,42 +82,37 @@ function render(pageId) {
     const baseGridStep = 40;
     
     let activeDots = [];
-    const dotLifetimeFrames = 90;
     const intersectionThreshold = 4;
     const minDotDistance = 25;
+    const refreshDistance = 12;
     const spawnCooldown = 15;
     let framesSinceLastSpawn = 0;
     
-    // Random color palette: greens, blues, purples, reds
-    const colorPalettes = [
-        // Greens
-        { r: 51, g: 255, b: 51 },   // phosphor green
-        { r: 0, g: 255, b: 128 },    // spring green
-        { r: 100, g: 255, b: 100 },  // light green
-        { r: 0, g: 200, b: 100 },    // emerald
-        { r: 150, g: 255, b: 150 },  // pale green
-        // Blues
-        { r: 100, g: 180, b: 255 },  // light blue
-        { r: 80, g: 140, b: 255 },   // sky blue
-        { r: 0, g: 200, b: 255 },    // cyan blue
-        { r: 130, g: 200, b: 255 },  // soft blue
-        { r: 70, g: 130, b: 255 },   // royal blue
-        // Purples
-        { r: 180, g: 130, b: 255 },  // lavender
-        { r: 200, g: 150, b: 255 },  // light purple
-        { r: 150, g: 100, b: 255 },  // medium purple
-        { r: 220, g: 180, b: 255 },  // lilac
-        { r: 170, g: 120, b: 255 },  // violet
-        // Reds
-        { r: 255, g: 100, b: 100 },  // soft red
-        { r: 255, g: 130, b: 130 },  // light red
-        { r: 255, g: 80, b: 100 },   // rose
-        { r: 255, g: 120, b: 140 },  // pink red
-        { r: 255, g: 150, b: 150 }   // salmon
+    const colorPalette = [
+        { r: 255, g: 255, b: 255 },
+        { r: 220, g: 255, b: 220 },
+        { r: 200, g: 240, b: 255 },
+        { r: 240, g: 220, b: 255 },
+        { r: 51, g: 255, b: 51 },
+        { r: 100, g: 255, b: 100 },
+        { r: 150, g: 255, b: 150 },
+        { r: 0, g: 200, b: 100 },
+        { r: 100, g: 180, b: 255 },
+        { r: 80, g: 140, b: 255 },
+        { r: 130, g: 180, b: 255 },
+        { r: 0, g: 150, b: 255 },
+        { r: 180, g: 130, b: 255 },
+        { r: 200, g: 150, b: 255 },
+        { r: 150, g: 100, b: 255 },
+        { r: 220, g: 180, b: 255 },
+        { r: 160, g: 200, b: 255 },
+        { r: 180, g: 220, b: 255 },
+        { r: 200, g: 180, b: 255 },
+        { r: 140, g: 255, b: 200 },
     ];
     
-    function getRandomColor() {
-        return colorPalettes[Math.floor(Math.random() * colorPalettes.length)];
+    function randomColor() {
+        return colorPalette[Math.floor(Math.random() * colorPalette.length)];
     }
     
     function resizeCanvas() {
@@ -147,6 +142,39 @@ function render(pageId) {
         return y + offset;
     }
     
+    // Calculate current brightness of a dot based on its age and phases
+    function getDotBrightness(dot, currentFrame) {
+        let ageFrames = currentFrame - dot.birthFrame;
+        
+        // If in recharge phase, interpolate from saved brightness
+        if (dot.recharging && ageFrames < dot.rechargeDuration) {
+            let rechargeProgress = ageFrames / dot.rechargeDuration;
+            // Smooth ease-in-out
+            let t = rechargeProgress < 0.5 
+                ? 2 * rechargeProgress * rechargeProgress 
+                : -1 + (4 - 2 * rechargeProgress) * rechargeProgress;
+            return dot.rechargeStartBrightness + (0.8 - dot.rechargeStartBrightness) * t;
+        }
+        
+        // If recharging and past recharge duration, switch to normal hold phase
+        if (dot.recharging && ageFrames >= dot.rechargeDuration) {
+            dot.recharging = false;
+            dot.birthFrame = currentFrame - dot.rechargeDuration;
+            dot.holdTime = Math.floor(Math.random() * 120);
+            dot.fadeTime = 40 + Math.floor(Math.random() * 80);
+            ageFrames = currentFrame - dot.birthFrame;
+        }
+        
+        // Normal hold + fade cycle
+        if (ageFrames < dot.holdTime) {
+            return 0.8;
+        } else {
+            let fadeProgress = (ageFrames - dot.holdTime) / dot.fadeTime;
+            if (fadeProgress >= 1) return 0;
+            return (1 - fadeProgress) * 0.8;
+        }
+    }
+    
     function drawFrame() {
         const w = canvas.width;
         const h = canvas.height;
@@ -155,9 +183,7 @@ function render(pageId) {
         
         const pulseAmount = Math.sin(time * 0.4) * 5;
         const gridStep = baseGridStep + pulseAmount;
-        
         const lineOpacity = 0.15 + Math.sin(time * 0.5) * 0.07;
-        
         const centerX = w / 2;
         const centerY = h / 2;
         
@@ -240,21 +266,49 @@ function render(pageId) {
                         
                         if (nearGreenLine) {
                             let tooClose = false;
+                            let existingDot = null;
+                            
                             for (let dot of activeDots) {
                                 let dx = intersection.wx - dot.x;
                                 let dy = intersection.wy - dot.y;
-                                if (Math.sqrt(dx * dx + dy * dy) < minDotDistance) {
-                                    tooClose = true;
+                                let dist = Math.sqrt(dx * dx + dy * dy);
+                                
+                                if (dist < minDotDistance) {
+                                    if (dist < refreshDistance) {
+                                        existingDot = dot;
+                                    } else {
+                                        tooClose = true;
+                                    }
                                     break;
                                 }
                             }
                             
-                            if (!tooClose) {
+                            if (existingDot) {
+                                // Start recharge: save current brightness, set recharge phase
+                                let currentBrightness = getDotBrightness(existingDot, frameCount);
+                                existingDot.recharging = true;
+                                existingDot.rechargeStartBrightness = currentBrightness;
+                                existingDot.rechargeDuration = 30 + Math.floor(Math.random() * 60); // 30-90 frame recharge
+                                existingDot.birthFrame = frameCount;
+                                let newColor = randomColor();
+                                existingDot.r = newColor.r;
+                                existingDot.g = newColor.g;
+                                existingDot.b = newColor.b;
+                            } else if (!tooClose) {
+                                let color = randomColor();
+                                let holdTime = Math.floor(Math.random() * 120);
+                                let fadeTime = 40 + Math.floor(Math.random() * 80);
+                                
                                 activeDots.push({
                                     x: intersection.wx,
                                     y: intersection.wy,
                                     birthFrame: frameCount,
-                                    color: getRandomColor()
+                                    holdTime: holdTime,
+                                    fadeTime: fadeTime,
+                                    recharging: false,
+                                    r: color.r,
+                                    g: color.g,
+                                    b: color.b
                                 });
                             }
                         }
@@ -300,32 +354,37 @@ function render(pageId) {
             ctx.stroke();
         }
         
-        // Draw active dots - random colored star-like dots
+        // Draw active dots
         for (let i = activeDots.length - 1; i >= 0; i--) {
             let dot = activeDots[i];
             let ageFrames = frameCount - dot.birthFrame;
-            let lifeProgress = ageFrames / dotLifetimeFrames;
             
-            if (lifeProgress >= 1) {
-                activeDots.splice(i, 1);
-            } else {
-                let fadeAlpha = (1 - lifeProgress) * 0.8;
-                let dotSize = 2.5 - lifeProgress * 1;
-                let c = dot.color;
-                
-                // Center dot
-                ctx.fillStyle = `rgba(${c.r}, ${c.g}, ${c.b}, ${fadeAlpha})`;
-                ctx.beginPath();
-                ctx.arc(dot.x, dot.y, dotSize, 0, Math.PI * 2);
-                ctx.fill();
-                
-                // Horizontal sparkle
-                ctx.fillStyle = `rgba(${c.r}, ${c.g}, ${c.b}, ${fadeAlpha * 0.6})`;
-                ctx.fillRect(dot.x - dotSize * 1.5, dot.y - 0.5, dotSize * 3, 1);
-                
-                // Vertical sparkle
-                ctx.fillRect(dot.x - 0.5, dot.y - dotSize * 1.5, 1, dotSize * 3);
+            // Check if dot is completely dead
+            if (!dot.recharging) {
+                let totalLifetime = dot.holdTime + dot.fadeTime;
+                if (ageFrames >= totalLifetime) {
+                    activeDots.splice(i, 1);
+                    continue;
+                }
             }
+            
+            let brightness = getDotBrightness(dot, frameCount);
+            if (brightness <= 0) {
+                activeDots.splice(i, 1);
+                continue;
+            }
+            
+            let dotSize = 1.5 + brightness * 1.25; // Size scales with brightness
+            
+            ctx.fillStyle = `rgba(${dot.r}, ${dot.g}, ${dot.b}, ${brightness})`;
+            
+            ctx.beginPath();
+            ctx.arc(dot.x, dot.y, dotSize, 0, Math.PI * 2);
+            ctx.fill();
+            
+            ctx.fillStyle = `rgba(${dot.r}, ${dot.g}, ${dot.b}, ${brightness * 0.6})`;
+            ctx.fillRect(dot.x - dotSize * 1.5, dot.y - 0.5, dotSize * 3, 1);
+            ctx.fillRect(dot.x - 0.5, dot.y - dotSize * 1.5, 1, dotSize * 3);
         }
         
         if (activeDots.length > 300) {

@@ -69,15 +69,7 @@ h2 {
 }
 
 .wave-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    opacity: 0.28;
-    background-image: repeating-linear-gradient(transparent 0px, transparent 2px, rgba(80, 100, 200, 0.06) 2px, rgba(80, 100, 200, 0.06) 6px), repeating-linear-gradient(90deg, transparent 0px, transparent 40px, rgba(140, 130, 255, 0.05) 40px, rgba(140, 130, 255, 0.05) 44px);
-    pointer-events: none;
+    display: none;
 }
 
 canvas.animated-lattice {
@@ -87,7 +79,7 @@ canvas.animated-lattice {
     width: 100%;
     height: 100%;
     z-index: -1;
-    opacity: 0.2;
+    opacity: 0.5;
     pointer-events: none;
 }
 
@@ -208,13 +200,9 @@ nav a:hover, nav a.active {
     color: var(--accent-cyan);
 }
 
-/* Unified number column width for all tables */
 .data-table th:first-child,
 .data-table td:first-child {
-    width: 3rem;
     text-align: center;
-    padding-left: 0.8rem;
-    padding-right: 0.6rem;
     white-space: nowrap;
 }
 
@@ -262,9 +250,7 @@ nav a:hover, nav a.active {
 
 .derivations-table th:first-child,
 .derivations-table td:first-child {
-    width: 3rem;
     text-align: center;
-    padding-right: 0.5rem;
     white-space: nowrap;
 }
 
@@ -358,8 +344,8 @@ nav a:hover, nav a.active {
 /* Predictions table */
 .predictions-table th:nth-child(1),
 .predictions-table td:nth-child(1) {
-    width: 3rem;
     text-align: center;
+    white-space: nowrap;
 }
 
 .predictions-table th:nth-child(2),
@@ -418,6 +404,26 @@ nav a:hover, nav a.active {
     margin: 1rem 0;
     text-align: center;
     font-size: 1.2rem;
+}
+
+/* Emergence Series - Two-column layout */
+.series-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.series-grid .volume-block {
+    margin: 0;
+}
+
+.series-grid h3 {
+    grid-column: 1 / -1;
+    margin: 0;
+}
+
+.series-fullwidth {
+    grid-column: 1 / -1;
 }
 
 .volume-block {
@@ -494,6 +500,12 @@ nav a:hover, nav a.active {
     background: rgba(0,0,0,0.3);
     border-radius: 32px;
     font-weight: 500;
+}
+
+@media (max-width: 900px) {
+    .series-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 780px) {

@@ -56,7 +56,16 @@ function renderLatexOnPage() {
 let current = 'home';
 function render(pageId) {
     if (pageGenerators[pageId]) {
-        document.getElementById('app').innerHTML = pageGenerators[pageId]();
+        const app = document.getElementById('app');
+        
+        // Re-trigger CRT spring-open animation in Discreet mode
+        if (document.body.classList.contains('crt-mode')) {
+            app.style.animation = 'none';
+            app.offsetHeight; // Force reflow
+            app.style.animation = '';
+        }
+        
+        app.innerHTML = pageGenerators[pageId]();
         current = pageId;
         renderLatexOnPage();
         

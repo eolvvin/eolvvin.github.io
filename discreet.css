@@ -35,10 +35,21 @@ body.crt-mode::after {
     background: radial-gradient(ellipse at center, transparent 60%, rgba(0,0,0,0.55) 100%);
 }
 
+/* Animations */
 @keyframes crtFlicker { 0%,97%,100% { opacity:1; } 98% { opacity:0.92; } 99% { opacity:0.96; } }
-body.crt-mode #app { animation: crtFlicker 6s infinite; }
+
+@keyframes crt-on {
+    from { opacity:0; transform:scaleY(0.02); filter:brightness(3); }
+    30%  { opacity:1; transform:scaleY(1.01); filter:brightness(1.5); }
+    to   { opacity:1; transform:scaleY(1);    filter:brightness(1); }
+}
 
 @keyframes shimmer { from { transform: translateY(-100vh); } to { transform: translateY(100vh); } }
+
+body.crt-mode #app {
+    animation: crtFlicker 6s infinite, crt-on 0.4s ease-out both;
+}
+
 body.crt-mode #app::before {
     content: '';
     position: fixed;

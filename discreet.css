@@ -18,116 +18,39 @@ body.crt-mode {
 }
 
 body.crt-mode::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    z-index: 9998;
-    pointer-events: none;
+    content: ''; position: fixed; inset: 0; z-index: 9998; pointer-events: none;
     background: repeating-linear-gradient(to bottom, transparent 0px, transparent 2px, rgba(0,0,0,0.18) 2px, rgba(0,0,0,0.18) 4px);
 }
-
 body.crt-mode::after {
-    content: '';
-    position: fixed;
-    inset: 0;
-    z-index: 9997;
-    pointer-events: none;
+    content: ''; position: fixed; inset: 0; z-index: 9997; pointer-events: none;
     background: radial-gradient(ellipse at center, transparent 60%, rgba(0,0,0,0.55) 100%);
 }
 
-/* Animations */
 @keyframes crtFlicker { 0%,97%,100% { opacity:1; } 98% { opacity:0.92; } 99% { opacity:0.96; } }
-
 @keyframes crt-on {
     from { opacity:0; transform:scaleY(0.02); filter:brightness(3); }
     30%  { opacity:1; transform:scaleY(1.01); filter:brightness(1.5); }
     to   { opacity:1; transform:scaleY(1);    filter:brightness(1); }
 }
-
 @keyframes shimmer { from { transform: translateY(-100vh); } to { transform: translateY(100vh); } }
 
-body.crt-mode #app {
-    animation: crtFlicker 6s infinite, crt-on 0.4s ease-out both;
-}
-
+body.crt-mode #app { animation: crtFlicker 6s infinite, crt-on 0.4s ease-out both; }
 body.crt-mode #app::before {
-    content: '';
-    position: fixed;
-    left: 0; right: 0;
-    height: 80px;
+    content: ''; position: fixed; left: 0; right: 0; height: 80px;
     background: linear-gradient(transparent, rgba(0,255,65,0.03), transparent);
-    pointer-events: none;
-    z-index: 9996;
-    animation: shimmer 8s linear infinite;
+    pointer-events: none; z-index: 9996; animation: shimmer 8s linear infinite;
 }
 
 body.crt-mode .canvas-bg { background: #020502; }
 body.crt-mode canvas.animated-lattice { opacity: 0.18; }
 
 /* NAV */
-body.crt-mode nav {
-    background: #030803;
-    border-bottom: 1px solid #00cc33;
-    backdrop-filter: none;
-    justify-content: flex-start;
-    align-items: stretch;
-    gap: 0;
-    padding: 0;
-    font-weight: 400;
-    min-height: 2.5rem;
-}
+body.crt-mode nav { background: #030803; border-bottom: 1px solid #00cc33; backdrop-filter: none; justify-content: flex-start; align-items: stretch; gap: 0; padding: 0; font-weight: 400; min-height: 2.5rem; }
+body.crt-mode .nav-label { display: flex; font-family: 'VT323', monospace; font-size: 1.1rem; color: #050a05; background: #00ff41; padding: 0.3rem 1rem; text-shadow: none; letter-spacing: 0.05em; align-items: center; white-space: nowrap; flex-shrink: 0; font-weight: 400; line-height: 1; }
+body.crt-mode nav a { font-family: 'Share Tech Mono', monospace; font-size: 0.72rem; color: #00cc33; border-right: 1px solid rgba(0,200,50,0.15); border-bottom: none; text-shadow: none; text-transform: uppercase; padding: 0.55rem 0.85rem; letter-spacing: 0.06em; font-weight: 400; display: flex; align-items: center; line-height: 1; text-decoration: none; transition: all 0.1s; }
+body.crt-mode nav a:hover { background: rgba(0,255,65,0.1); color: #00ff41; text-shadow: 0 0 6px rgba(0,255,65,0.5); border-bottom: none; }
+body.crt-mode nav a.active { background: rgba(0,255,65,0.15); color: #00ff41; border-bottom: 2px solid #00ff41; text-shadow: 0 0 8px rgba(0,255,65,0.6); font-size: 0.72rem; letter-spacing: 0.06em; }
 
-body.crt-mode .nav-label {
-    display: flex;
-    font-family: 'VT323', monospace;
-    font-size: 1.1rem;
-    color: #050a05;
-    background: #00ff41;
-    padding: 0.3rem 1rem;
-    text-shadow: none;
-    letter-spacing: 0.05em;
-    align-items: center;
-    white-space: nowrap;
-    flex-shrink: 0;
-    font-weight: 400;
-    line-height: 1;
-}
-
-body.crt-mode nav a {
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 0.72rem;
-    color: #00cc33;
-    border-right: 1px solid rgba(0,200,50,0.15);
-    border-bottom: none;
-    text-shadow: none;
-    text-transform: uppercase;
-    padding: 0.55rem 0.85rem;
-    letter-spacing: 0.06em;
-    font-weight: 400;
-    display: flex;
-    align-items: center;
-    line-height: 1;
-    text-decoration: none;
-    transition: all 0.1s;
-}
-
-body.crt-mode nav a:hover {
-    background: rgba(0,255,65,0.1);
-    color: #00ff41;
-    text-shadow: 0 0 6px rgba(0,255,65,0.5);
-    border-bottom: none;
-}
-
-body.crt-mode nav a.active {
-    background: rgba(0,255,65,0.15);
-    color: #00ff41;
-    border-bottom: 2px solid #00ff41;
-    text-shadow: 0 0 8px rgba(0,255,65,0.6);
-    font-size: 0.72rem;
-    letter-spacing: 0.06em;
-}
-
-/* Nav text replacements */
 body.crt-mode nav a[data-page="home"]:not(.active) { font-size: 0; }
 body.crt-mode nav a[data-page="home"]:not(.active)::before { content: 'HOME'; font-size: 0.72rem; letter-spacing: 0.06em; }
 body.crt-mode nav a[data-page="millennium"]:not(.active) { font-size: 0; }
@@ -145,108 +68,46 @@ body.crt-mode nav a[data-page="framework"]:not(.active)::before { content: 'FRAM
 body.crt-mode nav a[data-page="about"]:not(.active) { font-size: 0; }
 body.crt-mode nav a[data-page="about"]:not(.active)::before { content: 'ABOUT'; font-size: 0.72rem; letter-spacing: 0.06em; }
 
-body.crt-mode .crt-toggle {
-    margin-left: auto;
-    border-left: 1px solid rgba(0,200,50,0.3);
-    border-right: none;
-    color: #00ff41;
-    font-size: 0.72rem !important;
-    letter-spacing: 0.06em;
-}
+body.crt-mode .crt-toggle { margin-left: auto; border-left: 1px solid rgba(0,200,50,0.3); border-right: none; color: #00ff41; font-size: 0.72rem !important; letter-spacing: 0.06em; }
 
 /* CONTAINER */
 body.crt-mode .container { padding: 0 2rem; max-width: 1280px; }
 body.crt-mode #app { padding-top: 1rem; }
 
 /* TYPOGRAPHY */
-body.crt-mode h1 {
-    font-family: 'VT323', monospace; font-weight: 400; color: #00ff41;
-    background: none; -webkit-background-clip: unset; background-clip: unset;
-    text-shadow: 0 0 10px rgba(0,255,65,0.5), 0 0 30px rgba(0,255,65,0.3);
-    letter-spacing: 0.04em; text-transform: uppercase;
-    font-size: clamp(2.8rem, 6vw, 5.5rem); line-height: 1.1;
-    margin-bottom: 0.5rem; text-align: center;
-}
-
-body.crt-mode h2 {
-    font-family: 'VT323', monospace; font-weight: 400; color: #ffaa00;
-    text-shadow: 0 0 8px rgba(255,170,0,0.5); border-left: none; padding-left: 0;
-    letter-spacing: 0.06em; text-transform: uppercase;
-    font-size: clamp(1.4rem, 3vw, 2rem); line-height: 1.3;
-    margin: 2.5rem 0 1rem; display: flex; align-items: center; gap: 0.75rem;
-}
+body.crt-mode h1 { font-family: 'VT323', monospace; font-weight: 400; color: #00ff41; background: none; -webkit-background-clip: unset; background-clip: unset; text-shadow: 0 0 10px rgba(0,255,65,0.5), 0 0 30px rgba(0,255,65,0.3); letter-spacing: 0.04em; text-transform: uppercase; font-size: clamp(2.8rem, 6vw, 5.5rem); line-height: 1.1; margin-bottom: 0.5rem; text-align: center; }
+body.crt-mode h2 { font-family: 'VT323', monospace; font-weight: 400; color: #ffaa00; text-shadow: 0 0 8px rgba(255,170,0,0.5); border-left: none; padding-left: 0; letter-spacing: 0.06em; text-transform: uppercase; font-size: clamp(1.4rem, 3vw, 2rem); line-height: 1.3; margin: 2.5rem 0 1rem; display: flex; align-items: center; gap: 0.75rem; }
 body.crt-mode h2::before { content: '//'; color: #00cc33; font-size: 0.8em; }
-body.crt-mode h2.centered {
-    justify-content: center; text-align: center; font-size: 0.72rem;
-    font-family: 'Share Tech Mono', monospace; letter-spacing: 0.2em;
-    color: #00cc33; text-shadow: none; text-transform: uppercase;
-    margin: 2rem 0 0.75rem; display: flex; align-items: center; gap: 0;
-}
+body.crt-mode h2.centered { justify-content: center; text-align: center; font-size: 0.72rem; font-family: 'Share Tech Mono', monospace; letter-spacing: 0.2em; color: #00cc33; text-shadow: none; text-transform: uppercase; margin: 2rem 0 0.75rem; display: flex; align-items: center; gap: 0; }
 body.crt-mode h2.centered::before { content: ''; }
 body.crt-mode h3 { font-family: 'Share Tech Mono', monospace; color: #ffaa00; text-transform: uppercase; font-weight: 400; line-height: 1.4; }
-body.crt-mode .hero-sub {
-    font-family: 'Share Tech Mono', monospace; font-size: 0.88rem; font-weight: 400;
-    color: #ffaa00; text-shadow: 0 0 8px rgba(255,170,0,0.6);
-    text-transform: uppercase; letter-spacing: 0.25em; margin-bottom: 2.5rem;
-    line-height: 1.4; text-align: center;
-}
+body.crt-mode .hero-sub { font-family: 'Share Tech Mono', monospace; font-size: 0.88rem; font-weight: 400; color: #ffaa00; text-shadow: 0 0 8px rgba(255,170,0,0.6); text-transform: uppercase; letter-spacing: 0.25em; margin-bottom: 2.5rem; line-height: 1.4; text-align: center; }
 body.crt-mode p { font-family: 'Share Tech Mono', monospace; font-size: 0.88rem; color: #00cc33; line-height: 1.75; font-weight: 400; margin-bottom: 1rem; }
 
 /* CARDS */
 body.crt-mode .flex-grid { gap: 0.5rem; margin: 0.75rem 0 1.5rem; }
-body.crt-mode .unif-card, body.crt-mode .prize-card {
-    background: #030803; backdrop-filter: none; border: 1px solid #003310;
-    border-radius: 0; padding: 0.65rem 0.9rem; min-width: 130px;
-    text-align: center; position: relative; transition: all 0.15s;
-}
-body.crt-mode .unif-card::before, body.crt-mode .prize-card::before {
-    content: ''; position: absolute; inset: 0;
-    background: linear-gradient(rgba(0,255,65,0.03), transparent); pointer-events: none;
-}
-body.crt-mode .unif-card:hover, body.crt-mode .prize-card:hover {
-    border-color: #00ff41; background: rgba(0,255,65,0.06);
-    box-shadow: 0 0 12px rgba(0,255,65,0.2), inset 0 0 20px rgba(0,255,65,0.04); transform: none;
-}
-body.crt-mode .unif-card strong, body.crt-mode .prize-card strong {
-    font-family: 'Share Tech Mono', monospace; font-weight: 400; color: #00ff41;
-    text-transform: uppercase; letter-spacing: 0.03em; text-shadow: 0 0 4px rgba(0,255,65,0.4);
-    font-size: 0.78rem; display: block; margin-bottom: 0.35rem; line-height: 1.2;
-}
-body.crt-mode .check-green {
-    color: #00ff41; text-shadow: 0 0 6px rgba(0,255,65,0.4);
-    font-family: 'Share Tech Mono', monospace; font-weight: 400; text-transform: uppercase;
-    font-size: 0.7rem; letter-spacing: 0.08em; margin-top: 0; line-height: 1.2; display: block;
-}
-body.crt-mode .problem-mini-card {
-    background: #030803; backdrop-filter: none; border: 1px solid #003310; border-radius: 0;
-    font-family: 'Share Tech Mono', monospace; font-size: 0.72rem; color: #00cc33;
-    padding: 0.25rem 0.65rem; display: flex; align-items: center; gap: 0.5rem; transition: all 0.1s;
-}
+body.crt-mode .unif-card, body.crt-mode .prize-card { background: #030803; backdrop-filter: none; border: 1px solid #003310; border-radius: 0; padding: 0.65rem 0.9rem; min-width: 130px; text-align: center; position: relative; transition: all 0.15s; }
+body.crt-mode .unif-card::before, body.crt-mode .prize-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(rgba(0,255,65,0.03), transparent); pointer-events: none; }
+body.crt-mode .unif-card:hover, body.crt-mode .prize-card:hover { border-color: #00ff41; background: rgba(0,255,65,0.06); box-shadow: 0 0 12px rgba(0,255,65,0.2), inset 0 0 20px rgba(0,255,65,0.04); transform: none; }
+body.crt-mode .unif-card strong, body.crt-mode .prize-card strong { font-family: 'Share Tech Mono', monospace; font-weight: 400; color: #00ff41; text-transform: uppercase; letter-spacing: 0.03em; text-shadow: 0 0 4px rgba(0,255,65,0.4); font-size: 0.78rem; display: block; margin-bottom: 0.35rem; line-height: 1.2; }
+body.crt-mode .check-green { color: #00ff41; text-shadow: 0 0 6px rgba(0,255,65,0.4); font-family: 'Share Tech Mono', monospace; font-weight: 400; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.08em; margin-top: 0; line-height: 1.2; display: block; }
+body.crt-mode .problem-mini-card { background: #030803; backdrop-filter: none; border: 1px solid #003310; border-radius: 0; font-family: 'Share Tech Mono', monospace; font-size: 0.72rem; color: #00cc33; padding: 0.25rem 0.65rem; display: flex; align-items: center; gap: 0.5rem; transition: all 0.1s; }
 body.crt-mode .problem-mini-card:hover { border-color: #00cc33; color: #00ff41; }
 body.crt-mode .problem-mini-card .check-green, body.crt-mode .problem-mini-card .ok { color: #00ff41; font-size: 0.7rem; margin-top: 0; }
-body.crt-mode .problems-grid {
-    display: flex; flex-wrap: wrap; gap: 0.4rem; justify-content: center;
-    padding: 1.25rem; background: #030803; border: 1px solid #003310; margin: 0.5rem 0 1.5rem;
-}
+body.crt-mode .problems-grid { display: flex; flex-wrap: wrap; gap: 0.4rem; justify-content: center; padding: 1.25rem; background: #030803; border: 1px solid #003310; margin: 0.5rem 0 1.5rem; }
 body.crt-mode .status-solved { color: #00ff41; text-shadow: 0 0 6px rgba(0,255,65,0.4); font-family: 'Share Tech Mono', monospace; text-transform: uppercase; font-weight: 400; }
 body.crt-mode .prediction-highlight { color: #00ff41; }
 
 /* STAT CARDS */
 body.crt-mode .stat-row { gap: 0.75rem; margin: 2.5rem 0 1.5rem; }
-body.crt-mode .stat-card {
-    background: #030803; backdrop-filter: none; border: 1px solid #00cc33; border-radius: 0;
-    position: relative; overflow: hidden; padding: 1.2rem 1.4rem; min-width: 155px; text-align: center;
-}
-body.crt-mode .stat-card::after {
-    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
-    background: #00ff41; box-shadow: 0 0 8px rgba(0,255,65,0.5);
-}
+body.crt-mode .stat-card { background: #030803; backdrop-filter: none; border: 1px solid #00cc33; border-radius: 0; position: relative; overflow: hidden; padding: 1.2rem 1.4rem; min-width: 155px; text-align: center; }
+body.crt-mode .stat-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: #00ff41; box-shadow: 0 0 8px rgba(0,255,65,0.5); }
 body.crt-mode .stat-number { font-family: 'VT323', monospace; font-weight: 400; color: #00ff41; text-shadow: 0 0 12px rgba(0,255,65,0.5); font-size: 3.5rem; line-height: 1; display: block; }
 body.crt-mode .stat-card > div:last-child { font-family: 'Share Tech Mono', monospace; font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: #00cc33; font-weight: 400; margin-top: 0.3rem; line-height: 1.3; }
 
 /* TABLES */
 body.crt-mode .data-table { background: #030803; backdrop-filter: none; border: 1px solid #00cc33; border-radius: 0; margin: 1.25rem 0; font-size: 0.83rem; }
-body.crt-mode .data-table th { background: rgba(0,255,65,0.1); color: #ffaa00; text-shadow: 0 0 6px rgba(255,170,0,0.5); font-family: 'Share Tech Mono', monospace; text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.65rem; font-weight: 400; padding: 0.7rem 1rem; border-bottom: 1px solid #00cc33; text-align: left; }
+body.crt-mode .data-table th { background: rgba(0,255,65,0.1); color: #ffaa00; text-shadow: 0 0 8px rgba(255,170,0,0.7), 0 0 16px rgba(255,170,0,0.3); font-family: 'Share Tech Mono', monospace; text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.65rem; font-weight: 400; padding: 0.7rem 1rem; border-bottom: 1px solid #00cc33; text-align: left; }
 body.crt-mode .data-table td { color: #00cc33; font-family: 'Share Tech Mono', monospace; font-size: 0.8rem; font-weight: 400; padding: 0.65rem 1rem; border-bottom: 1px solid rgba(0,200,50,0.1); }
 body.crt-mode .data-table th:first-child, body.crt-mode .data-table td:first-child { text-align: center; white-space: nowrap; }
 body.crt-mode .data-table tr:last-child td { border-bottom: none; }
@@ -254,14 +115,14 @@ body.crt-mode .data-table tbody tr:hover td { background: rgba(0,255,65,0.05); c
 body.crt-mode .problem-link { color: #ffaa00; text-shadow: 0 0 4px rgba(255,170,0,0.4); border-bottom: 1px solid rgba(255,170,0,0.25); text-decoration: none; }
 body.crt-mode .problem-link:hover { color: #fff; border-color: #ffaa00; }
 body.crt-mode .derivations-table { background: #030803; backdrop-filter: none; border: 1px solid #00cc33; border-radius: 0; }
-body.crt-mode .derivations-table th { background: rgba(0,255,65,0.1); color: #ffaa00; text-shadow: 0 0 6px rgba(255,170,0,0.5); text-transform: uppercase; font-weight: 400; }
+body.crt-mode .derivations-table th { background: rgba(0,255,65,0.1); color: #ffaa00; text-shadow: 0 0 8px rgba(255,170,0,0.7), 0 0 16px rgba(255,170,0,0.3); text-transform: uppercase; font-weight: 400; }
 body.crt-mode .derivations-table td { color: #00cc33; font-weight: 400; }
 body.crt-mode .derivations-table tr:hover td { background: rgba(0,255,65,0.05); }
 body.crt-mode .derivation-link { color: #00ff41; text-shadow: 0 0 4px rgba(0,255,65,0.4); text-decoration: none; }
 body.crt-mode .derivation-link:hover { color: #fff; }
 body.crt-mode .derivation-status { color: #00ff41; text-shadow: 0 0 6px rgba(0,255,65,0.4); text-transform: uppercase; font-weight: 400; }
 body.crt-mode .comparison-table { background: #030803; backdrop-filter: none; border: 1px solid #00cc33; border-radius: 0; }
-body.crt-mode .comparison-table th { background: rgba(0,255,65,0.12); color: #ffaa00; text-shadow: 0 0 6px rgba(255,170,0,0.5); text-transform: uppercase; font-weight: 400; }
+body.crt-mode .comparison-table th { background: rgba(0,255,65,0.12); color: #ffaa00; text-shadow: 0 0 8px rgba(255,170,0,0.7), 0 0 16px rgba(255,170,0,0.3); text-transform: uppercase; font-weight: 400; }
 body.crt-mode .comparison-table td { color: #00cc33; font-weight: 400; }
 body.crt-mode .comparison-table td:first-child { background: rgba(0,255,65,0.05); text-transform: uppercase; }
 body.crt-mode .check-mark { color: #00ff41; }
@@ -269,13 +130,7 @@ body.crt-mode .cross-mark { color: #ff4444; }
 body.crt-mode .question-mark { color: #ffaa00; }
 
 /* QUOTE */
-body.crt-mode .quote {
-    font-family: 'VT323', monospace; font-weight: 400; color: #00ff41;
-    border-left: 3px solid #00ff41; border-radius: 0; background: #030803;
-    text-shadow: 0 0 8px rgba(0,255,65,0.5); text-transform: uppercase;
-    font-size: 1.55rem; letter-spacing: 0.04em; line-height: 1.4;
-    padding: 1rem 1.5rem; margin: 2rem 0; position: relative;
-}
+body.crt-mode .quote { font-family: 'VT323', monospace; font-weight: 400; color: #00ff41; border-left: 3px solid #00ff41; border-radius: 0; background: #030803; text-shadow: 0 0 8px rgba(0,255,65,0.5); text-transform: uppercase; font-size: 1.55rem; letter-spacing: 0.04em; line-height: 1.4; padding: 1rem 1.5rem; margin: 2rem 0; position: relative; }
 body.crt-mode .quote::before { content: '"'; font-size: 4rem; color: rgba(0,255,65,0.1); position: absolute; top: -0.5rem; left: 0.75rem; line-height: 1; }
 
 /* EQUATIONS */
@@ -292,8 +147,44 @@ body.crt-mode .paper-link { color: #00cc33; font-family: 'Share Tech Mono', mono
 body.crt-mode .paper-link::before { content: '>'; flex-shrink: 0; color: #003310; }
 body.crt-mode .paper-link:hover { color: #00ff41; }
 
+/* ABOUT CARD */
+body.crt-mode .about-card {
+    background: #030803;
+    border: 1px solid #00cc33;
+    padding: 1.4rem 1.75rem;
+    margin: 1.5rem 0;
+}
+body.crt-mode .about-card strong {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #ffaa00;
+    text-shadow: 0 0 6px rgba(255,170,0,0.5);
+    display: block;
+    margin-bottom: 0.6rem;
+    font-weight: 400;
+}
+body.crt-mode .about-card a {
+    color: #ffaa00;
+    text-decoration: none;
+    text-shadow: 0 0 4px rgba(255,170,0,0.4);
+}
+body.crt-mode .about-card a:hover {
+    text-decoration: underline;
+    color: #fff;
+}
+body.crt-mode .about-card p {
+    font-size: 0.82rem;
+    line-height: 2;
+    margin: 0;
+    color: #00cc33;
+}
+
 /* FOOTER */
 body.crt-mode .footer { color: #00cc33; border-top: 1px solid #00cc33; font-family: 'Share Tech Mono', monospace; text-transform: uppercase; font-weight: 400; font-size: 0.72rem; margin-top: 4rem; padding: 1.5rem 0; text-align: center; }
+body.crt-mode .footer-continuum { display: none; }
+body.crt-mode .footer-discreet { display: block; }
 body.crt-mode .footer a { color: #ffaa00; text-decoration: none; }
 
 /* BACK TO TOP */

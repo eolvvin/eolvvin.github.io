@@ -42,10 +42,11 @@ function getMarkClass(value) {
 }
 
 function generateFeatureTable() {
+    const crt = document.body.classList.contains('crt-mode');
     let rows = '';
     featureComparisonData.forEach(row => {
         rows += `<tr>
-            <td>${row.feature}</td>
+            <td>${crt ? row.feature.toUpperCase() : row.feature}</td>
             <td><span class="${getMarkClass(row.canvas)}">${row.canvas}</span></td>
             <td><span class="${getMarkClass(row.qft)}">${row.qft}</span></td>
             <td><span class="${getMarkClass(row.qm)}">${row.qm}</span></td>
@@ -55,20 +56,14 @@ function generateFeatureTable() {
             <td><span class="${getMarkClass(row.causal)}">${row.causal}</span></td>
         </tr>`;
     });
-    return `<h2>Feature Comparison</h2>
-    <p>The Canvas Model is the only framework that derives all major frameworks and resolves every major open problem from first principles.</p>
+    return `<h2>${crt ? 'FEATURE COMPARISON' : 'Feature Comparison'}</h2>
+    <p>${crt ? 'The Canvas Model is the only framework that derives all major frameworks and resolves every major open problem from first principles.' : 'The Canvas Model is the only framework that derives all major frameworks and resolves every major open problem from first principles.'}</p>
     <div class="comparison-scroll">
     <table class="comparison-table">
         <thead>
             <tr>
-                <th>Feature</th>
-                <th>Canvas</th>
-                <th>QFT</th>
-                <th>QM</th>
-                <th>GR</th>
-                <th>String Theory</th>
-                <th>LQG</th>
-                <th>Causal Sets</th>
+                <th>${crt ? 'FEATURE' : 'Feature'}</th>
+                <th>Canvas</th><th>QFT</th><th>QM</th><th>GR</th><th>String Theory</th><th>LQG</th><th>Causal Sets</th>
             </tr>
         </thead>
         <tbody>${rows}</tbody>
@@ -77,36 +72,40 @@ function generateFeatureTable() {
 }
 
 function generateFrameworkPage() {
-    return `<div style="text-align: center; margin: 2rem 0 1rem;"><h2 style="border-left: none; font-size: 4rem; background: linear-gradient(135deg,#fff,#b8b0ff); -webkit-background-clip:text; background-clip:text; color:transparent;">Three Equations. All of Universe.</h2></div>
+    const crt = document.body.classList.contains('crt-mode');
+    return `<div style="text-align: center; margin: 2rem 0 1rem;"><h2 style="border-left: none; font-size: 4rem; background: linear-gradient(135deg,#fff,#b8b0ff); -webkit-background-clip:text; background-clip:text; color:transparent;">${crt ? 'THREE EQUATIONS. ALL OF UNIVERSE.' : 'Three Equations. All of Universe.'}</h2></div>
     
-    <h3>✦ The Three Core Equations</h3>
-    <p>The Canvas Model reduces all of physics to three equations operating on a discrete pre-geometric canvas. Together they govern wave dynamics, threshold activation, and the spectral structure of reality.</p>
+    <h3>${crt ? '✦ THE THREE CORE EQUATIONS' : '✦ The Three Core Equations'}</h3>
+    <p>${crt ? 'The Canvas Model reduces all of physics to three equations operating on a discrete pre-geometric canvas. Together they govern wave dynamics, threshold activation, and the spectral structure of reality.' : 'The Canvas Model reduces all of physics to three equations operating on a discrete pre-geometric canvas. Together they govern wave dynamics, threshold activation, and the spectral structure of reality.'}</p>
     
-    <h4 style="margin-top: 1.5rem;">Unified Wave Equation</h4>
+    <h4 style="margin-top: 1.5rem;">${crt ? 'UNIFIED WAVE EQUATION' : 'Unified Wave Equation'}</h4>
     <div id="framework-equation" class="equation-fullwidth"></div>
-    <p>The master wave equation evolves field amplitude Φ across the order parameter v, coupling linear propagation, amplitude, acceleration, and polarity.</p>
+    <p>${crt ? 'The master wave equation evolves field amplitude across the order parameter, coupling linear propagation, amplitude, acceleration, and polarity.' : 'The master wave equation evolves field amplitude Φ across the order parameter v, coupling linear propagation, amplitude, acceleration, and polarity.'}</p>
     
-    <h4 style="margin-top: 1.5rem;">Threshold Condition</h4>
+    <h4 style="margin-top: 1.5rem;">${crt ? 'THRESHOLD CONDITION' : 'Threshold Condition'}</h4>
     <div id="threshold-equation" class="core-equation"></div>
-    <p>Adjacent canvas nodes activate when the product of their field amplitudes exceeds the local threshold tensor — this is the mechanism that generates spacetime, particles, and forces.</p>
+    <p>${crt ? 'Adjacent canvas nodes activate when the product of their field amplitudes exceeds the local threshold tensor — the mechanism that generates spacetime, particles, and forces.' : 'Adjacent canvas nodes activate when the product of their field amplitudes exceeds the local threshold tensor — this is the mechanism that generates spacetime, particles, and forces.'}</p>
     
-    <h4 style="margin-top: 1.5rem;">Eigenvalue Structure</h4>
+    <h4 style="margin-top: 1.5rem;">${crt ? 'EIGENVALUE STRUCTURE' : 'Eigenvalue Structure'}</h4>
     <div id="eigenvalue-equation" class="core-equation"></div>
-    <p>The threshold tensor's eigenvalue spectrum determines the mass spectrum, coupling constants, and all observable parameters of the Standard Model.</p>
+    <p>${crt ? 'The threshold tensor eigenvalue spectrum determines the mass spectrum, coupling constants, and all observable parameters of the Standard Model.' : 'The threshold tensor\'s eigenvalue spectrum determines the mass spectrum, coupling constants, and all observable parameters of the Standard Model.'}</p>
     
-    <h3>✦ Meta-Control Modes (The Fifth Element)</h3>
-    <p>The equality processor evolves in meta-time via two complementary modes — no new axioms or primitives required. The direction of meta-time determines which mode is active.</p>
+    <h3>${crt ? '✦ META-CONTROL MODES (THE FIFTH ELEMENT)' : '✦ Meta-Control Modes (The Fifth Element)'}</h3>
+    <p>${crt ? 'The equality processor evolves in meta-time via two complementary modes — no new axioms or primitives required. The direction of meta-time determines which mode is active.' : 'The equality processor evolves in meta-time via two complementary modes — no new axioms or primitives required. The direction of meta-time determines which mode is active.'}</p>
     
-    <h4 style="margin-top: 1.5rem;">Steering (Feed-Back)</h4>
+    <h4 style="margin-top: 1.5rem;">${crt ? 'STEERING (FEED-BACK)' : 'Steering (Feed-Back)'}</h4>
     <div id="steering-equation" class="core-equation"></div>
-    <p>Steering is reactive, error-driven, and backward-looking in meta-time. It implements gradient descent, driving the system toward the S-invariant attractor — the mechanism of feedback control, correction, and equilibrium.</p>
+    <p>${crt ? 'Steering is reactive, error-driven, and backward-looking in meta-time. It implements gradient descent, driving the system toward the S-invariant attractor — the mechanism of feedback control, correction, and equilibrium.' : 'Steering is reactive, error-driven, and backward-looking in meta-time. It implements gradient descent, driving the system toward the S-invariant attractor — the mechanism of feedback control, correction, and equilibrium.'}</p>
     
-    <h4 style="margin-top: 1.5rem;">Driving (Feed-Forward)</h4>
+    <h4 style="margin-top: 1.5rem;">${crt ? 'DRIVING (FEED-FORWARD)' : 'Driving (Feed-Forward)'}</h4>
     <div id="driving-equation" class="core-equation"></div>
-    <p>Driving is anticipatory, goal-driven, and forward-looking in meta-time. It is Steering in reverse meta-time, corresponding to feed-forward control, anticipation, and goal-seeking — the processor mode underlying intuition, planning, and value-directed behavior.</p>
+    <p>${crt ? 'Driving is anticipatory, goal-driven, and forward-looking in meta-time. It is Steering in reverse meta-time, corresponding to feed-forward control, anticipation, and goal-seeking — the processor mode underlying intuition, planning, and value-directed behavior.' : 'Driving is anticipatory, goal-driven, and forward-looking in meta-time. It is Steering in reverse meta-time, corresponding to feed-forward control, anticipation, and goal-seeking — the processor mode underlying intuition, planning, and value-directed behavior.'}</p>
     
-    <h3>✦ The Eight Primitives</h3><p><strong>Dynamic:</strong> Order (v), Amplitude (Φ), Acceleration (∂²Φ/∂v²), Polarity (sgn(Φ))</p><p><strong>Property:</strong> Dimension (d=3), Angle (θ=π/2), Chirality (h=+1), Charge → SU(3)×SU(2)×U(1)</p>
-    <h3>✦ Fundamental Number</h3><p>α₀ = 1/ln(I_max) ≈ 1/140 → all physical parameters emerge from {1,2,3,4,6}.</p>
+    <h3>${crt ? '✦ THE EIGHT PRIMITIVES' : '✦ The Eight Primitives'}</h3>
+    <p><strong>${crt ? 'DYNAMIC:' : 'Dynamic:'}</strong> ${crt ? 'ORDER (V), AMPLITUDE (Φ), ACCELERATION (∂²Φ/∂V²), POLARITY (SGN(Φ))' : 'Order (v), Amplitude (Φ), Acceleration (∂²Φ/∂v²), Polarity (sgn(Φ))'}</p>
+    <p><strong>${crt ? 'PROPERTY:' : 'Property:'}</strong> ${crt ? 'DIMENSION (D=3), ANGLE (θ=π/2), CHIRALITY (H=+1), CHARGE → SU(3)×SU(2)×U(1)' : 'Dimension (d=3), Angle (θ=π/2), Chirality (h=+1), Charge → SU(3)×SU(2)×U(1)'}</p>
+    <h3>${crt ? '✦ FUNDAMENTAL NUMBER' : '✦ Fundamental Number'}</h3>
+    <p>${crt ? 'α₀ = 1/LN(I_MAX) ≈ 1/140 → ALL PHYSICAL PARAMETERS EMERGE FROM {1,2,3,4,6}.' : 'α₀ = 1/ln(I_max) ≈ 1/140 → all physical parameters emerge from {1,2,3,4,6}.'}</p>
     ${generateFeatureTable()}`;
 }
 

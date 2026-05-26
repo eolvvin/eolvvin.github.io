@@ -105,22 +105,23 @@ const derivationsList = [
 ];
 
 function generateDerivationsPage() {
+    const crt = document.body.classList.contains('crt-mode');
     let rows = '';
     derivationsList.forEach((item, index) => {
         const doiUrl = `https://doi.org/${item.doi}`;
+        const num = crt ? String(index + 1).padStart(3, '0') : index + 1;
         rows += `<tr>
-            <td>${index + 1}</td>
+            <td style="${crt ? 'color:#00cc33;font-size:0.78rem;' : ''}">${num}</td>
             <td><a href="${doiUrl}" class="derivation-link" target="_blank" rel="noopener noreferrer">${item.name}</a></td>
-            <td class="derivation-status">✅ Derived</td>
+            <td class="derivation-status">${crt ? '[DERIVED]' : '✅ Derived'}</td>
         </tr>`;
     });
-    return `<h2>Derivations from First Principles</h2>
-    <p>The Canvas Model derives over 100 fundamental laws, theories, and equations directly from the eight primitives. Each entry links to the paper containing its derivation.</p>
+    return `<h2>${crt ? 'DERIVATIONS FROM FIRST PRINCIPLES' : 'Derivations from First Principles'}</h2>
+    <p>${crt ? '100+ major derivations from the Canvas axioms. Each entry links to the paper containing its derivation.' : 'The Canvas Model derives over 100 fundamental laws, theories, and equations directly from the eight primitives. Each entry links to the paper containing its derivation.'}</p>
     <table class="derivations-table">
-        <thead><tr><th>#</th><th>Derivation</th><th>Status</th></tr></thead>
+        <thead><tr><th>${crt ? '#' : '#'}</th><th>${crt ? 'DERIVATION' : 'Derivation'}</th><th>${crt ? 'STATUS' : 'Status'}</th></tr></thead>
         <tbody>${rows}</tbody>
-    </table>
-    `;
+    </table>`;
 }
 
 window.generateDerivationsPage = generateDerivationsPage;

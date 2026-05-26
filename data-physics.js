@@ -105,25 +105,27 @@ const physicsProblemsList = [
 ];
 
 function generatePhysicsTable() {
+    const crt = document.body.classList.contains('crt-mode');
     let rows = '';
     physicsProblemsList.forEach((problem, index) => {
         const doiUrl = `https://doi.org/${problem.doi}`;
+        const num = crt ? String(index + 1).padStart(3, '0') : index + 1;
         rows += `<tr>
-            <td>${index + 1}</td>
+            <td style="${crt ? 'color:#00cc33;font-size:0.78rem;' : ''}">${num}</td>
             <td><a href="${doiUrl}" class="problem-link" target="_blank" rel="noopener noreferrer">${problem.name}</a></td>
             <td>${problem.yearsOpen}</td>
             <td>${problem.since}</td>
-            <td class="status-solved">✅ ${problem.status}</td>
+            <td class="status-solved">${crt ? '[' + problem.status.toUpperCase() + ']' : '✅ ' + problem.status}</td>
         </tr>`;
     });
-    return `<div class="comparison-scroll"><table class="data-table"><thead><tr><th>#</th><th>Problem</th><th>Years Open</th><th>Since</th><th>Status</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+    return `<div class="comparison-scroll"><table class="data-table"><thead><tr><th>${crt ? '#' : '#'}</th><th>${crt ? 'PROBLEM' : 'Problem'}</th><th>${crt ? 'YRS OPEN' : 'Years Open'}</th><th>${crt ? 'SINCE' : 'Since'}</th><th>${crt ? 'STATUS' : 'Status'}</th></tr></thead><tbody>${rows}</tbody></table></div>`;
 }
 
 function generatePhysicsPage() {
-    return `<h2>100+ Problems Solved by the Canvas Model</h2>
-    <p>Every major open problem in physics — from the Measurement Problem to the Problem of Everything — has been resolved within a single unified framework. Click any problem name to view the derivation paper.</p>
-    ${generatePhysicsTable()}
-    `;
+    const crt = document.body.classList.contains('crt-mode');
+    return `<h2>${crt ? '100+ PROBLEMS SOLVED' : '100+ Problems Solved by the Canvas Model'}</h2>
+    <p>${crt ? 'Every major open problem in physics resolved within a single unified framework. Click any problem name to view the derivation paper.' : 'Every major open problem in physics — from the Measurement Problem to the Problem of Everything — has been resolved within a single unified framework. Click any problem name to view the derivation paper.'}</p>
+    ${generatePhysicsTable()}`;
 }
 
 window.generatePhysicsPage = generatePhysicsPage;

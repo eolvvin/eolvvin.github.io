@@ -2,7 +2,6 @@
 // Emergence Series page content with all paper data
 
 const volume1 = [
-    { num: "0", title: "The Necessity of the Primitives", doi: "10.5281/zenodo.20096985" },
     { num: "1", title: "A Unified Field Theory", doi: "10.5281/zenodo.19639452" },
     { num: "2", title: "Quantum Foundations", doi: "10.5281/zenodo.19951901" },
     { num: "3", title: "Black Holes and Cosmology", doi: "10.5281/zenodo.19952123" },
@@ -123,23 +122,26 @@ const standaloneMath = [
 ];
 
 const specialPapers = [
-    { title: "Emergence Position Paper", doi: "10.5281/zenodo.19928415" }
+    { title: "Emergence Position Paper", doi: "10.5281/zenodo.19928415" },
+    { title: "The Necessity of the Primitives", doi: "10.5281/zenodo.20096985" }
 ];
 
 function renderVolume(title, papers, showNumbers = true) {
     if (!papers.length) return '';
-    let html = `<h3 style="margin: 1.5rem 0 0.5rem 0; font-size: 1.7rem;">${title}</h3><div class="volume-block"><div class="paper-list">`;
+    const crt = document.body.classList.contains('crt-mode');
+    let html = `<h3 style="margin: 1.5rem 0 0.5rem 0; font-size: 1.7rem;">${crt ? title.toUpperCase() : title}</h3><div class="volume-block"><div class="paper-list">`;
     papers.forEach(p => {
         let displayTitle;
         if (p.isCompanion) {
-            displayTitle = `Companion: ${p.title}`;
+            displayTitle = crt ? `COMPANION: ${p.title.toUpperCase()}` : `Companion: ${p.title}`;
         } else if (showNumbers && p.num) {
-            displayTitle = `Emergence ${p.num}: ${p.title}`;
+            const num = crt ? String(p.num).padStart(2, '0') : p.num;
+            displayTitle = crt ? `EMERGENCE ${num}: ${p.title.toUpperCase()}` : `Emergence ${p.num}: ${p.title}`;
         } else {
-            displayTitle = p.title;
+            displayTitle = crt ? p.title.toUpperCase() : p.title;
         }
         const doiUrl = `https://doi.org/${p.doi}`;
-        html += `<div><a href="${doiUrl}" class="paper-link" target="_blank" rel="noopener noreferrer">✅ ${displayTitle}</a></div>`;
+        html += `<div><a href="${doiUrl}" class="paper-link" target="_blank" rel="noopener noreferrer">${crt ? '' : '✅ '}${displayTitle}</a></div>`;
     });
     html += `</div></div>`;
     return html;
@@ -147,26 +149,28 @@ function renderVolume(title, papers, showNumbers = true) {
 
 function renderStandaloneSection(title, papers) {
     if (!papers.length) return '';
-    let html = `<h3 style="margin: 1.5rem 0 0.5rem 0; font-size: 1.7rem;">${title}</h3><div class="volume-block"><div class="paper-list">`;
+    const crt = document.body.classList.contains('crt-mode');
+    let html = `<h3 style="margin: 1.5rem 0 0.5rem 0; font-size: 1.7rem;">${crt ? title.toUpperCase() : title}</h3><div class="volume-block"><div class="paper-list">`;
     papers.forEach(p => {
         const doiUrl = `https://doi.org/${p.doi}`;
-        html += `<div><a href="${doiUrl}" class="paper-link" target="_blank" rel="noopener noreferrer">✅ ${p.title}</a></div>`;
+        html += `<div><a href="${doiUrl}" class="paper-link" target="_blank" rel="noopener noreferrer">${crt ? '> ' + p.title.toUpperCase() : '✅ ' + p.title}</a></div>`;
     });
     html += `</div></div>`;
     return html;
 }
 
 function generateSeriesPage() {
-    return `<h2>The Emergence Series</h2><p>Complete collection of all published papers, organized by volume.</p>
-        ${renderVolume("Volume I: Foundations", volume1, true)}
-        ${renderVolume("Volume II: Primitives", volume2, true)}
-        ${renderVolume("Volume III: Structure", volume3, true)}
-        ${renderVolume("Volume IV: Canvas Temporal Mathematics", volume4, true)}
-        ${renderVolume("Volume V: Psychology, Free Will, Consciousness, Cognition, Creation, Evolution, and the Future", volume5, true)}
-        ${renderStandaloneSection("Standalone Physics Papers", standalonePhysics)}
-        ${renderStandaloneSection("Standalone Mathematics Papers", standaloneMath)}
-        ${renderStandaloneSection("Special Papers", specialPapers)}
-        `;
+    const crt = document.body.classList.contains('crt-mode');
+    return `<h2>${crt ? 'THE EMERGENCE SERIES' : 'The Emergence Series'}</h2>
+    <p>${crt ? 'Complete collection of all published preprint papers, organized by volume.' : 'Complete collection of all published papers, organized by volume.'}</p>
+    ${renderVolume("Volume I: Foundations", volume1, true)}
+    ${renderVolume("Volume II: Primitives", volume2, true)}
+    ${renderVolume("Volume III: Structure", volume3, true)}
+    ${renderVolume("Volume IV: Canvas Temporal Mathematics", volume4, true)}
+    ${renderVolume("Volume V: Psychology, Free Will, Consciousness, Cognition, Creation, Evolution, and the Future", volume5, true)}
+    ${renderStandaloneSection("Standalone Physics Papers", standalonePhysics)}
+    ${renderStandaloneSection("Standalone Mathematics Papers", standaloneMath)}
+    ${renderStandaloneSection("Special Papers", specialPapers)}`;
 }
 
 window.generateSeriesPage = generateSeriesPage;

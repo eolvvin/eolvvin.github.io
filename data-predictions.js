@@ -169,11 +169,13 @@ const unknownPredictions = [
 ];
 
 function generateKnownTable() {
+    const crt = document.body.classList.contains('crt-mode');
     let rows = '';
     knownNumbers.forEach((item, index) => {
         const doiUrl = `https://doi.org/${item.doi}`;
+        const num = crt ? String(index + 1).padStart(2, '0') : index + 1;
         rows += `<tr>
-            <td>${index + 1}</td>
+            <td style="${crt ? 'color:#00cc33;font-size:0.78rem;' : ''}">${num}</td>
             <td><a href="${doiUrl}" class="derivation-link" target="_blank" rel="noopener noreferrer">${item.name}</a></td>
             <td>${item.known}</td>
             <td class="prediction-highlight">${item.predicted}</td>
@@ -183,13 +185,15 @@ function generateKnownTable() {
 }
 
 function generateUnknownTable() {
+    const crt = document.body.classList.contains('crt-mode');
     let rows = '';
     unknownPredictions.forEach((item, index) => {
         const doiUrl = `https://doi.org/${item.doi}`;
+        const num = crt ? String(knownNumbers.length + index + 1).padStart(2, '0') : knownNumbers.length + index + 1;
         rows += `<tr>
-            <td>${knownNumbers.length + index + 1}</td>
+            <td style="${crt ? 'color:#00cc33;font-size:0.78rem;' : ''}">${num}</td>
             <td><a href="${doiUrl}" class="derivation-link" target="_blank" rel="noopener noreferrer">${item.name}</a></td>
-            <td class="undiscovered-text">Undiscovered</td>
+            <td class="undiscovered-text">${crt ? 'UNDISCOVERED' : 'Undiscovered'}</td>
             <td class="prediction-highlight">${item.predicted}</td>
         </tr>`;
     });

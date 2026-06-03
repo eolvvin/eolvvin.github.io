@@ -93,13 +93,20 @@ nav {
     background: rgba(8, 8, 20, 0.85);
     border-bottom: 1px solid var(--border-glow);
     z-index: 100;
-    padding: 1rem 2rem;
+    padding: 0.5rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-weight: 600;
+}
+
+.nav-center {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
-    font-weight: 600;
+    gap: 1.5rem;
+    flex: 1;
 }
 
 nav a {
@@ -107,7 +114,7 @@ nav a {
     text-decoration: none;
     font-size: 0.95rem;
     transition: 0.2s;
-    padding: 0.2rem 0;
+    padding: 0.5rem 0;
     border-bottom: 2px solid transparent;
 }
 
@@ -123,13 +130,11 @@ nav a:hover, nav a.active {
     font-family: 'Press Start 2P', monospace;
     font-size: 0.65rem !important;
     letter-spacing: 0.05em;
-    position: absolute;
-    right: 2rem;
-    top: 50%;
-    transform: translateY(-50%);
-    border-left: 8px solid rgba(195, 184, 255, 1);
+    flex-shrink: 0;
+    border-left: 8px solid rgba(195, 184, 255, 0.5);
     padding-left: 1.2rem;
     border-bottom: none !important;
+    margin-left: 1rem;
 }
 
 .flex-grid { display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; margin: 2rem 0; }
@@ -175,7 +180,9 @@ nav a:hover, nav a.active {
 .derivations-table th, .derivations-table td { padding: 0.9rem 1.1rem; text-align: left; border-bottom: 1px solid rgba(100, 90, 200, 0.12); }
 .derivations-table th { background: rgba(24, 20, 54, 0.9); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-cyan); }
 .derivations-table td { font-size: 0.9rem; color: var(--text-dim); }
-.derivations-table th:first-child, .derivations-table td:first-child { text-align: center; white-space: nowrap; }
+.derivations-table th:first-child, .derivations-table td:first-child { width: 5%; text-align: center; white-space: nowrap; }
+.derivations-table th:nth-child(2), .derivations-table td:nth-child(2) { width: 78%; }
+.derivations-table th:nth-child(3), .derivations-table td:nth-child(3) { width: 17%; text-align: center; white-space: nowrap; }
 .derivations-table tr:last-child td { border-bottom: none; }
 .derivations-table tr:hover td { background: rgba(100, 90, 200, 0.07); }
 .derivation-link { color: var(--accent-cyan); text-decoration: none; border-bottom: 1px dotted rgba(136, 204, 255, 0.4); transition: 0.1s; font-weight: 500; }
@@ -196,27 +203,13 @@ nav a:hover, nav a.active {
 .question-mark { color: #ffaa44; font-weight: 600; }
 .fraction-text { font-size: 0.9rem; font-weight: 500; }
 
-.predictions-table td:nth-child(1) {
-    width: 4%;
-    text-align: center;
-    white-space: nowrap;
-}
-.predictions-table th:nth-child(2),
-.predictions-table td:nth-child(2) {
-    width: 30%;
-}
-.predictions-table th:nth-child(3),
-.predictions-table td:nth-child(3) {
-    width: 24%;
-}
-.predictions-table th:nth-child(4),
-.predictions-table td:nth-child(4) {
-    width: 24%;
-}
-.predictions-table th:nth-child(5),
-.predictions-table td:nth-child(5) {
-    width: 18%;
-}
+.predictions-table th:nth-child(1), .predictions-table td:nth-child(1) { width: 4%; text-align: center; white-space: nowrap; }
+.predictions-table th:nth-child(2), .predictions-table td:nth-child(2) { width: 30%; }
+.predictions-table th:nth-child(3), .predictions-table td:nth-child(3) { width: 24%; }
+.predictions-table th:nth-child(4), .predictions-table td:nth-child(4) { width: 24%; }
+.predictions-table th:nth-child(5), .predictions-table td:nth-child(5) { width: 18%; }
+.undiscovered-text { color: #b8a0ff; font-weight: 600; font-style: italic; }
+.prediction-highlight { color: #5fe0a0; font-weight: 500; }
 
 .equation-fullwidth {
     width: 100%; background: rgba(8, 8, 22, 0.65); padding: 2rem 1rem; border-radius: 18px;

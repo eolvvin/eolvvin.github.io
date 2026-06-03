@@ -77,24 +77,28 @@ function render(pageId) {
             }
         }
         
-        document.querySelectorAll('nav a').forEach(link => {
-            const linkPage = link.getAttribute('data-page');
-            if (!linkPage) return;
-            
-            if (linkPage === pageId) {
-                link.classList.add('active');
-                if (document.body.classList.contains('crt-mode')) {
-                    const originalText = link.getAttribute('data-original') || link.textContent.replace(/^> \s*/, '');
-                    link.setAttribute('data-original', originalText);
-                    link.textContent = '>  ' + originalText;
-                }
-            } else {
-                link.classList.remove('active');
-                if (document.body.classList.contains('crt-mode') && link.getAttribute('data-original')) {
-                    link.textContent = link.getAttribute('data-original');
-                }
-            }
-        });
+		document.querySelectorAll('nav a').forEach(link => {
+			const linkPage = link.getAttribute('data-page');
+			if (!linkPage) return;
+			
+			// Save original text on first encounter
+			if (!link.getAttribute('data-original')) {
+				link.setAttribute('data-original', link.textContent.replace(/^> \s*/, ''));
+			}
+			
+			if (linkPage === pageId) {
+				link.classList.add('active');
+				if (document.body.classList.contains('crt-mode')) {
+					link.textContent = '>  ' + link.getAttribute('data-original');
+				}
+			} else {
+				link.classList.remove('active');
+				// Always restore original text for inactive items in CRT mode
+				if (document.body.classList.contains('crt-mode')) {
+					link.textContent = link.getAttribute('data-original');
+				}
+			}
+		});
         
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }

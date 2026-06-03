@@ -256,10 +256,10 @@ function generateDerivationsPage() {
     
     <h3>${crt ? 'STATUS DEFINITIONS' : 'Status Definitions'}</h3>
     <table class="data-table">
-        <thead><tr><th>${crt ? 'STATUS' : 'Status'}</th><th>${crt ? 'MEANING' : 'Meaning'}</th></tr></thead>
+        <thead><tr><th style="text-align:left;">${crt ? 'STATUS' : 'Status'}</th><th>${crt ? 'MEANING' : 'Meaning'}</th></tr></thead>
         <tbody>
-            <tr><td class="derivation-status">${crt ? '[DERIVED]' : '✅ Derived'}</td><td>${crt ? 'THE THEORY, EQUATION, OR PHENOMENON FOLLOWS DIRECTLY FROM CANVAS MODEL AXIOMS WITH NO FREE PARAMETERS.' : 'The theory, equation, or phenomenon follows directly from Canvas Model axioms with no free parameters.'}</td></tr>
-            <tr><td class="derivation-status" style="color:#ffaa00;">${crt ? '[POSTULATED]' : '📌 Postulated'}</td><td>${crt ? 'FOUNDATIONAL EQUATION OF THE CANVAS MODEL — THE STARTING POINT FROM WHICH ALL ELSE IS DERIVED.' : 'Foundational equation of the Canvas Model — the starting point from which all else is derived.'}</td></tr>
+            <tr><td class="derivation-status" style="text-align:left;">${crt ? '[DERIVED]' : '✅ Derived'}</td><td>${crt ? 'THE THEORY, EQUATION, OR PHENOMENON FOLLOWS DIRECTLY FROM CANVAS MODEL AXIOMS WITH NO FREE PARAMETERS.' : 'The theory, equation, or phenomenon follows directly from Canvas Model axioms with no free parameters.'}</td></tr>
+            <tr><td class="derivation-status" style="color:#ffaa00;text-align:left;">${crt ? '[POSTULATED]' : '📌 Postulated'}</td><td>${crt ? 'FOUNDATIONAL EQUATION OF THE CANVAS MODEL — THE STARTING POINT FROM WHICH ALL ELSE IS DERIVED.' : 'Foundational equation of the Canvas Model — the starting point from which all else is derived.'}</td></tr>
         </tbody>
     </table>`;
     
@@ -286,14 +286,14 @@ function generateDerivationsPage() {
     
     html += `<h3>${crt ? 'SUMMARY' : 'Summary'}</h3>
     <table class="data-table">
-        <thead><tr><th>${crt ? 'CATEGORY' : 'Category'}</th><th>${crt ? 'COUNT' : 'Count'}</th></tr></thead>
+        <thead><tr><th style="text-align:left;">${crt ? 'CATEGORY' : 'Category'}</th><th>${crt ? 'COUNT' : 'Count'}</th></tr></thead>
         <tbody>`;
     
     derivationCategories.forEach(cat => {
-        html += `<tr><td>${crt ? cat.category.toUpperCase() : cat.category}</td><td>${cat.items.length}</td></tr>`;
+        html += `<tr><td style="text-align:left;">${crt ? cat.category.toUpperCase() : cat.category}</td><td>${cat.items.length}</td></tr>`;
     });
     
-    html += `<tr style="font-weight:bold;border-top:2px solid ${crt ? '#00ff41' : 'var(--accent-cyan)'};"><td>${crt ? 'TOTAL' : 'Total'}</td><td>${totalCount}</td></tr></tbody></table>`;
+    html += `<tr style="font-weight:bold;border-top:2px solid ${crt ? '#00ff41' : 'var(--accent-cyan)'};"><td style="text-align:left;">${crt ? 'TOTAL' : 'Total'}</td><td>${totalCount}</td></tr></tbody></table>`;
     
     return html;
 }

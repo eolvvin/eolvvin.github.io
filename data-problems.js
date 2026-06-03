@@ -193,16 +193,16 @@ function generatePhysicsPage() {
     const statusDefsHTML = `
     <h3>${crt ? 'STATUS DEFINITIONS' : 'Status Definitions'}</h3>
     <table class="data-table">
-        <thead><tr><th>${crt ? 'STATUS' : 'Status'}</th><th>${crt ? 'MEANING' : 'Meaning'}</th></tr></thead>
+        <thead><tr><th style="text-align:left;">${crt ? 'STATUS' : 'Status'}</th><th>${crt ? 'MEANING' : 'Meaning'}</th></tr></thead>
         <tbody>
-            <tr><td class="status-solved">${crt ? '[SOLVED]' : '✅ Solved'}</td><td>${crt ? 'THE PROBLEM HAS A DEFINITE, QUANTITATIVE SOLUTION WITHIN THE FRAMEWORK.' : 'The problem has a definite, quantitative solution within the framework.'}</td></tr>
-            <tr><td class="status-solved">${crt ? '[RESOLVED]' : '✅ Resolved'}</td><td>${crt ? 'A LONG-STANDING PARADOX IS REMOVED; THE PHYSICS IS CLARIFIED.' : 'A long-standing paradox is removed; the physics is clarified.'}</td></tr>
-            <tr><td class="question-mark">${crt ? '[DISSOLVED]' : '💠 Dissolved'}</td><td>${crt ? 'THE PROBLEM DISAPPEARS BECAUSE ITS ASSUMPTIONS ARE INCOMPATIBLE WITH THE FRAMEWORK.' : 'The problem disappears because its assumptions are incompatible with the framework.'}</td></tr>
-            <tr><td class="status-solved">${crt ? '[DERIVED]' : '✅ Derived'}</td><td>${crt ? 'THE PHENOMENON IS DERIVED FROM FIRST PRINCIPLES WITH NO FREE PARAMETERS.' : 'The phenomenon is derived from first principles with no free parameters.'}</td></tr>
-            <tr><td class="status-solved">${crt ? '[EXPLAINED]' : '✅ Explained'}</td><td>${crt ? 'A CLEAR MECHANISM IS PROVIDED.' : 'A clear mechanism is provided.'}</td></tr>
-            <tr><td class="prediction-highlight">${crt ? '[PREDICTED]' : '🔮 Predicted'}</td><td>${crt ? 'THE FRAMEWORK MAKES A NOVEL, TESTABLE PREDICTION NOT PREVIOUSLY RECOGNIZED AS A PROBLEM.' : 'The framework makes a novel, testable prediction not previously recognized as a problem.'}</td></tr>
-            <tr><td class="status-solved">${crt ? '[STRUCTURAL]' : '✅ Structural'}</td><td>${crt ? 'A DEEP STRUCTURAL FEATURE OF THE FRAMEWORK THAT UNIFIES MULTIPLE PHENOMENA.' : 'A deep structural feature of the framework that unifies multiple phenomena.'}</td></tr>
-            <tr><td class="status-solved">${crt ? '[METHODOLOGICAL]' : '✅ Methodological'}</td><td>${crt ? 'A NEW METHOD OF PROOF OR REASONING INTRODUCED BY THE FRAMEWORK.' : 'A new method of proof or reasoning introduced by the framework.'}</td></tr>
+            <tr><td class="status-solved" style="text-align:left;">${crt ? '[SOLVED]' : '✅ Solved'}</td><td>${crt ? 'THE PROBLEM HAS A DEFINITE, QUANTITATIVE SOLUTION WITHIN THE FRAMEWORK.' : 'The problem has a definite, quantitative solution within the framework.'}</td></tr>
+            <tr><td class="status-solved" style="text-align:left;">${crt ? '[RESOLVED]' : '✅ Resolved'}</td><td>${crt ? 'A LONG-STANDING PARADOX IS REMOVED; THE PHYSICS IS CLARIFIED.' : 'A long-standing paradox is removed; the physics is clarified.'}</td></tr>
+            <tr><td class="question-mark" style="text-align:left;">${crt ? '[DISSOLVED]' : '💠 Dissolved'}</td><td>${crt ? 'THE PROBLEM DISAPPEARS BECAUSE ITS ASSUMPTIONS ARE INCOMPATIBLE WITH THE FRAMEWORK.' : 'The problem disappears because its assumptions are incompatible with the framework.'}</td></tr>
+            <tr><td class="status-solved" style="text-align:left;">${crt ? '[DERIVED]' : '✅ Derived'}</td><td>${crt ? 'THE PHENOMENON IS DERIVED FROM FIRST PRINCIPLES WITH NO FREE PARAMETERS.' : 'The phenomenon is derived from first principles with no free parameters.'}</td></tr>
+            <tr><td class="status-solved" style="text-align:left;">${crt ? '[EXPLAINED]' : '✅ Explained'}</td><td>${crt ? 'A CLEAR MECHANISM IS PROVIDED.' : 'A clear mechanism is provided.'}</td></tr>
+            <tr><td class="prediction-highlight" style="text-align:left;">${crt ? '[PREDICTED]' : '🔮 Predicted'}</td><td>${crt ? 'THE FRAMEWORK MAKES A NOVEL, TESTABLE PREDICTION NOT PREVIOUSLY RECOGNIZED AS A PROBLEM.' : 'The framework makes a novel, testable prediction not previously recognized as a problem.'}</td></tr>
+            <tr><td class="status-solved" style="text-align:left;">${crt ? '[STRUCTURAL]' : '✅ Structural'}</td><td>${crt ? 'A DEEP STRUCTURAL FEATURE OF THE FRAMEWORK THAT UNIFIES MULTIPLE PHENOMENA.' : 'A deep structural feature of the framework that unifies multiple phenomena.'}</td></tr>
+            <tr><td class="status-solved" style="text-align:left;">${crt ? '[METHODOLOGICAL]' : '✅ Methodological'}</td><td>${crt ? 'A NEW METHOD OF PROOF OR REASONING INTRODUCED BY THE FRAMEWORK.' : 'A new method of proof or reasoning introduced by the framework.'}</td></tr>
         </tbody>
     </table>`;
     
@@ -213,9 +213,9 @@ function generatePhysicsPage() {
     ${generatePhysicsTable()}
     <h3>${crt ? 'SUMMARY' : 'Summary'}</h3>
     <table class="data-table">
-        <thead><tr><th>${crt ? 'CATEGORY' : 'Category'}</th><th>${crt ? 'COUNT' : 'Count'}</th></tr></thead>
+        <thead><tr><th style="text-align:left;">${crt ? 'CATEGORY' : 'Category'}</th><th>${crt ? 'COUNT' : 'Count'}</th></tr></thead>
         <tbody>
-            <tr><td>${crt ? 'TOTAL PROBLEMS SOLVED/RESOLVED/DISSOLVED/DERIVED/EXPLAINED/PREDICTED' : 'Total problems solved/resolved/dissolved/derived/explained/predicted'}</td><td>143</td></tr>
+            <tr><td style="text-align:left;">${crt ? 'TOTAL PROBLEMS SOLVED/RESOLVED/DISSOLVED/DERIVED/EXPLAINED/PREDICTED' : 'Total problems solved/resolved/dissolved/derived/explained/predicted'}</td><td>143</td></tr>
         </tbody>
     </table>`;
 }

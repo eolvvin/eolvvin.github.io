@@ -1,6 +1,10 @@
 // data-series.js
 // Emergence Series page content with all paper data
 
+const mainPaper = [
+    { title: "Emergence: A Unified Framework of Fundamental Physics", doi: "10.5281/zenodo.20392265" }
+];
+
 const volume1 = [
     { num: "1", title: "A Unified Field Theory", doi: "10.5281/zenodo.19639452" },
     { num: "2", title: "Quantum Foundations", doi: "10.5281/zenodo.19951901" },
@@ -98,7 +102,11 @@ const standalonePhysics = [
     { title: "Failure of the Singularity Theorems", doi: "10.5281/zenodo.19972062" },
     { title: "Completion of the Classical Self-Force Problem", doi: "10.5281/zenodo.19971657" },
     { title: "A Proof of Convergence of Regge Calculus", doi: "10.5281/zenodo.19958212" },
-    { title: "Origin of Born Rule", doi: "10.5281/zenodo.19958089" }
+    { title: "Origin of Born Rule", doi: "10.5281/zenodo.19958089" },
+    // New physics papers
+    { title: "Lattice Quantum Canvas", doi: "10.5281/zenodo.20349965" },
+    { title: "de Sitter Space", doi: "10.5281/zenodo.20349947" },
+	{ title: "Gravitational Sign Reversal", doi: "10.5281/zenodo.20513412" }
 ];
 
 const standaloneMath = [
@@ -118,13 +126,43 @@ const standaloneMath = [
     { title: "Harmonicity of the Algebraicity Field", doi: "10.5281/zenodo.20236712" },
     { title: "The Sitnikov Problem", doi: "10.5281/zenodo.20313223" },
     { title: "The Cheeger–Plank Mechanism", doi: "10.5281/zenodo.20313135" },
-    { title: "The Three Body Problem", doi: "10.5281/zenodo.20312792" }
+    { title: "The Three Body Problem", doi: "10.5281/zenodo.20312792" },
+    // New math papers
+    { title: "The Computational Universe", doi: "10.5281/zenodo.20350129" },
+    { title: "Wave Goodbye to PEMDAS in CTM", doi: "10.5281/zenodo.20353362" },
+    { title: "CTM Position Table", doi: "10.5281/zenodo.20396049" },
+    { title: "Dependencies Notation", doi: "10.5281/zenodo.20512324" },
+    { title: "Cosmological Constant Correction", doi: "10.5281/zenodo.20438505" },
+    { title: "Weights of the UWE", doi: "10.5281/zenodo.20512848" },
+    { title: "Numerical Simulations", doi: "10.5281/zenodo.20513047" },
+    { title: "Division by Zero", doi: "10.5281/zenodo.20513225" },
+    { title: "CTM Model", doi: "10.5281/zenodo.20513257" },
+    { title: "PEMDAS and Rocket Science", doi: "10.5281/zenodo.20513364" }
 ];
 
 const specialPapers = [
     { title: "Emergence Position Paper", doi: "10.5281/zenodo.19928415" },
     { title: "The Necessity of the Primitives", doi: "10.5281/zenodo.20096985" }
 ];
+
+const mapsAndCatalogs = [
+    { title: "MAP: Dependencies Map for Predictions", doi: "10.5281/zenodo.20513157" },
+    { title: "Catalog: Physics Predictions", doi: "10.5281/zenodo.20364753" },
+    { title: "Catalog: Solved Physics Problems", doi: "10.5281/zenodo.20366043" },
+    { title: "Catalog: Derived Physics Phenomena", doi: "10.5281/zenodo.20366151" }
+];
+
+function renderMainPaper(title, papers) {
+    if (!papers.length) return '';
+    const crt = document.body.classList.contains('crt-mode');
+    let html = `<h3 style="margin: 1.5rem 0 0.5rem 0; font-size: 1.7rem;">${crt ? title.toUpperCase() : title}</h3><div class="volume-block"><div class="paper-list">`;
+    papers.forEach(p => {
+        const doiUrl = `https://doi.org/${p.doi}`;
+        html += `<div><a href="${doiUrl}" class="paper-link" target="_blank" rel="noopener noreferrer">${crt ? '> ' + p.title.toUpperCase() : '✅ ' + p.title}</a></div>`;
+    });
+    html += `</div></div>`;
+    return html;
+}
 
 function renderVolume(title, papers, showNumbers = true) {
     if (!papers.length) return '';
@@ -162,7 +200,8 @@ function renderStandaloneSection(title, papers) {
 function generateSeriesPage() {
     const crt = document.body.classList.contains('crt-mode');
     return `<h2>${crt ? 'THE EMERGENCE SERIES' : 'The Emergence Series'}</h2>
-    <p>${crt ? 'Complete collection of all published preprint papers, organized by volume.' : 'Complete collection of all published papers, organized by volume.'}</p>
+    <p>${crt ? 'Complete collection of all published papers, organized by volume.' : 'Complete collection of all published papers, organized by volume.'}</p>
+    ${renderMainPaper("Main Paper", mainPaper)}
     ${renderVolume("Volume I: Foundations", volume1, true)}
     ${renderVolume("Volume II: Primitives", volume2, true)}
     ${renderVolume("Volume III: Structure", volume3, true)}
@@ -170,7 +209,8 @@ function generateSeriesPage() {
     ${renderVolume("Volume V: Psychology, Free Will, Consciousness, Cognition, Creation, Evolution, and the Future", volume5, true)}
     ${renderStandaloneSection("Standalone Physics Papers", standalonePhysics)}
     ${renderStandaloneSection("Standalone Mathematics Papers", standaloneMath)}
-    ${renderStandaloneSection("Special Papers", specialPapers)}`;
+    ${renderStandaloneSection("Special Papers", specialPapers)}
+    ${renderStandaloneSection("Maps and Catalogs", mapsAndCatalogs)}`;
 }
 
 window.generateSeriesPage = generateSeriesPage;

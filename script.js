@@ -4,8 +4,7 @@
 const unifiedWaveLatex = "\\Phi(v) = a v + b \\Phi_0 + c \\frac{d^2\\Phi}{dv^2} + d \\pi(v)";
 const thresholdEq = "|\\Phi_i \\Phi_j| > T_{ij}";
 const eigenvalueEq = "\\hat{T}_{ij} c^j = \\lambda c_i";
-const steeringEq = "\\frac{d\\mathcal{E}_\\tau}{d\\tau} = -\\kappa \\nabla_{\\mathcal{E}} \\mathbb{E}[\\mathcal{E}_\\tau]";
-const drivingEq = "\\frac{d\\mathcal{E}_\\tau}{d\\tau} = +\\kappa \\nabla_{\\mathcal{E}} \\mathbb{E}[\\mathcal{E}_\\tau]";
+const steeringEq = "\\frac{dT_{ij}}{d\\tau} = -\\mu \\nabla_{T} \\mathcal{E}[T]";
 
 function renderLatexInElement(el, latex, display = true) {
     if (window.katex) {
@@ -21,53 +20,62 @@ const pageGenerators = {
     millennium: generateMillenniumPage,
     derivations: generateDerivationsPage,
     predictions: generatePredictionsPage,
-    physics: generatePhysicsPage,
+    problems: generatePhysicsPage,
     series: generateSeriesPage,
     framework: generateFrameworkPage,
     about: generateAboutPage
 };
 
 function renderLatexOnPage() {
-    const fw = document.getElementById('framework-equation');
-    if (fw) renderLatexInElement(fw, unifiedWaveLatex, true);
-    const th = document.getElementById('threshold-equation');
-    if (th) renderLatexInElement(th, thresholdEq, true);
-    const eig = document.getElementById('eigenvalue-equation');
-    if (eig) renderLatexInElement(eig, eigenvalueEq, true);
-    const st = document.getElementById('steering-equation');
-    if (st) renderLatexInElement(st, steeringEq, true);
-    const dr = document.getElementById('driving-equation');
-    if (dr) renderLatexInElement(dr, drivingEq, true);
-    
-    if (window.renderMathInElement) {
-        const app = document.getElementById('app');
-        if (app) {
-            window.renderMathInElement(app, {
-                delimiters: [
-                    {left: '$$', right: '$$', display: true},
-                    {left: '$', right: '$', display: false},
-                    {left: '\\(', right: '\\)', display: false}
-                ]
-            });
+    // Small delay to ensure DOM is fully updated
+    setTimeout(() => {
+        const fw = document.getElementById('framework-equation');
+        if (fw) renderLatexInElement(fw, unifiedWaveLatex, true);
+        const th = document.getElementById('threshold-equation');
+        if (th) renderLatexInElement(th, thresholdEq, true);
+        const eig = document.getElementById('eigenvalue-equation');
+        if (eig) renderLatexInElement(eig, eigenvalueEq, true);
+        const st = document.getElementById('steering-equation');
+        if (st) renderLatexInElement(st, steeringEq, true);
+        
+        if (window.renderMathInElement) {
+            const app = document.getElementById('app');
+            if (app) {
+                window.renderMathInElement(app, {
+                    delimiters: [
+                        {left: '$$', right: '$$', display: true},
+                        {left: '$', right: '$', display: false},
+                        {left: '\\(', right: '\\)', display: false}
+                    ]
+                });
+            }
         }
-    }
+    }, 50);
 }
 
 let current = 'home';
 function render(pageId) {
     if (pageGenerators[pageId]) {
+        window.location.hash = pageId;
+        
         const app = document.getElementById('app');
         
-        // Re-trigger CRT spring-open animation in Discreet mode
         if (document.body.classList.contains('crt-mode')) {
             app.style.animation = 'none';
-            app.offsetHeight; // Force reflow
+            app.offsetHeight;
             app.style.animation = '';
         }
         
         app.innerHTML = pageGenerators[pageId]();
         current = pageId;
         renderLatexOnPage();
+        
+        if (pageId === 'about') {
+            const bookSpread = document.getElementById('bookSpread');
+            if (bookSpread) {
+                bookSpread.addEventListener('click', window.handleBookClick);
+            }
+        }
         
         document.querySelectorAll('nav a').forEach(link => {
             const linkPage = link.getAttribute('data-page');
@@ -91,6 +99,15 @@ function render(pageId) {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 }
+
+function handleHashChange() {
+    const hash = window.location.hash.replace('#', '');
+    if (hash && pageGenerators[hash] && hash !== current) {
+        render(hash);
+    }
+}
+
+window.addEventListener('hashchange', handleHashChange);
 
 // Canvas animation
 (function() {
@@ -279,4 +296,10 @@ document.getElementById('backToTop').addEventListener('click', (e) => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-render('home');
+// Initial load - check hash or default to home
+const initialHash = window.location.hash.replace('#', '');
+if (initialHash && pageGenerators[initialHash]) {
+    render(initialHash);
+} else {
+    render('home');
+}

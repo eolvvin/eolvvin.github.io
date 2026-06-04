@@ -85,14 +85,20 @@ body.crt-mode nav a[data-page="millennium"]:not(.active) { font-size: 0; }
 body.crt-mode nav a[data-page="millennium"]:not(.active)::before { content: 'MILLENNIUM'; font-size: 0.80rem; letter-spacing: 0.06em; }
 body.crt-mode nav a[data-page="derivations"]:not(.active) { font-size: 0; }
 body.crt-mode nav a[data-page="derivations"]:not(.active)::before { content: 'DERIVATIONS'; font-size: 0.80rem; letter-spacing: 0.06em; }
-body.crt-mode nav a[data-page="predictions"]:not(.active) { font-size: 0; }
-body.crt-mode nav a[data-page="predictions"]:not(.active)::before { content: 'PREDICTIONS'; font-size: 0.80rem; letter-spacing: 0.06em; }
 body.crt-mode nav a[data-page="problems"]:not(.active) { font-size: 0; }
 body.crt-mode nav a[data-page="problems"]:not(.active)::before { content: 'PROBLEMS'; font-size: 0.80rem; letter-spacing: 0.06em; }
+body.crt-mode nav a[data-page="paradoxes"]:not(.active) { font-size: 0; }
+body.crt-mode nav a[data-page="paradoxes"]:not(.active)::before { content: 'PARADOXES'; font-size: 0.80rem; letter-spacing: 0.06em; }
+body.crt-mode nav a[data-page="tables"]:not(.active) { font-size: 0; }
+body.crt-mode nav a[data-page="tables"]:not(.active)::before { content: 'TABLES'; font-size: 0.80rem; letter-spacing: 0.06em; }
+body.crt-mode nav a[data-page="predictions"]:not(.active) { font-size: 0; }
+body.crt-mode nav a[data-page="predictions"]:not(.active)::before { content: 'PREDICTIONS'; font-size: 0.80rem; letter-spacing: 0.06em; }
 body.crt-mode nav a[data-page="series"]:not(.active) { font-size: 0; }
 body.crt-mode nav a[data-page="series"]:not(.active)::before { content: 'SERIES'; font-size: 0.80rem; letter-spacing: 0.06em; }
 body.crt-mode nav a[data-page="framework"]:not(.active) { font-size: 0; }
 body.crt-mode nav a[data-page="framework"]:not(.active)::before { content: 'FRAMEWORK'; font-size: 0.80rem; letter-spacing: 0.06em; }
+body.crt-mode nav a[data-page="comparison"]:not(.active) { font-size: 0; }
+body.crt-mode nav a[data-page="comparison"]:not(.active)::before { content: 'COMPARISON'; font-size: 0.80rem; letter-spacing: 0.06em; }
 body.crt-mode nav a[data-page="about"]:not(.active) { font-size: 0; }
 body.crt-mode nav a[data-page="about"]:not(.active)::before { content: 'ABOUT'; font-size: 0.80rem; letter-spacing: 0.06em; }
 
@@ -172,6 +178,18 @@ body.crt-mode .prediction-highlight { color: #00ff41; }
 /* STAT CARDS */
 body.crt-mode .stat-row { gap: 0.75rem; margin: 2.5rem 0 1.5rem; }
 body.crt-mode .stat-card { background: #030803; backdrop-filter: none; border: 1px solid #00cc33; border-radius: 0; position: relative; overflow: hidden; padding: 1.2rem 1.4rem; min-width: 155px; text-align: center; }
+body.crt-mode .stat-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+body.crt-mode .stat-card-link:hover .stat-card {
+    border-color: #00ff41;
+    background: rgba(0,255,65,0.06);
+    box-shadow: 0 0 12px rgba(0,255,65,0.2);
+}
+
 body.crt-mode .stat-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: #00ff41; box-shadow: 0 0 8px rgba(0,255,65,0.5); }
 body.crt-mode .stat-number { font-family: 'VT323', monospace; font-weight: 400; color: #00ff41; text-shadow: 0 0 12px rgba(0,255,65,0.5); font-size: 3.5rem; line-height: 1; display: block; }
 body.crt-mode .stat-card > div:last-child { font-family: 'Share Tech Mono', monospace; font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: #00cc33; font-weight: 400; margin-top: 0.3rem; line-height: 1.3; }

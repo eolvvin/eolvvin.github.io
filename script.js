@@ -19,10 +19,13 @@ const pageGenerators = {
     home: generateHome,
     millennium: generateMillenniumPage,
     derivations: generateDerivationsPage,
+	problems: generatePhysicsPage,
+	paradoxes: generateParadoxesPage,
     predictions: generatePredictionsPage,
-    problems: generatePhysicsPage,
+	tables: generateTablesPage,
     series: generateSeriesPage,
     framework: generateFrameworkPage,
+	comparison: generateComparisonPage,
     about: generateAboutPage
 };
 

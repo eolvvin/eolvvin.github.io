@@ -44,7 +44,7 @@ function generateHome() {
         <div style="font-family:'Share Tech Mono',monospace;font-size:0.7rem;color:#00cc33;letter-spacing:0.1em;text-align:center;margin-bottom:1rem;font-weight:400;">
             SYSTEM BOOT v4.2.0 :: INITIALIZING UNIFIED FIELD ENGINE...
         </div>
-        <h1>EMERGENCE<br>UNIFIED FRAMEWORK<br>— CANVAS MODEL —</h1>
+        <h1>EMERGENCE CANVAS MODEL<br>UNIFIED FRAMEWORK</h1>
         <div class="hero-sub">&gt;&gt; UNIFYING ALL OF PHYSICS &amp; MATHEMATICS &lt;&lt;</div>
         <div style="font-family:'Share Tech Mono',monospace;font-size:0.75rem;color:#003310;text-align:center;letter-spacing:0.1em;margin:1rem 0;overflow:hidden;white-space:nowrap;">
             ══════════════════════════════════════════════════════════════════════════════
@@ -78,13 +78,13 @@ function generateHome() {
         </div>
 
         <div class="stat-row">
-            <div class="stat-card"><span class="stat-number">100+</span><div>PHYSICS PROBLEMS RESOLVED</div></div>
-            <div class="stat-card"><span class="stat-number">100+</span><div>PHENOMENA DERIVED</div></div>
-            <div class="stat-card"><span class="stat-number">100+</span><div>PAPERS WRITTEN</div></div>
-            <div class="stat-card"><span class="stat-number">100+</span><div>MATH CONCEPTS CATEGORIZED</div></div>
-            <div class="stat-card"><span class="stat-number">100+</span><div>NEW MATH DISCOVERED</div></div>
-            <div class="stat-card"><span class="stat-number">100+</span><div>PARADOXES DISSOLVED</div></div>
-            <div class="stat-card"><span class="stat-number">100+</span><div>PREDICTIONS MADE</div></div>
+            <a href="#problems" class="stat-card-link"><div class="stat-card"><span class="stat-number">100+</span><div>PHYSICS PROBLEMS RESOLVED</div></div></a>
+            <a href="#derivations" class="stat-card-link"><div class="stat-card"><span class="stat-number">100+</span><div>PHENOMENA DERIVED</div></div></a>
+            <a href="#series" class="stat-card-link"><div class="stat-card"><span class="stat-number">100+</span><div>PAPERS WRITTEN</div></div></a>
+            <a href="#tables" class="stat-card-link"><div class="stat-card"><span class="stat-number">100+</span><div>MATH CONCEPTS CATEGORIZED</div></div></a>
+            <a href="#tables" class="stat-card-link"><div class="stat-card"><span class="stat-number">100+</span><div>NEW MATH DISCOVERED</div></div></a>
+            <a href="#paradoxes" class="stat-card-link"><div class="stat-card"><span class="stat-number">100+</span><div>PARADOXES DISSOLVED</div></div></a>
+            <a href="#predictions" class="stat-card-link"><div class="stat-card"><span class="stat-number">100+</span><div>PREDICTIONS MADE</div></div></a>
         </div>
 
         <div style="font-family:'Share Tech Mono',monospace;font-size:0.75rem;color:#003310;text-align:center;letter-spacing:0.1em;margin:1rem 0;overflow:hidden;white-space:nowrap;">
@@ -95,7 +95,7 @@ function generateHome() {
     }
 
     // CONTINUUM (ORIGINAL) HOME PAGE
-    return `<div class="hero"><h1>Emergence Unified Framework<br>— Canvas Model —</h1><div class="hero-sub">Unifies Everything</div>
+    return `<div class="hero"><h1>Emergence Canvas Model<br>Unified Framework</h1><div class="hero-sub">Unifies Everything</div>
     <div class="flex-grid">${frameworksList.map(f => `<div class="unif-card"><strong>${f.name}</strong><div class="check-green"> ✓ Unified</div></div>`).join('')}</div>
     <h2 style="font-size:1.9rem; text-align:center; border:none;">🏆 Millennium Prize Problems Proven in CTM</h2>
     <div class="flex-grid">${millenniumShort.map(p => `<div class="prize-card"><strong>${p.name}</strong><div class="check-green"> ✓ Proven</div></div>`).join('')}</div>
@@ -104,13 +104,13 @@ function generateHome() {
         ${centuryProblems.map(prob => `<div class="problem-mini-card"><span>${prob}</span> <span class="check-green" style="margin-top:0;">✓</span></div>`).join('')}
     </div>
     <div class="stat-row">
-        <div class="stat-card"><div class="stat-number">100+</div><div>Physics Problems Resolved</div></div>
-        <div class="stat-card"><div class="stat-number">100+</div><div>Phenomena Derived</div></div>
-        <div class="stat-card"><div class="stat-number">100+</div><div>Papers Written</div></div>
-        <div class="stat-card"><div class="stat-number">100+</div><div>Math Concepts Categorized</div></div>
-        <div class="stat-card"><div class="stat-number">100+</div><div>New Math Discovered</div></div>
-        <div class="stat-card"><div class="stat-number">100+</div><div>Paradoxes Dissolved</div></div>
-        <div class="stat-card"><div class="stat-number">100+</div><div>Predictions Made</div></div>
+        <a href="#problems" class="stat-card-link"><div class="stat-card"><div class="stat-number">100+</div><div>Physics Problems Resolved</div></div></a>
+        <a href="#derivations" class="stat-card-link"><div class="stat-card"><div class="stat-number">100+</div><div>Phenomena Derived</div></div></a>
+        <a href="#series" class="stat-card-link"><div class="stat-card"><div class="stat-number">100+</div><div>Papers Written</div></div></a>
+        <a href="#tables" class="stat-card-link"><div class="stat-card"><div class="stat-number">100+</div><div>Math Concepts Categorized</div></div></a>
+        <a href="#tables" class="stat-card-link"><div class="stat-card"><div class="stat-number">100+</div><div>New Math Discovered</div></div></a>
+        <a href="#paradoxes" class="stat-card-link"><div class="stat-card"><div class="stat-number">100+</div><div>Paradoxes Dissolved</div></div></a>
+        <a href="#predictions" class="stat-card-link"><div class="stat-card"><div class="stat-number">100+</div><div>Predictions Made</div></div></a>
     </div>
     <div class="quote">"From wave to world — a pre‑geometric canvas, eight primitives, one unified theory."</div></div>`;
 }

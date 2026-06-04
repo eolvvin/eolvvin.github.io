@@ -139,7 +139,7 @@ function generateFrameworkPage() {
     <h3>${crt ? '✦ SCOPE OF THE FRAMEWORK' : '✦ Scope of the Framework'}</h3>
     <p>${crt ? 'The Canvas Model reproduces 111 known physical constants and phenomena, makes 54 novel testable predictions, and resolves 143 long-standing problems in physics and mathematics. All from eight primitives and four equations. No free parameters. No observational inputs.' : 'The Canvas Model reproduces 111 known physical constants and phenomena, makes 54 novel testable predictions, and resolves 143 long-standing problems in physics and mathematics. All from eight primitives and four equations.'}</p>
 
-    ${generateFeatureTable()}`;
+    `; // ${generateFeatureTable()}
 }
 
 window.generateFrameworkPage = generateFrameworkPage;

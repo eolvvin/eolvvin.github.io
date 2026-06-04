@@ -78,7 +78,7 @@ function generateAboutPage() {
     window.bookState = { currentPage: 0, totalPages: 39 };
     
     const bookHTML = `
-    <h2>${crt ? 'THE MAGIC UNIVERSE' : 'The Magic Universe'}</h2>
+    <h2>${crt ? 'PEDAGOGY: THE MAGIC UNIVERSE' : 'Pedagogy: The Magic Universe'}</h2>
     <p>${crt ? 'CANVAS MODEL CHILDREN\'S BOOK' : 'Canvas Model Children\'s Book'}</p>
     
     <div class="book-container">
@@ -158,7 +158,8 @@ function generateAboutPage() {
         <p><strong>Key Insight:</strong> Four dynamic primitives generate change (Order, Amplitude, Acceleration, Polarity) and four property primitives select structure (Dimension, Angle, Chirality, Charge), including two feed-modes Steering and Driving. Everything else emerges.</p>
         <div class="stat-card" style="margin:2rem 0;"><strong>📧 Contact:</strong> <a href="https://x.com/eolvvin" target="_blank" style="color:cyan">@eolvvin</a><br>🌌 Zenodo: <a href="https://zenodo.org/communities/emergence" target="_blank" style="color:cyan">community/emergence</a><br>📚 All preprints open access.</div>`;
     
-    return infoHTML + bookHTML;
+    // return infoHTML;
+	return infoHTML + bookHTML
 }
 
 window.generateAboutPage = generateAboutPage;

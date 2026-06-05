@@ -36,7 +36,8 @@ const physicsBranch = {
 const mathematicsBranch = {
     foundations: [
         { title: "Canvas Temporal Mathematics", doi: "10.5281/zenodo.20176016" },
-        { title: "A Formal Model for CTM", doi: "10.5281/zenodo.20513257" }
+        { title: "A Formal Model for CTM", doi: "10.5281/zenodo.20513257" },
+		{ title: "CTM Position Paper", doi: "10.5281/zenodo.20396049" }
     ],
     classification: [
         { title: "The Complete Periodic Table of Mathematical Concepts", doi: "10.5281/zenodo.20182331" },
@@ -148,7 +149,6 @@ const standalonePhysics = [
     { title: "The Complete Parameter Spectrum", doi: "10.5281/zenodo.20047334" },
     { title: "CMB Predictions of the Discrete Lattice", doi: "10.5281/zenodo.20047314" },
     { title: "Gravitational Wave Signatures of the Discrete Lattice", doi: "10.5281/zenodo.20047292" },
-    { title: "Time Evolution of Constants", doi: "10.5281/zenodo.20047271" },
     { title: "Why Lepton Mixing Is Large", doi: "10.5281/zenodo.20047258" },
     { title: "The Fine-Structure Constant", doi: "10.5281/zenodo.20047112" },
     { title: "How 1/140 Generates All of Physics", doi: "10.5281/zenodo.20046994" },
@@ -174,12 +174,8 @@ const standalonePhysics = [
 const standaloneMath = [
     { title: "The Computational Universe", doi: "10.5281/zenodo.20350129" },
     { title: "Wave Goodbye to PEMDAS in CTM", doi: "10.5281/zenodo.20353362" },
-    { title: "CTM Position Table", doi: "10.5281/zenodo.20396049" },
     { title: "Dependencies Notation", doi: "10.5281/zenodo.20512324" },
-    { title: "Weights of the UWE", doi: "10.5281/zenodo.20512848" },
-    { title: "Numerical Simulations", doi: "10.5281/zenodo.20513047" },
     { title: "Division by Zero", doi: "10.5281/zenodo.20513225" },
-    { title: "CTM Model", doi: "10.5281/zenodo.20513257" },
     { title: "PEMDAS and Rocket Science", doi: "10.5281/zenodo.20513364" },
     { title: "Gravitational Sign Reversal", doi: "10.5281/zenodo.20513412" },
     { title: "The Canvas Exploration Program", doi: "10.5281/zenodo.20211209" },

@@ -32,7 +32,7 @@ function generateComparisonPage() {
             <tr><td>${crt ? 'COMPLETE SPECTRAL CLASSIFICATION (PST)' : 'Complete spectral classification (PST)'}</td><td class="check-mark">✓</td><td class="cross-mark">✗</td><td class="cross-mark">✗</td><td class="cross-mark">✗</td><td class="cross-mark">✗</td><td class="cross-mark">✗</td><td class="cross-mark">✗</td></tr>
             <tr><td>${crt ? 'BRIDGES PHYSICS AND NUMBER THEORY' : 'Bridges physics and number theory'}</td><td class="check-mark">✓</td><td class="cross-mark">✗</td><td class="cross-mark">✗</td><td class="cross-mark">✗</td><td class="cross-mark">✗</td><td class="cross-mark">✗</td><td class="cross-mark">✗</td></tr>
             <tr><td>${crt ? 'SOLVES CENTURY-SCALE OPEN PROBLEMS' : 'Solves century-scale open problems'}</td><td class="check-mark">✓</td><td class="cross-mark">✗</td><td class="cross-mark">✗</td><td class="cross-mark">✗</td><td class="cross-mark">✗</td><td class="cross-mark">✗</td><td class="cross-mark">✗</td></tr>
-            <tr style="font-weight:bold;border-top:2px solid ${crt ? '#00ff41' : 'var(--accent-cyan)'};"><td>${crt ? 'TOTAL' : 'Total'}</td><td>19</td><td>3</td><td>2</td><td>3</td><td>4</td><td>4</td><td>3</td></tr>
+            <tr style="font-weight:bold;background:rgba(100, 140, 255, 0.15);"><td>${crt ? 'TOTAL' : 'Total'}</td><td>19</td><td>3</td><td>2</td><td>3</td><td>4</td><td>4</td><td>3</td></tr>
         </tbody>
     </table>
     </div>
@@ -53,7 +53,7 @@ function generateComparisonPage() {
             <tr><td>${crt ? 'REGGE CALCULUS' : 'Regge Calculus'}</td><td>✓</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td><td>✓</td><td>✗</td></tr>
             <tr><td>${crt ? 'SPECTRAL ANALYSIS (PST)' : 'Spectral Analysis (PST)'}</td><td>✓</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td></tr>
             <tr><td>${crt ? 'NUMBER THEORY (RIEMANN)' : 'Number Theory (Riemann)'}</td><td>✓</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td></tr>
-            <tr style="font-weight:bold;border-top:2px solid ${crt ? '#00ff41' : 'var(--accent-cyan)'};"><td>${crt ? 'TOTAL' : 'Total'}</td><td>10</td><td>4</td><td>2</td><td>2</td><td>6</td><td>3</td><td>2</td></tr>
+			<tr style="font-weight:bold;background:rgba(100, 140, 255, 0.15);"><td>${crt ? 'TOTAL' : 'Total'}</td><td>10</td><td>4</td><td>2</td><td>2</td><td>6</td><td>3</td><td>2</td></tr>
         </tbody>
     </table>
     </div>
@@ -113,8 +113,7 @@ function generateComparisonPage() {
             <tr><td>${crt ? 'LARGE-SCALE STRUCTURE' : 'Large-scale structure'}</td><td>1</td><td>2</td><td>0</td><td>2</td><td>2</td><td>2</td><td>2</td></tr>
             <tr><td>${crt ? 'GALAXY ROTATION CURVES' : 'Galaxy rotation curves'}</td><td>1</td><td>1</td><td>0</td><td>2</td><td>1</td><td>1</td><td>1</td></tr>
             <tr><td>${crt ? 'NEUTRINO OSCILLATIONS' : 'Neutrino oscillations'}</td><td>1</td><td>4</td><td>2</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
-            <tr style="font-weight:bold;border-top:2px solid ${crt ? '#00ff41' : 'var(--accent-cyan)'};"><td>${crt ? 'WEIGHTED TOTAL' : 'Weighted Total'}</td><td>100</td><td>36</td><td>24</td><td>16</td><td>18</td><td>18</td><td>11</td></tr>
-            <tr><td>${crt ? 'PERCENTAGE OF MAXIMUM (148)' : 'Percentage of Maximum (148)'}</td><td>68%</td><td>24%</td><td>16%</td><td>11%</td><td>12%</td><td>12%</td><td>7%</td></tr>
+			<tr style="font-weight:bold;background:rgba(100, 140, 255, 0.15);"><td>${crt ? 'WEIGHTED TOTAL' : 'Weighted Total'}</td><td>100</td><td>36</td><td>24</td><td>16</td><td>18</td><td>18</td><td>11</td></tr>
         </tbody>
     </table>
     </div>

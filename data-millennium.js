@@ -3,12 +3,12 @@
 
 const millenniumProblems = [
     { name: "Riemann Hypothesis", since: "1859", yearsOpen: "165+", status: "SOLVED IN CTM", doi: "10.5281/zenodo.20136786" },
-    { name: "Yang-Mills Mass Gap", since: "1954", yearsOpen: "70+", status: "SOLVED IN CTM", doi: "10.5281/zenodo.20313135" },
-    { name: "Hodge Conjecture", since: "1950", yearsOpen: "75+", status: "SOLVED IN CTM", doi: "10.5281/zenodo.20313135" },
-    { name: "P vs NP", since: "1971", yearsOpen: "50+", status: "SOLVED IN CTM", doi: "10.5281/zenodo.20323576" },
-    { name: "Navier-Stokes Existence and Smoothness", since: "2000", yearsOpen: "25+", status: "SOLVED IN CTM", doi: "10.5281/zenodo.20323576" },
-    { name: "Birch and Swinnerton-Dyer Conjecture", since: "1965", yearsOpen: "60+", status: "SOLVED IN CTM", doi: "10.5281/zenodo.20323576" },
-    { name: "Poincaré Conjecture", since: "1904", yearsOpen: "100+", status: "PERELMAN 2003", doi: "10.5281/zenodo.20323576" }
+    { name: "Yang-Mills Mass Gap", since: "1954", yearsOpen: "70+", status: "SOLVED IN CTM", doi: "10.5281/zenodo.20176319" },
+    { name: "Hodge Conjecture", since: "1950", yearsOpen: "75+", status: "SOLVED IN CTM", doi: "10.5281/zenodo.20176319" },
+    { name: "P vs NP", since: "1971", yearsOpen: "50+", status: "SOLVED IN CTM", doi: "10.5281/zenodo.20176319" },
+    { name: "Navier-Stokes Existence and Smoothness", since: "2000", yearsOpen: "25+", status: "SOLVED IN CTM", doi: "10.5281/zenodo.20176319" },
+    { name: "Birch and Swinnerton-Dyer Conjecture", since: "1965", yearsOpen: "60+", status: "SOLVED IN CTM", doi: "10.5281/zenodo.20176319" },
+    { name: "Poincaré Conjecture", since: "1904", yearsOpen: "100+", status: "PERELMAN 2003", doi: "10.5281/zenodo.20176319" }
 ];
 
 function generateMillenniumPage() {

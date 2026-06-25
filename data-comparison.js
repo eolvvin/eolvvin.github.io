@@ -53,7 +53,7 @@ function generateComparisonPage() {
             <tr><td>${crt ? 'REGGE CALCULUS' : 'Regge Calculus'}</td><td>✓</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td><td>✓</td><td>✗</td></tr>
             <tr><td>${crt ? 'SPECTRAL ANALYSIS (PST)' : 'Spectral Analysis (PST)'}</td><td>✓</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td></tr>
             <tr><td>${crt ? 'NUMBER THEORY (RIEMANN)' : 'Number Theory (Riemann)'}</td><td>✓</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td></tr>
-			<tr style="font-weight:bold;background:rgba(100, 140, 255, 0.15);"><td>${crt ? 'TOTAL' : 'Total'}</td><td>10</td><td>4</td><td>2</td><td>2</td><td>6</td><td>3</td><td>2</td></tr>
+            <tr style="font-weight:bold;background:rgba(100, 140, 255, 0.15);"><td>${crt ? 'TOTAL' : 'Total'}</td><td>10</td><td>4</td><td>2</td><td>2</td><td>6</td><td>3</td><td>2</td></tr>
         </tbody>
     </table>
     </div>
@@ -113,7 +113,7 @@ function generateComparisonPage() {
             <tr><td>${crt ? 'LARGE-SCALE STRUCTURE' : 'Large-scale structure'}</td><td>1</td><td>2</td><td>0</td><td>2</td><td>2</td><td>2</td><td>2</td></tr>
             <tr><td>${crt ? 'GALAXY ROTATION CURVES' : 'Galaxy rotation curves'}</td><td>1</td><td>1</td><td>0</td><td>2</td><td>1</td><td>1</td><td>1</td></tr>
             <tr><td>${crt ? 'NEUTRINO OSCILLATIONS' : 'Neutrino oscillations'}</td><td>1</td><td>4</td><td>2</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
-			<tr style="font-weight:bold;background:rgba(100, 140, 255, 0.15);"><td>${crt ? 'WEIGHTED TOTAL' : 'Weighted Total'}</td><td>100</td><td>36</td><td>24</td><td>16</td><td>18</td><td>18</td><td>11</td></tr>
+            <tr style="font-weight:bold;background:rgba(100, 140, 255, 0.15);"><td>${crt ? 'WEIGHTED TOTAL' : 'Weighted Total'}</td><td>100</td><td>36</td><td>24</td><td>16</td><td>18</td><td>18</td><td>11</td></tr>
         </tbody>
     </table>
     </div>
@@ -136,7 +136,7 @@ function generateComparisonPage() {
     <p>${crt ? 'The Canvas Model leads in all three categories. It has more structural features, reproduces more established frameworks, and derives more phenomena from fewer assumptions than any competing framework.' : 'The Canvas Model leads in all three categories. It has more structural features, reproduces more established frameworks, and derives more phenomena from fewer assumptions than any competing framework.'}</p>
 
     <h3>${crt ? 'METHODOLOGY AND UPDATES' : 'Methodology and Updates'}</h3>
-    <p>${crt ? 'This comparison is based on the published literature for each framework as of 2026. Scoring for the Canvas Model is based on the Unified Framework paper and its appendices, which contain complete step-by-step derivations for every result claimed.' : 'This comparison is based on the published literature for each framework as of 2026. Scoring for the Canvas Model is based on the Unified Framework paper and its appendices, which contain complete step-by-step derivations for every result claimed.'}</p>
+    <p>${crt ? 'This comparison is based on the published literature for each framework as of 2026. Scoring for the Canvas Model is based on the Unified Framework paper (doi:10.5281/zenodo.20392265) and its appendices, which contain complete step-by-step derivations for every result claimed. Gauge coupling unification is scored as absent in the Canvas Model (non-unification with fixed ratios 1 : 2/3 : 2/π is the prediction). Neutrino mass ordering is inverted (m₁ > m₃ > m₂). The internal lattice parameter is β = 0.167 ± 0.005.' : 'This comparison is based on the published literature for each framework as of 2026. Scoring for the Canvas Model is based on the Unified Framework paper and its appendices, which contain complete step-by-step derivations for every result claimed. Gauge coupling unification is scored as absent in the Canvas Model. Neutrino mass ordering is inverted. The internal lattice parameter is β = 0.167 ± 0.005.'}</p>
     <p>${crt ? 'The comparison is a living document. Corrections, updates, and challenges to specific scores are welcome. Submit them with references to the relevant literature.' : 'The comparison is a living document. Corrections, updates, and challenges to specific scores are welcome. Submit them with references to the relevant literature.'}</p>`;
 }
 

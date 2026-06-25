@@ -4,32 +4,69 @@
 const physicsBranch = {
     core: [
         { title: "A Unified Framework of Fundamental Physics", doi: "10.5281/zenodo.20392265" },
+        { title: "The Machine and the State", doi: "10.5281/zenodo.20795774" },
         { title: "Position Paper: A Unified Framework for Fundamental Physics", doi: "10.5281/zenodo.19928415" },
-        { title: "Constructive Frameworks in Fundamental Physics", doi: "10.5281/zenodo.20096985" }
+        { title: "Constructive Frameworks in Fundamental Physics (Dependencies Notation)", doi: "10.5281/zenodo.20512324" }
+    ],
+    primitivesAndWaves: [
+        { title: "The Primitives of the Canvas Model (Compilation)", doi: "10.5281/zenodo.20061105" },
+        { title: "Acceleration as Primitive", doi: "10.5281/zenodo.19810849" },
+        { title: "Order as Primitive", doi: "10.5281/zenodo.19910866" },
+        { title: "Amplitude as Primitive", doi: "10.5281/zenodo.19911493" },
+        { title: "Polarity as Primitive", doi: "10.5281/zenodo.19912555" },
+        { title: "A Primitive Ontology for Wave Dynamics", doi: "10.5281/zenodo.19912939" },
+        { title: "Dynamic and Property Primitives", doi: "10.5281/zenodo.20096899" },
+        { title: "Tensor Properties from Primitives", doi: "10.5281/zenodo.20096957" },
+        { title: "The Negative Primitives", doi: "10.5281/zenodo.20148951" },
+        { title: "The Steering Primitive", doi: "10.5281/zenodo.20148152" },
+        { title: "The Great Generator", doi: "10.5281/zenodo.20065279" },
+        { title: "The Three Simplified Equations of the Canvas Model", doi: "10.5281/zenodo.20046841" },
+        { title: "The Three Equations Across All Domains", doi: "10.5281/zenodo.20046700" },
+        { title: "Derivation of the Unified Wave Equation Weights", doi: "10.5281/zenodo.20582604" }
     ],
     quantumMechanics: [
         { title: "Lattice Quantum Canvas", doi: "10.5281/zenodo.20349965" },
-        { title: "The Measurement Problem: A Threshold Resolution", doi: "10.5281/zenodo.20546695" }
+        { title: "The Measurement Problem: A Threshold Resolution", doi: "10.5281/zenodo.20546695" },
+        { title: "Quantum Logic as Below-Threshold CTM", doi: "10.5281/zenodo.20688323" }
     ],
     quantumFieldTheory: [
         { title: "Quantum Field Theory from the Canvas Model", doi: "10.5281/zenodo.20546554" },
         { title: "Renormalization from Discrete Spacetime", doi: "10.5281/zenodo.20546746" },
         { title: "Spin and Statistics from Thresholds", doi: "10.5281/zenodo.20546621" },
         { title: "The Feynman Path Integral as Threshold Histories", doi: "10.5281/zenodo.20546407" },
-        { title: "Confinement from Voxel Lattice Topology", doi: "10.5281/zenodo.20546311" },
-        { title: "Emergence X: The Derivation of String Theory", doi: "10.5281/zenodo.20021515" }
+        { title: "Confinement from Voxel Lattice Topology", doi: "10.5281/zenodo.20546311" }
+    ],
+    stringTheory: [
+        { title: "Emergence X: The Derivation of String Theory", doi: "10.5281/zenodo.20021515" },
+        { title: "The String-Canvas Dictionary", doi: "10.5281/zenodo.20818334" }
     ],
     cosmology: [
         { title: "Why the Higgs is Light", doi: "10.5281/zenodo.20546782" },
+        { title: "The Electroweak Hierarchy", doi: "10.5281/zenodo.20817358" },
         { title: "Observational Signatures of Planck-Mass Dark Matter", doi: "10.5281/zenodo.20546355" },
         { title: "Why r << 0.01: The Tensor-to-Scalar Ratio", doi: "10.5281/zenodo.20546653" },
         { title: "Time Evolution of Constants", doi: "10.5281/zenodo.20047271" },
-        { title: "Gravitational Wave Signatures of the Discrete Lattice", doi: "10.5281/zenodo.20546468" }
+        { title: "Gravitational Wave Signatures of the Discrete Lattice", doi: "10.5281/zenodo.20546468" },
+        { title: "Why More Matter Than Antimatter", doi: "10.5281/zenodo.20578825" },
+        { title: "The Factor 1/2 in the Cosmological Constant", doi: "10.5281/zenodo.20693575" },
+        { title: "The Boundary Conditions", doi: "10.5281/zenodo.20823626" }
+    ],
+    flavorPhysics: [
+        { title: "The Yukawa Coupling from Threshold Crossing", doi: "10.5281/zenodo.20814575" },
+        { title: "The CKM Matrix — Complete Derivation", doi: "10.5281/zenodo.20814000" },
+        { title: "Gauge Dominance in the CKM Matrix", doi: "10.5281/zenodo.20808021" },
+        { title: "The PMNS Matrix — Complete Derivation", doi: "10.5281/zenodo.20814054" },
+        { title: "Gauge Couplings in Closed Form", doi: "10.5281/zenodo.20807629" },
+        { title: "Geometry of the CKM Parameter", doi: "10.5281/zenodo.20546200" }
+    ],
+    philosophyPhysics: [
+        { title: "The Three Freedoms", doi: "10.5281/zenodo.20846230" }
     ],
     historical: [
         { title: "The Cosmological Constant Correction", doi: "10.5281/zenodo.20438505" },
         { title: "The Weight of Reality", doi: "10.5281/zenodo.20512848" },
-        { title: "From Mismatch to Milestone", doi: "10.5281/zenodo.20513047" }
+        { title: "From Mismatch to Milestone", doi: "10.5281/zenodo.20513047" },
+        { title: "Numerical Simulations of the Canvas Model", doi: "10.5281/zenodo.20583037" }
     ]
 };
 
@@ -37,7 +74,8 @@ const mathematicsBranch = {
     foundations: [
         { title: "Canvas Temporal Mathematics", doi: "10.5281/zenodo.20176016" },
         { title: "A Formal Model for CTM", doi: "10.5281/zenodo.20513257" },
-		{ title: "CTM Position Paper", doi: "10.5281/zenodo.20396049" }
+        { title: "CTM Position Paper", doi: "10.5281/zenodo.20396049" },
+        { title: "CTM: A Unified Foundation", doi: "10.5281/zenodo.20691136" }
     ],
     classification: [
         { title: "The Complete Periodic Table of Mathematical Concepts", doi: "10.5281/zenodo.20182331" },
@@ -55,12 +93,17 @@ const mathematicsBranch = {
     ],
     bridge: [
         { title: "The Prime Wave Bridge", doi: "10.5281/zenodo.20526620" },
-        { title: "The Geometry of the CKM Parameter", doi: "10.5281/zenodo.20546200" }
+        { title: "The Complete Parameter Spectrum", doi: "10.5281/zenodo.20826520" },
+        { title: "Why the Universe Lives in the 1st Quadrant", doi: "10.5281/zenodo.20827273" }
     ],
     mathematicalPhysics: [
         { title: "The Cheeger-Plank Mechanism", doi: "10.5281/zenodo.20313135" },
         { title: "The Threshold Trace Formula", doi: "10.5281/zenodo.20237266" },
         { title: "The Threshold Index Theorem", doi: "10.5281/zenodo.20236909" }
+    ],
+    logicAndFoundations: [
+        { title: "Homotype Theory as Finite Threshold CTM", doi: "10.5281/zenodo.20687832" },
+        { title: "ZFC Theory as the Static Limit of CTM", doi: "10.5281/zenodo.20687673" }
     ]
 };
 
@@ -69,7 +112,8 @@ const referenceDocuments = [
     { title: "Catalog of Canvas Model Predictions", doi: "10.5281/zenodo.20364753" },
     { title: "Compilation: Solved Problems", doi: "10.5281/zenodo.20366043" },
     { title: "Compilation: Derived Frameworks", doi: "10.5281/zenodo.20366151" },
-    { title: "Dependency Map of Predictions", doi: "10.5281/zenodo.20513157" }
+    { title: "Dependency Map of Predictions", doi: "10.5281/zenodo.20513157" },
+    { title: "CTM Position Table", doi: "10.5281/zenodo.20396049" }
 ];
 
 // Keep original volumes for backward compatibility
@@ -141,8 +185,6 @@ const volume5 = [
 ];
 
 const standalonePhysics = [
-    { title: "The Primitives of the Canvas Model (Compilation)", doi: "10.5281/zenodo.20061105" },
-    { title: "The Great Generator", doi: "10.5281/zenodo.20065279" },
     { title: "A Deterministic Resolution of the Measurement Problem", doi: "10.5281/zenodo.20055624" },
     { title: "Inflation from First Principles", doi: "10.5281/zenodo.20047393" },
     { title: "Baryogenesis at Reheating", doi: "10.5281/zenodo.20047373" },
@@ -174,7 +216,6 @@ const standalonePhysics = [
 const standaloneMath = [
     { title: "The Computational Universe", doi: "10.5281/zenodo.20350129" },
     { title: "Wave Goodbye to PEMDAS in CTM", doi: "10.5281/zenodo.20353362" },
-    { title: "Dependencies Notation", doi: "10.5281/zenodo.20512324" },
     { title: "Division by Zero", doi: "10.5281/zenodo.20513225" },
     { title: "PEMDAS and Rocket Science", doi: "10.5281/zenodo.20513364" },
     { title: "Gravitational Sign Reversal", doi: "10.5281/zenodo.20513412" },
@@ -237,9 +278,13 @@ function generateSeriesPage() {
     <h3 style="margin: 2rem 0 1rem 0; font-size: 2rem; color: ${crt ? '#00ff41' : 'var(--text-light)'};">${crt ? 'PHYSICS BRANCH' : 'Physics Branch'}</h3>
     <p>${crt ? 'These papers derive, extend, or document physics results that flow from the TOE paper.' : 'These papers derive, extend, or document physics results that flow from the TOE paper.'}</p>
     ${renderBranchSection("Core", physicsBranch.core)}
+    ${renderSubSection("Primitives and Waves", physicsBranch.primitivesAndWaves)}
     ${renderSubSection("Quantum Mechanics", physicsBranch.quantumMechanics)}
     ${renderSubSection("Quantum Field Theory", physicsBranch.quantumFieldTheory)}
+    ${renderSubSection("String Theory", physicsBranch.stringTheory)}
     ${renderSubSection("Cosmology and Astrophysics", physicsBranch.cosmology)}
+    ${renderSubSection("Flavor Physics", physicsBranch.flavorPhysics)}
+    ${renderSubSection("Philosophy of Physics", physicsBranch.philosophyPhysics)}
     ${renderSubSection("Historical Records", physicsBranch.historical)}
     
     <h3 style="margin: 2rem 0 1rem 0; font-size: 2rem; color: ${crt ? '#00ff41' : 'var(--text-light)'};">${crt ? 'MATHEMATICS BRANCH' : 'Mathematics Branch'}</h3>
@@ -249,6 +294,7 @@ function generateSeriesPage() {
     ${renderSubSection("Number Theory and Spectral Theory", mathematicsBranch.numberTheory)}
     ${renderSubSection("The Bridge", mathematicsBranch.bridge)}
     ${renderSubSection("Mathematical Physics", mathematicsBranch.mathematicalPhysics)}
+    ${renderSubSection("Logic and Foundations", mathematicsBranch.logicAndFoundations)}
     
     <h3 style="margin: 2rem 0 1rem 0; font-size: 2rem; color: ${crt ? '#00ff41' : 'var(--text-light)'};">${crt ? 'REFERENCE DOCUMENTS' : 'Reference Documents'}</h3>
     <p>${crt ? 'Serving both branches.' : 'Serving both branches.'}</p>

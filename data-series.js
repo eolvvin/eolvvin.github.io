@@ -3,10 +3,11 @@
 
 const physicsBranch = {
     core: [
-        { title: "A Unified Framework of Fundamental Physics", doi: "10.5281/zenodo.20392265" },
-        { title: "The Machine and the State", doi: "10.5281/zenodo.20795774" },
-        { title: "Position Paper: A Unified Framework for Fundamental Physics", doi: "10.5281/zenodo.19928415" },
-        { title: "Constructive Frameworks in Fundamental Physics (Dependencies Notation)", doi: "10.5281/zenodo.20512324" }
+        { title: "Emergence: Genesis", doi: "10.5281/zenodo.21025040" },
+        { title: "Emergence: HEP", doi: "10.5281/zenodo.21061365" },
+        { title: "Emergence: Technical Manual - The Machine and the State", doi: "10.5281/zenodo.20795774" },
+        { title: "Emergence: Position Paper", doi: "10.5281/zenodo.19928415" },
+        { title: "Emergence: Dependencies Notation", doi: "10.5281/zenodo.20512324" }
     ],
     primitivesAndWaves: [
         { title: "The Primitives of the Canvas Model (Compilation)", doi: "10.5281/zenodo.20061105" },

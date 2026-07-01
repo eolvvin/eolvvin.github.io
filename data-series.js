@@ -2,13 +2,38 @@
 // Emergence Series page content with all paper data
 
 const physicsBranch = {
-    core: [
-        { title: "Emergence: Genesis", doi: "10.5281/zenodo.21025040" },
-        { title: "Emergence: HEP", doi: "10.5281/zenodo.21061365" },
-        { title: "Emergence: Technical Manual - The Machine and the State", doi: "10.5281/zenodo.20795774" },
-        { title: "Emergence: Position Paper", doi: "10.5281/zenodo.19928415" },
-        { title: "Emergence: Dependencies Notation", doi: "10.5281/zenodo.20512324" }
-    ],
+	core: [
+		{ 
+			title: "❶ Emergence: Genesis — A Unified Field Theory from Wave Intersections on a Pre-Geometric Canvas", 
+			doi: "10.5281/zenodo.21025040",
+			caption: "For an introductory journey of how the theory was developed, read this."
+		},
+		{ 
+			title: "❷ Emergence: HEP — A Unified Framework for Fundamental Physics from Eight Primitives", 
+			doi: "10.5281/zenodo.21061365",
+			caption: "For a scientific paper presentation of this theory with a Standard Model and particle physics focus, read this."
+		},
+		{ 
+			title: "❸ Emergence: Cosmology — A Unified Framework of Fundamental Physics", 
+			doi: "10.5281/zenodo.20392265",
+			caption: "For a scientific paper presentation with a cosmology and unified predictions focus, read this."
+		},
+		{ 
+			title: "❹ Emergence: Technical Manual — The Machine and the State", 
+			doi: "10.5281/zenodo.20795774",
+			caption: "For a complete encyclopedic technical reference manual, read this."
+		},
+		{ 
+			title: "Position Paper: A Unified Framework for Fundamental Physics", 
+			doi: "10.5281/zenodo.19928415",
+			caption: "For a high-level overview of where the framework stands in fundamental physics."
+		},
+		{ 
+			title: "Constructive Frameworks in Fundamental Physics (Dependencies Notation)", 
+			doi: "10.5281/zenodo.20512324",
+			caption: "For the dependency tagging system that makes every result traceable to its axioms."
+		}
+	],
     primitivesAndWaves: [
         { title: "The Primitives of the Canvas Model (Compilation)", doi: "10.5281/zenodo.20061105" },
         { title: "Acceleration as Primitive", doi: "10.5281/zenodo.19810849" },
@@ -232,7 +257,8 @@ function renderBranchSection(title, papers) {
     let html = `<h3 style="margin: 1.5rem 0 0.5rem 0; font-size: 1.7rem;">${crt ? title.toUpperCase() : title}</h3><div class="volume-block"><div class="paper-list">`;
     papers.forEach(p => {
         const doiUrl = `https://doi.org/${p.doi}`;
-        html += `<div><a href="${doiUrl}" class="paper-link" target="_blank" rel="noopener noreferrer">${crt ? '> ' + p.title.toUpperCase() : '✅ ' + p.title}</a></div>`;
+        const captionHTML = p.caption ? `<span style="display:block;font-size:0.78rem;color:${crt ? '#00cc33' : '#8888aa'};margin-top:0.15rem;font-style:italic;">${crt ? p.caption.toUpperCase() : p.caption}</span>` : '';
+        html += `<div><a href="${doiUrl}" class="paper-link" target="_blank" rel="noopener noreferrer">${crt ? '> ' + p.title.toUpperCase() : '✅ ' + p.title}</a>${captionHTML}</div>`;
     });
     html += `</div></div>`;
     return html;
@@ -277,7 +303,7 @@ function generateSeriesPage() {
     <p>${crt ? 'Complete collection of all published papers, organized by branch.' : 'Complete collection of all published papers, organized by branch.'}</p>
     
     <h3 style="margin: 2rem 0 1rem 0; font-size: 2rem; color: ${crt ? '#00ff41' : 'var(--text-light)'};">${crt ? 'PHYSICS BRANCH' : 'Physics Branch'}</h3>
-    <p>${crt ? 'These papers derive, extend, or document physics results that flow from the TOE paper.' : 'These papers derive, extend, or document physics results that flow from the TOE paper.'}</p>
+    <p>${crt ? 'These papers derive, extend, or document physics results that flow from the main paper.' : 'These papers derive, extend, or document physics results that flow from the main paper.'}</p>
     ${renderBranchSection("Core", physicsBranch.core)}
     ${renderSubSection("Primitives and Waves", physicsBranch.primitivesAndWaves)}
     ${renderSubSection("Quantum Mechanics", physicsBranch.quantumMechanics)}

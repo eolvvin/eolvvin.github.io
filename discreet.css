@@ -302,4 +302,5 @@ body.crt-mode .blink { animation: blink 1s step-start infinite; }
     body.crt-mode h1 { font-size: 2.4rem; }
     body.crt-mode nav a { font-size: 0.65rem; padding: 0.35rem 0.5rem; }
     body.crt-mode .paper-list { grid-template-columns: 1fr; }
+	.data-table td:first-child { white-space: normal; word-break: break-word; hyphens: auto;}
 }

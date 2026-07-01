@@ -216,8 +216,8 @@ function generatePhysicsPage() {
         <thead><tr><th style="text-align:left;">${crt ? 'CATEGORY' : 'Category'}</th><th>${crt ? 'COUNT' : 'Count'}</th></tr></thead>
         <tbody>
             <tr>
-				<td style="text-align:left; word-break: break-word; hyphens: auto;">
-					${crt ? 'TOTAL PROBLEMS SOLVED / RESOLVED / DISSOLVED / DERIVED / EXPLAINED / PREDICTED' : 'Total problems solved / resolved / dissolved / derived / explained / predicted'}
+				<td>
+				${crt ? 'TOTAL PROBLEMS SOLVED / RESOLVED / DISSOLVED / <DERIVED / EXPLAINED / PREDICTED' : 'Total problems solved / resolved / dissolved / derived / explained / predicted'}
 				</td>
 				<td>143</td>
 			</tr>

@@ -148,7 +148,7 @@ function generateAboutPage() {
             <strong>// CONTACT & RESOURCES</strong>
             <p style="margin:0;font-size:0.82rem;line-height:2;">
                 > X/TWITTER: <a href="https://x.com/eolvvin" target="_blank">@EOLVVIN</a><br>
-                > ZENODO: <a href="https://zenodo.org/communities/emergence" target="_blank">ZENODO.ORG/COMMUNITIES/EMERGENCE</a><br>
+                > ZENODO: <a href="https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Ong%2C%20Edwin%22&l=list&p=1&s=20&sort=newest" target="_blank">EOLVVIN</a><br>
                 > ALL PREPRINTS OPEN ACCESS.
             </p>
         </div>`
@@ -156,7 +156,7 @@ function generateAboutPage() {
         <h2>About the Canvas Model</h2>
         <p><strong>Emergence Canvas Model Unified Framework</strong> derives all known physics from eight primitives and a steering primitive on a pre-geometric canvas. The Emergence series comprises 100+ papers solving the deepest open problems, including all seven Millennium Prize Problems in Canvas Temporal Mathematics.</p>
         <p><strong>Key Insight:</strong> Four dynamic primitives generate change (Order, Amplitude, Acceleration, Polarity) and four property primitives select structure (Dimension, Angle, Chirality, Charge), including two feed-modes Steering and Driving. Everything else emerges.</p>
-        <div class="stat-card" style="margin:2rem 0;"><strong>📧 Contact:</strong> <a href="https://x.com/eolvvin" target="_blank" style="color:cyan">@eolvvin</a><br>🌌 Zenodo: <a href="https://zenodo.org/communities/emergence" target="_blank" style="color:cyan">community/emergence</a><br>📚 All preprints open access.</div>`;
+        <div class="stat-card" style="margin:2rem 0;"><strong>📧 Contact:</strong> <a href="https://x.com/eolvvin" target="_blank" style="color:cyan">@eolvvin</a><br>🌌 Zenodo: <a href="https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Ong%2C%20Edwin%22&l=list&p=1&s=20&sort=newest" target="_blank" style="color:cyan">eolvvin</a><br>📚 All preprints open access.</div>`;
     
     // return infoHTML;
 	return infoHTML + bookHTML

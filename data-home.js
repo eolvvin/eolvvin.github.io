@@ -49,6 +49,17 @@ function generateHome() {
         <div style="font-family:'Share Tech Mono',monospace;font-size:0.75rem;color:#003310;text-align:center;letter-spacing:0.1em;margin:1rem 0;overflow:hidden;white-space:nowrap;">
             ══════════════════════════════════════════════════════════════════════════════
         </div>
+        
+        <div style="max-width:800px;margin:1.5rem auto 2.5rem;padding:1.2rem 1.5rem;background:#030803;border:1px solid #00cc33;text-align:center;">
+            <div style="font-family:'VT323',monospace;font-size:1.2rem;color:#ffaa00;text-shadow:0 0 8px rgba(255,170,0,0.7);margin-bottom:0.5rem;">NEW TO THE FRAMEWORK?</div>
+            <div style="font-family:'Share Tech Mono',monospace;font-size:0.82rem;color:#00cc33;line-height:1.8;">
+                &gt; <a href="https://doi.org/10.5281/zenodo.21025040" target="_blank" rel="noopener noreferrer" style="color:#00ff41;text-decoration:none;border-bottom:1px solid rgba(0,255,65,0.3);">① GENESIS</a> — Scientific paper (origin of theory)<br>
+                &gt; <a href="https://doi.org/10.5281/zenodo.21061365" target="_blank" rel="noopener noreferrer" style="color:#00ff41;text-decoration:none;border-bottom:1px solid rgba(0,255,65,0.3);">② HEP</a> — Scientific paper (particle physics focus)<br>
+                &gt; <a href="https://doi.org/10.5281/zenodo.20392265" target="_blank" rel="noopener noreferrer" style="color:#00ff41;text-decoration:none;border-bottom:1px solid rgba(0,255,65,0.3);">③ COSMO</a> — Scientific paper (cosmology focus)<br>
+                &gt; <a href="https://doi.org/10.5281/zenodo.20795774" target="_blank" rel="noopener noreferrer" style="color:#00ff41;text-decoration:none;border-bottom:1px solid rgba(0,255,65,0.3);">④ TECHNICAL MANUAL</a> — Complete reference (The Machine and the State)
+            </div>
+            <div style="font-family:'Share Tech Mono',monospace;font-size:0.65rem;color:#003310;margin-top:0.75rem;">[ CLICK ANY TO OPEN THE PAPER ON ZENODO ]</div>
+        </div>
 
         <h2 class="centered">[ FRAMEWORKS UNIFIED ]</h2>
         <div class="flex-grid">
@@ -96,6 +107,18 @@ function generateHome() {
 
     // CONTINUUM (ORIGINAL) HOME PAGE
     return `<div class="hero"><h1>Emergence Canvas Model<br>Unified Framework</h1><div class="hero-sub">Unifies Everything</div>
+    
+    <div style="max-width:800px;margin:1.5rem auto 2.5rem;padding:1.5rem 2rem;background:rgba(8,8,22,0.65);border-radius:18px;border:1px solid rgba(136,204,255,0.4);text-align:center;backdrop-filter:blur(8px);">
+        <div style="font-family:'Manrope',sans-serif;font-size:1.3rem;font-weight:700;color:var(--accent-cyan);margin-bottom:0.6rem;">New to the framework?</div>
+        <div style="font-size:0.95rem;color:var(--text-dim);line-height:2;">
+            <a href="https://doi.org/10.5281/zenodo.21025040" target="_blank" rel="noopener noreferrer" style="color:var(--accent-cyan);text-decoration:none;border-bottom:1px dotted rgba(136,204,255,0.4);">① Genesis</a> — Scientific paper (origin of theory)<br>
+            <a href="https://doi.org/10.5281/zenodo.21061365" target="_blank" rel="noopener noreferrer" style="color:var(--accent-cyan);text-decoration:none;border-bottom:1px dotted rgba(136,204,255,0.4);">② HEP</a> — Scientific paper (particle physics focus)<br>
+            <a href="https://doi.org/10.5281/zenodo.20392265" target="_blank" rel="noopener noreferrer" style="color:var(--accent-cyan);text-decoration:none;border-bottom:1px dotted rgba(136,204,255,0.4);">③ COSMO</a> — Scientific paper (cosmology focus)<br>
+            <a href="https://doi.org/10.5281/zenodo.20795774" target="_blank" rel="noopener noreferrer" style="color:var(--accent-cyan);text-decoration:none;border-bottom:1px dotted rgba(136,204,255,0.4);">④ Technical Manual</a> — Complete reference (The Machine and the State)
+        </div>
+        <div style="font-size:0.8rem;color:var(--text-dim);margin-top:0.75rem;opacity:0.7;">Click any to open the paper on Zenodo</div>
+    </div>
+    
     <div class="flex-grid">${frameworksList.map(f => `<div class="unif-card"><strong>${f.name}</strong><div class="check-green"> ✓ Unified</div></div>`).join('')}</div>
     <h2 style="font-size:1.9rem; text-align:center; border:none;">🏆 Millennium Prize Problems Proven in CTM</h2>
     <div class="flex-grid">${millenniumShort.map(p => `<div class="prize-card"><strong>${p.name}</strong><div class="check-green"> ✓ Proven</div></div>`).join('')}</div>

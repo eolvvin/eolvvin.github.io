@@ -4,6 +4,9 @@
 function generateComparisonPage() {
     const crt = document.body.classList.contains('crt-mode');
     
+    const check = '<span class="check-mark">✓</span>';
+    const cross = '<span class="cross-mark">✗</span>';
+    
     return `<h2>${crt ? 'COMPARISON: CANVAS MODEL VS. OTHER FRAMEWORKS' : 'Comparison: Canvas Model vs. Other Frameworks'}</h2>
     <p>${crt ? 'This page compares the Canvas Model with the major frameworks of fundamental physics. Scores reflect the current state of the framework as of the latest TOE paper. The Canvas Model is a work in progress; items with known tensions are noted.' : 'This page compares the Canvas Model with the major frameworks of fundamental physics. Scores reflect the current state of the framework as of the latest TOE paper. The Canvas Model is a work in progress; items with known tensions are noted.'}</p>
 
@@ -42,16 +45,16 @@ function generateComparisonPage() {
     <table class="comparison-table">
         <thead><tr><th>${crt ? 'FRAMEWORK' : 'Framework'}</th><th>Canvas</th><th>QFT</th><th>QM</th><th>GR</th><th>String</th><th>LQG</th><th>Causal</th></tr></thead>
         <tbody>
-            <tr><td>${crt ? 'GENERAL RELATIVITY' : 'General Relativity'}</td><td>✓</td><td>✗</td><td>✗</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
-            <tr><td>${crt ? 'QUANTUM MECHANICS' : 'Quantum Mechanics'}</td><td>✓</td><td>✗</td><td>✓</td><td>✗</td><td>✓</td><td>✗</td><td>✗</td></tr>
-            <tr><td>${crt ? 'QUANTUM FIELD THEORY' : 'Quantum Field Theory'}</td><td>✓ (structural)</td><td>✓</td><td>✗</td><td>✗</td><td>✓</td><td>✗</td><td>✗</td></tr>
-            <tr><td>${crt ? 'STANDARD MODEL' : 'Standard Model'}</td><td>✓ (structural)</td><td>✓</td><td>✗</td><td>✗</td><td>✓</td><td>✗</td><td>✗</td></tr>
-            <tr><td>${crt ? 'THERMODYNAMICS' : 'Thermodynamics'}</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✗</td></tr>
-            <tr><td>${crt ? 'CLASSICAL MECHANICS' : 'Classical Mechanics'}</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
-            <tr><td>${crt ? 'ELECTROMAGNETISM' : 'Electromagnetism'}</td><td>✓</td><td>✓</td><td>✓</td><td>✗</td><td>✓</td><td>✗</td><td>✗</td></tr>
-            <tr><td>${crt ? 'REGGE CALCULUS' : 'Regge Calculus'}</td><td>✓</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td><td>✓</td><td>✗</td></tr>
-            <tr><td>${crt ? 'SPECTRAL ANALYSIS (PST)' : 'Spectral Analysis (PST)'}</td><td>✓</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td></tr>
-            <tr><td>${crt ? 'NUMBER THEORY (RIEMANN)' : 'Number Theory (Riemann)'}</td><td>✓</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td><td>✗</td></tr>
+            <tr><td>${crt ? 'GENERAL RELATIVITY' : 'General Relativity'}</td><td>${check}</td><td>${cross}</td><td>${cross}</td><td>${check}</td><td>${check}</td><td>${check}</td><td>${check}</td></tr>
+            <tr><td>${crt ? 'QUANTUM MECHANICS' : 'Quantum Mechanics'}</td><td>${check}</td><td>${cross}</td><td>${check}</td><td>${cross}</td><td>${check}</td><td>${cross}</td><td>${cross}</td></tr>
+            <tr><td>${crt ? 'QUANTUM FIELD THEORY' : 'Quantum Field Theory'}</td><td>${check}</td><td>${check}</td><td>${cross}</td><td>${cross}</td><td>${check}</td><td>${cross}</td><td>${cross}</td></tr>
+            <tr><td>${crt ? 'STANDARD MODEL' : 'Standard Model'}</td><td>${check}</td><td>${check}</td><td>${cross}</td><td>${cross}</td><td>${check}</td><td>${cross}</td><td>${cross}</td></tr>
+            <tr><td>${crt ? 'THERMODYNAMICS' : 'Thermodynamics'}</td><td>${check}</td><td>${check}</td><td>${check}</td><td>${check}</td><td>${check}</td><td>${check}</td><td>${cross}</td></tr>
+            <tr><td>${crt ? 'CLASSICAL MECHANICS' : 'Classical Mechanics'}</td><td>${check}</td><td>${check}</td><td>${check}</td><td>${check}</td><td>${check}</td><td>${check}</td><td>${check}</td></tr>
+            <tr><td>${crt ? 'ELECTROMAGNETISM' : 'Electromagnetism'}</td><td>${check}</td><td>${check}</td><td>${check}</td><td>${cross}</td><td>${check}</td><td>${cross}</td><td>${cross}</td></tr>
+            <tr><td>${crt ? 'REGGE CALCULUS' : 'Regge Calculus'}</td><td>${check}</td><td>${cross}</td><td>${cross}</td><td>${cross}</td><td>${cross}</td><td>${check}</td><td>${cross}</td></tr>
+            <tr><td>${crt ? 'SPECTRAL ANALYSIS (PST)' : 'Spectral Analysis (PST)'}</td><td>${check}</td><td>${cross}</td><td>${cross}</td><td>${cross}</td><td>${cross}</td><td>${cross}</td><td>${cross}</td></tr>
+            <tr><td>${crt ? 'NUMBER THEORY (RIEMANN)' : 'Number Theory (Riemann)'}</td><td>${check}</td><td>${cross}</td><td>${cross}</td><td>${cross}</td><td>${cross}</td><td>${cross}</td><td>${cross}</td></tr>
             <tr style="font-weight:bold;background:rgba(100, 140, 255, 0.15);"><td>${crt ? 'TOTAL' : 'Total'}</td><td>10</td><td>4</td><td>2</td><td>2</td><td>6</td><td>3</td><td>2</td></tr>
         </tbody>
     </table>

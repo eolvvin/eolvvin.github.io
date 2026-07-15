@@ -10,12 +10,18 @@ function generateFrameworkPage() {
     
     return `<div style="text-align: center; margin: 2rem 0 1rem;"><h2 class="framework-title" style="border-left: none; font-size: 4rem; background: linear-gradient(135deg,#fff,#b8b0ff); -webkit-background-clip:text; background-clip:text; color:transparent;">${crt ? 'EIGHT PRIMITIVES. FOUR PILLARS.<br>ONE FRAMEWORK.' : 'Eight Primitives. Four Pillars.<br>One Framework.'}</h2></div>
 
+    <div style="max-width:800px;margin:0 auto 2rem;padding:1.2rem 1.5rem;background:${crt ? '#030803' : 'rgba(8,8,22,0.65)'};border:1px solid ${crt ? '#00cc33' : 'rgba(136,204,255,0.4)'};border-radius:${crt ? '0' : '18px'};text-align:center;">
+        <p style="margin:0;font-size:0.95rem;color:${crt ? '#00cc33' : 'var(--text-dim)'};">
+            ${crt ? '> FOR THE COMPLETE DERIVATION, READ THE' : 'For the complete derivation, read the'} <a href="https://doi.org/10.5281/zenodo.21327996" target="_blank" rel="noopener noreferrer" style="color:${crt ? '#00ff41' : 'var(--accent-cyan)'};font-weight:600;">${crt ? 'THEORY OF EVERYTHING' : 'Theory of Everything'}</a> ${crt ? 'PAPER (ALL SEVEN PARTS).' : 'paper (all seven parts).'}
+        </p>
+    </div>
+
     <h3 style="${sectionStyle}">${crt ? 'THE FOUR CORE EQUATIONS' : '✦ The Four Core Equations'}</h3>
-    <p style="${paraStyle}">${crt ? 'The Canvas Model reduces all of physics to four equations operating on a pre-geometric canvas. No free parameters. No external inputs.' : 'The Canvas Model reduces all of physics to four equations operating on a pre-geometric canvas. No free parameters. No external inputs.'}</p>
+    <p style="${paraStyle}">${crt ? 'The Canvas Model reduces all of physics to four equations operating on a pre-geometric canvas.' : 'The Canvas Model reduces all of physics to four equations operating on a pre-geometric canvas.'}</p>
 
     <h4 style="${subsectionStyle}">${crt ? 'PILLAR I: UNIFIED WAVE EQUATION' : 'Pillar I: Unified Wave Equation'}</h4>
     <div id="framework-equation" class="equation-fullwidth"></div>
-    <p style="${paraStyle}">${crt ? 'The master wave equation evolves field amplitude Φ across the order parameter v. All four dynamic primitives — Order, Amplitude, Acceleration, and Polarity — contribute through dimensionless weights (a,b,c,d). Under attractor dynamics (Pillar IV), the linear terms vanish and the equation reduces to a nonlinear wave equation whose solutions produce bound states with a universal π/2 waveform asymmetry.' : 'The master wave equation evolves field amplitude Φ across the order parameter v. All four dynamic primitives — Order, Amplitude, Acceleration, and Polarity — contribute through dimensionless weights (a,b,c,d). Under attractor dynamics, the linear terms vanish and the equation reduces to a nonlinear wave equation whose solutions produce bound states with a universal π/2 waveform asymmetry.'}</p>
+    <p style="${paraStyle}">${crt ? 'The master wave equation evolves field amplitude Φ across the order parameter v. All four dynamic primitives — Order, Amplitude, Acceleration, and Polarity — contribute through dimensionless weights (a,b,c,d). Under attractor dynamics (Pillar IV), the linear terms vanish and the equation reduces to a nonlinear wave equation.' : 'The master wave equation evolves field amplitude Φ across the order parameter v. All four dynamic primitives — Order, Amplitude, Acceleration, and Polarity — contribute through dimensionless weights (a,b,c,d). Under attractor dynamics, the linear terms vanish and the equation reduces to a nonlinear wave equation.'}</p>
 
     <h4 style="${subsectionStyle}">${crt ? 'PILLAR II: THRESHOLD CONDITION' : 'Pillar II: Threshold Condition'}</h4>
     <div id="threshold-equation" class="core-equation"></div>
@@ -23,25 +29,25 @@ function generateFrameworkPage() {
 
     <h4 style="${subsectionStyle}">${crt ? 'PILLAR III: EIGENVALUE EQUATION' : 'Pillar III: Eigenvalue Equation'}</h4>
     <div id="eigenvalue-equation" class="core-equation"></div>
-    <p style="${paraStyle}">${crt ? 'The spectrum of possible particles is organized by a 3×3 threshold tensor on the internal space of the spatial axes. Its three eigenvectors correspond to the three fermion generations. Its eigenvalues determine masses and coupling strengths. The tensor is not assumed — it is derived from the structural field couplings of the gauge symmetry fields U(1), SU(2), and SU(3).' : 'The spectrum of possible particles is organized by a 3×3 threshold tensor on the internal space of the spatial axes. Its three eigenvectors correspond to the three fermion generations. Its eigenvalues determine masses and coupling strengths. The tensor is derived from the structural field couplings of the gauge symmetry fields.'}</p>
+    <p style="${paraStyle}">${crt ? 'The spectrum of possible particles is organized by a 3×3 threshold tensor on the internal space of the spatial axes. Its three eigenvectors correspond to the three fermion generations. Its eigenvalues determine masses and coupling strengths. The tensor is derived from the structural field couplings of the gauge symmetry fields.' : 'The spectrum of possible particles is organized by a 3×3 threshold tensor on the internal space of the spatial axes. Its three eigenvectors correspond to the three fermion generations. Its eigenvalues determine masses and coupling strengths. The tensor is derived from the structural field couplings of the gauge symmetry fields.'}</p>
 
     <h4 style="${subsectionStyle}">${crt ? 'PILLAR IV: FEED EQUATION' : 'Pillar IV: Feed Equation'}</h4>
     <div id="steering-equation" class="core-equation"></div>
-    <p style="${paraStyle}">${crt ? 'Thresholds evolve in meta-time τ according to the gradient of the spectral energy functional. This drives the system toward attractor configurations — including the critical equality c_base = d_base that forces the π/2 waveform asymmetry. The meta-time coupling μ is observationally bounded at |μ| ≲ 10⁻³⁰, meaning parameters appear constant over cosmic history while having relaxed to their attractor values over deep meta-time. This is the mechanism that eliminates free parameters from the framework.' : 'Thresholds evolve in meta-time τ according to the gradient of the spectral energy functional. This drives the system toward attractor configurations — including the critical equality that forces the π/2 waveform asymmetry. Parameters appear constant over cosmic history while having relaxed to their attractor values over deep meta-time.'}</p>
+    <p style="${paraStyle}">${crt ? 'Thresholds evolve in meta-time τ according to the gradient of the spectral energy functional. This drives the system toward attractor configurations. Parameters appear constant over cosmic history while having relaxed to their attractor values over deep meta-time. This is the mechanism that eliminates free parameters from the framework.' : 'Thresholds evolve in meta-time τ according to the gradient of the spectral energy functional. This drives the system toward attractor configurations. Parameters appear constant over cosmic history while having relaxed to their attractor values over deep meta-time.'}</p>
 
     <h3 style="${sectionStyle}">${crt ? 'THE EIGHT PRIMITIVES (POSTULATES P1–P8)' : '✦ The Eight Primitives (Postulates P1–P8)'}</h3>
-    <p style="${paraStyle}">${crt ? 'All physical law emerges from eight irreducible primitives. Four dynamic primitives govern wave behavior; four property primitives select the structure of our universe. The specific values of the property primitives (d=3, θ=π/2, h=+1) are not arbitrary — they are selected by the attractor dynamics of Pillar IV from the possible values allowed by P8.' : 'All physical law emerges from eight irreducible primitives. Four dynamic primitives govern wave behavior; four property primitives select the structure of our universe.'}</p>
+    <p style="${paraStyle}">${crt ? 'All physical law emerges from eight irreducible primitives. Four dynamic primitives govern wave behavior; four property primitives select the structure of our universe.' : 'All physical law emerges from eight irreducible primitives. Four dynamic primitives govern wave behavior; four property primitives select the structure of our universe.'}</p>
 
     <table class="data-table">
         <thead><tr><th>#</th><th>${crt ? 'PRIMITIVE' : 'Primitive'}</th><th>${crt ? 'SYMBOL' : 'Symbol'}</th><th>${crt ? 'TYPE' : 'Type'}</th><th>${crt ? 'ROLE IN THE FRAMEWORK' : 'Role in the Framework'}</th></tr></thead>
         <tbody>
             <tr><td>P1</td><td>${crt ? 'ORDER' : 'Order'}</td><td>v</td><td>${crt ? 'DYNAMIC' : 'Dynamic'}</td><td>${crt ? 'Before/after sequence. Becomes time t in physical contexts. The canvas clock.' : 'Before/after sequence. Becomes time t in physical contexts. The canvas clock.'}</td></tr>
-            <tr><td>P2</td><td>${crt ? 'AMPLITUDE' : 'Amplitude'}</td><td>Φ₀</td><td>${crt ? 'DYNAMIC' : 'Dynamic'}</td><td>${crt ? 'Sets the fundamental field magnitude scale. All amplitudes are multiples of Φ₀ ∼ 1/ℓ_P.' : 'Sets the fundamental field magnitude scale. All amplitudes are multiples of Φ₀.'}</td></tr>
-            <tr><td>P3</td><td>${crt ? 'ACCELERATION' : 'Acceleration'}</td><td>∂²Φ/∂v²</td><td>${crt ? 'DYNAMIC' : 'Dynamic'}</td><td>${crt ? 'Change of change. Minimal derivative order enabling oscillatory solutions. Generates mass and inertia.' : 'Change of change. Minimal derivative order enabling oscillatory solutions.'}</td></tr>
+            <tr><td>P2</td><td>${crt ? 'AMPLITUDE' : 'Amplitude'}</td><td>Φ₀</td><td>${crt ? 'DYNAMIC' : 'Dynamic'}</td><td>${crt ? 'Sets the fundamental field magnitude scale. All amplitudes are multiples of Φ₀.' : 'Sets the fundamental field magnitude scale. All amplitudes are multiples of Φ₀.'}</td></tr>
+            <tr><td>P3</td><td>${crt ? 'ACCELERATION' : 'Acceleration'}</td><td>∂²Φ/∂v²</td><td>${crt ? 'DYNAMIC' : 'Dynamic'}</td><td>${crt ? 'Change of change. Minimal derivative order enabling oscillatory solutions.' : 'Change of change. Minimal derivative order enabling oscillatory solutions.'}</td></tr>
             <tr><td>P4</td><td>${crt ? 'POLARITY' : 'Polarity'}</td><td>sgn(Φ)</td><td>${crt ? 'DYNAMIC' : 'Dynamic'}</td><td>${crt ? 'Sign reversal. The engine of oscillation. Without polarity, waves cannot reverse direction.' : 'Sign reversal. The engine of oscillation. Without polarity, waves cannot reverse direction.'}</td></tr>
-            <tr><td>P5</td><td>${crt ? 'CHIRALITY' : 'Chirality'}</td><td>h = +1</td><td>${crt ? 'PROPERTY' : 'Property'}</td><td>${crt ? 'Primitive handedness. Selects matter over antimatter. Sets the sign of the π/2 asymmetry.' : 'Primitive handedness. Selects matter over antimatter. Sets the sign of the π/2 asymmetry.'}</td></tr>
-            <tr><td>P6</td><td>${crt ? 'DIMENSION' : 'Dimension'}</td><td>n = 3</td><td>${crt ? 'PROPERTY' : 'Property'}</td><td>${crt ? 'Number of spatial axes. Three dimensions are forced by wave intersection consistency and stable orbits.' : 'Number of spatial axes. Three dimensions are forced by wave intersection consistency.'}</td></tr>
-            <tr><td>P7</td><td>${crt ? 'ANGLE' : 'Angle'}</td><td>θ = π/2</td><td>${crt ? 'PROPERTY' : 'Property'}</td><td>${crt ? 'Axis orthogonality. Forced by lattice isotropy. Sets the magnitude of the π/2 asymmetry.' : 'Axis orthogonality. Forced by lattice isotropy. Sets the magnitude of the π/2 asymmetry.'}</td></tr>
+            <tr><td>P5</td><td>${crt ? 'CHIRALITY' : 'Chirality'}</td><td>h = +1</td><td>${crt ? 'PROPERTY' : 'Property'}</td><td>${crt ? 'Primitive handedness. Selects matter over antimatter.' : 'Primitive handedness. Selects matter over antimatter.'}</td></tr>
+            <tr><td>P6</td><td>${crt ? 'DIMENSION' : 'Dimension'}</td><td>n = 3</td><td>${crt ? 'PROPERTY' : 'Property'}</td><td>${crt ? 'Number of spatial axes. Three dimensions are forced by wave intersection consistency.' : 'Number of spatial axes. Three dimensions are forced by wave intersection consistency.'}</td></tr>
+            <tr><td>P7</td><td>${crt ? 'ANGLE' : 'Angle'}</td><td>θ = π/2</td><td>${crt ? 'PROPERTY' : 'Property'}</td><td>${crt ? 'Axis orthogonality. Forced by lattice isotropy.' : 'Axis orthogonality. Forced by lattice isotropy.'}</td></tr>
             <tr><td>P8</td><td>${crt ? 'CHARGE' : 'Charge'}</td><td>q_s ∈ {1,2,3}</td><td>${crt ? 'PROPERTY' : 'Property'}</td><td>${crt ? 'Coupling to spatial axes. Generates U(1), SU(2), SU(3). The integers {1,2,3} determine all gauge parameters.' : 'Coupling to spatial axes. Generates U(1), SU(2), SU(3). The integers {1,2,3} determine all gauge parameters.'}</td></tr>
         </tbody>
     </table>
@@ -52,10 +58,10 @@ function generateFrameworkPage() {
     <table class="data-table">
         <thead><tr><th>${crt ? 'PILLAR' : 'Pillar'}</th><th>${crt ? 'EQUATION' : 'Equation'}</th><th>${crt ? 'DOMAIN' : 'Domain'}</th><th>${crt ? 'KEY RESULT' : 'Key Result'}</th></tr></thead>
         <tbody>
-            <tr><td>I</td><td>${crt ? 'UNIFIED WAVE EQUATION' : 'Unified Wave Equation'}</td><td>${crt ? 'WAVE DYNAMICS' : 'Wave Dynamics'}</td><td>${crt ? 'All fields evolve under one equation. Produces the π/2 waveform asymmetry.' : 'All fields evolve under one equation. Produces the π/2 waveform asymmetry.'}</td></tr>
+            <tr><td>I</td><td>${crt ? 'UNIFIED WAVE EQUATION' : 'Unified Wave Equation'}</td><td>${crt ? 'WAVE DYNAMICS' : 'Wave Dynamics'}</td><td>${crt ? 'All fields evolve under one equation.' : 'All fields evolve under one equation.'}</td></tr>
             <tr><td>II</td><td>${crt ? 'THRESHOLD CONDITION' : 'Threshold Condition'}</td><td>${crt ? 'EMERGENCE & COSMOLOGY' : 'Emergence & Cosmology'}</td><td>${crt ? 'Spacetime and particles emerge from wave intersections. Sets Λ, flatness, inflation, entropy.' : 'Spacetime and particles emerge from wave intersections. Sets Λ, flatness, inflation, entropy.'}</td></tr>
-            <tr><td>III</td><td>${crt ? 'EIGENVALUE EQUATION' : 'Eigenvalue Equation'}</td><td>${crt ? 'PARTICLE PHYSICS' : 'Particle Physics'}</td><td>${crt ? 'Three generations, CKM and PMNS mixing, gauge couplings all follow from the 3×3 threshold tensor.' : 'Three generations, CKM and PMNS mixing, gauge couplings from the 3×3 threshold tensor.'}</td></tr>
-            <tr><td>IV</td><td>${crt ? 'FEED EQUATION' : 'Feed Equation'}</td><td>${crt ? 'META-DYNAMICS' : 'Meta-Dynamics'}</td><td>${crt ? 'Parameters evolve to attractor values. Eliminates free parameters. Drives c_base = d_base.' : 'Parameters evolve to attractor values. Eliminates free parameters.'}</td></tr>
+            <tr><td>III</td><td>${crt ? 'EIGENVALUE EQUATION' : 'Eigenvalue Equation'}</td><td>${crt ? 'PARTICLE PHYSICS' : 'Particle Physics'}</td><td>${crt ? 'Three generations, CKM and PMNS mixing, gauge couplings from the 3×3 threshold tensor.' : 'Three generations, CKM and PMNS mixing, gauge couplings from the 3×3 threshold tensor.'}</td></tr>
+            <tr><td>IV</td><td>${crt ? 'FEED EQUATION' : 'Feed Equation'}</td><td>${crt ? 'META-DYNAMICS' : 'Meta-Dynamics'}</td><td>${crt ? 'Parameters evolve to attractor values. Eliminates free parameters.' : 'Parameters evolve to attractor values. Eliminates free parameters.'}</td></tr>
         </tbody>
     </table>
 
@@ -66,45 +72,16 @@ function generateFrameworkPage() {
     <strong>${crt ? 'Example: "P5, P7, I, IV" means the result depends on Primitives P5 and P7, and Pillars I and IV.' : 'Example: "P5, P7, I, IV" means depends on Primitives P5 and P7, and Pillars I and IV.'}</strong></p>
 
     <h3 style="${sectionStyle}">${crt ? 'THE FUNDAMENTAL NUMBERS' : '✦ The Fundamental Numbers'}</h3>
-    <p style="${paraStyle}">${crt ? 'All 25 fundamental parameters of the Standard Model and cosmology are generated by five numbers: α₀ = 1/ln(I_max) ≈ 1/140, the gauge subspace dimensions {1,2,3}, and π. The fine-structure constant, the CKM and PMNS mixing angles, the cosmological constant, the baryon asymmetry — all trace back to α₀, {1,2,3}, and π.' : 'All 25 fundamental parameters of the Standard Model and cosmology are generated by five numbers: α₀ = 1/ln(I_max) ≈ 1/140, the gauge subspace dimensions {1,2,3}, and π. The fine-structure constant, the CKM and PMNS mixing angles, the cosmological constant, the baryon asymmetry — all trace back to α₀, {1,2,3}, and π.'}</p>
-
-    <h3 style="${sectionStyle}">${crt ? 'THE FATAL PREDICTION' : '✦ The Fatal Prediction'}</h3>
-    <p style="${paraStyle}">${crt ? 'The framework makes one sharp, falsifiable prediction: T_rise/T_fall = π/2 ≈ 1.5708. Every bound state formed by wave intersection must exhibit this specific waveform asymmetry. Verified in 3+1D numerical simulation at 1.568 ± 0.012. Awaiting experimental test. If confirmed, it validates the entire framework. If falsified, the framework is abandoned. That is the standard to which we hold it.' : 'The framework makes one sharp, falsifiable prediction: T_rise/T_fall = π/2 ≈ 1.5708. Every bound state formed by wave intersection must exhibit this specific waveform asymmetry. Verified in simulation at 1.568 ± 0.012. If confirmed experimentally, it validates the entire framework. If falsified, the framework is abandoned.'}</p>
+    <p style="${paraStyle}">${crt ? 'All fundamental parameters of the Standard Model and cosmology are generated by five numbers: α₀, the gauge subspace dimensions {1,2,3}, and π. The gauge couplings, the CKM and PMNS mixing angles, the cosmological constant — all trace back to these five numbers.' : 'All fundamental parameters of the Standard Model and cosmology are generated by five numbers: α₀, the gauge subspace dimensions {1,2,3}, and π. The gauge couplings, the CKM and PMNS mixing angles, the cosmological constant — all trace back to these five numbers.'}</p>
 
     <h3 style="${sectionStyle}">${crt ? 'SCOPE OF THE FRAMEWORK' : '✦ Scope of the Framework'}</h3>
-    <p style="${paraStyle}">${crt ? 'The Canvas Model reproduces 111 known physical constants and phenomena, makes 54 novel testable predictions, and resolves 143 long-standing problems in physics and mathematics. All from eight primitives and four equations. No free parameters. No observational inputs.' : 'The Canvas Model reproduces 111 known physical constants and phenomena, makes 54 novel testable predictions, and resolves 143 long-standing problems in physics and mathematics. All from eight primitives and four equations.'}</p>
-
-    <h2 style="margin-top: 4rem;">${crt ? 'NUMERICAL SIMULATIONS' : 'Numerical Simulations'}</h2>
-    <p style="${paraStyle}">${crt ? 'Three simulation programs verify key predictions of the framework. All code is publicly available on GitHub.' : 'Three simulation programs verify key predictions of the framework. All code is publicly available on GitHub.'}</p>
+    <p style="${paraStyle}">${crt ? 'The Canvas Model derives the Standard Model, general relativity, and cosmology from twelve postulates. It reproduces known physical constants and phenomena, makes novel testable predictions, and resolves long-standing problems in physics and mathematics.' : 'The Canvas Model derives the Standard Model, general relativity, and cosmology from twelve postulates. It reproduces known physical constants and phenomena, makes novel testable predictions, and resolves long-standing problems in physics and mathematics.'}</p>
     
-    <div class="simulation-grid">
-        <div class="volume-block">
-            <h4 style="margin-top:0;">${crt ? '1. BETA FINDER & 1+1D UWE SIMULATION' : '1. Beta Finder & 1+1D UWE Simulation'}</h4>
-            <p>${crt ? 'Binary search converging to the internal lattice parameter β = 0.167, plus a 1+1D simulation demonstrating bound state formation from colliding wave packets at threshold R = 4.0. The exact overlap integral using the imaginary error function erfi(z) determines β from the strong coupling g₃ = 5π/32 and the Higgs width σ = 1/2.' : 'Binary search converging to the internal lattice parameter β = 0.167, plus a 1+1D simulation demonstrating bound state formation from colliding wave packets at threshold R = 4.0. The exact overlap integral using the imaginary error function determines β from the strong coupling and Higgs width.'}</p>
-            <a href="https://github.com/eolvvin" target="_blank" class="problem-link">${crt ? 'VIEW ON GITHUB →' : 'View on GitHub →'}</a>
-        </div>
-        <div class="volume-block">
-            <h4 style="margin-top:0;">${crt ? '2. THRESHOLD FINDER (1+1D)' : '2. Threshold Finder (1+1D)'}</h4>
-            <p>${crt ? 'Self-adjusting binary search that finds the critical threshold R where bound states form. Verifies the prediction R = d+1 = 4 (N = e⁴ ≈ 55 e-folds of inflation) using locked weights with ratio c_eff/d_eff = π/2.' : 'Self-adjusting binary search that finds the critical threshold R where bound states form. Verifies the prediction R = d+1 = 4 (N = e⁴ ≈ 55 e-folds of inflation) using locked weights with ratio π/2.'}</p>
-            <a href="https://github.com/eolvvin" target="_blank" class="problem-link">${crt ? 'VIEW ON GITHUB →' : 'View on GitHub →'}</a>
-        </div>
-        <div class="volume-block">
-            <h4 style="margin-top:0;">${crt ? '3. THRESHOLD FINDER (3+1D)' : '3. Threshold Finder (3+1D)'}</h4>
-            <p>${crt ? 'GPU-accelerated 3+1D simulation using Taichi. Performs the same verification in three spatial dimensions on a 48³ lattice. Auto-detects Vulkan, CUDA, or Metal.' : 'GPU-accelerated 3+1D simulation using Taichi. Performs the same verification in three spatial dimensions on a 48³ lattice. Auto-detects Vulkan, CUDA, or Metal.'}</p>
-            <a href="https://github.com/eolvvin" target="_blank" class="problem-link">${crt ? 'VIEW ON GITHUB →' : 'View on GitHub →'}</a>
-        </div>
-    </div>
-    
-    <h4 style="margin-top: 1.5rem;">${crt ? 'RESULTS SUMMARY' : 'Results Summary'}</h4>
-    <table class="data-table">
-        <thead><tr><th>${crt ? 'PROGRAM' : 'Program'}</th><th>${crt ? 'DIMENSIONS' : 'Dimensions'}</th><th>${crt ? 'KEY RESULT' : 'Key Result'}</th></tr></thead>
-        <tbody>
-            <tr><td>${crt ? 'BETA FINDER' : 'Beta Finder'}</td><td>—</td><td>β = 0.167 ± 0.005</td></tr>
-            <tr><td>${crt ? 'THRESHOLD FINDER' : 'Threshold Finder'}</td><td>1+1D</td><td>${crt ? 'BOUND STATES AT R = 4.0' : 'Bound states at R = 4.0'}</td></tr>
-            <tr><td>${crt ? 'THRESHOLD FINDER' : 'Threshold Finder'}</td><td>3+1D</td><td>${crt ? 'BOUND STATES AT R = 4.0 (GPU)' : 'Bound states at R = 4.0 (GPU)'}</td></tr>
-        </tbody>
-    </table>
-    <p style="${paraStyle}"><em>${crt ? 'All simulations use weights locked to the predicted ratio c_eff/d_eff = π/2.' : 'All simulations use weights locked to the predicted ratio c_eff/d_eff = π/2.'}</em></p>`;
+    <div style="max-width:800px;margin:3rem auto 1rem;padding:1.2rem 1.5rem;background:${crt ? '#030803' : 'rgba(8,8,22,0.65)'};border:1px solid ${crt ? '#00cc33' : 'rgba(136,204,255,0.4)'};border-radius:${crt ? '0' : '18px'};text-align:center;">
+        <p style="margin:0;font-size:0.95rem;color:${crt ? '#00cc33' : 'var(--text-dim)'};">
+            ${crt ? '> READ THE FULL DERIVATION IN THE' : 'Read the full derivation in the'} <a href="https://doi.org/10.5281/zenodo.21327996" target="_blank" rel="noopener noreferrer" style="color:${crt ? '#00ff41' : 'var(--accent-cyan)'};font-weight:600;">${crt ? 'THEORY OF EVERYTHING' : 'Theory of Everything'}</a> ${crt ? 'PAPER (ALL SEVEN PARTS).' : 'paper (all seven parts).'}
+        </p>
+    </div>`;
 }
 
 window.generateFrameworkPage = generateFrameworkPage;

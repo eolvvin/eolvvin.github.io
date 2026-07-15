@@ -1,39 +1,36 @@
 // data-series.js
 // Emergence Series page content with all paper data
 
+const mainPaper = [
+    { title: "Theory of Everything (All Seven Parts)", doi: "10.5281/zenodo.21327996" }
+];
+
+const canvasModelSeries = [
+    { title: "Paper 0: The Black Box — On the Necessity of Fitting", doi: "10.5281/zenodo.21321013" },
+    { title: "Paper I: A Derivation of the Standard Model's Particle Content from Twelve Postulates", doi: "10.5281/zenodo.21313613" },
+    { title: "Paper II: Fermion Masses, the QCD Scale, and the Gauge Coupling Prediction", doi: "10.5281/zenodo.21327888" },
+    { title: "Paper III: Flavor Mixing from the Internal Space Geometry", doi: "10.5281/zenodo.21327911" },
+    { title: "Paper IV: Cosmology from the Discrete Spacetime Lattice", doi: "10.5281/zenodo.21327933" },
+    { title: "Paper V: The Geometry of the Standard Model's Parameters", doi: "10.5281/zenodo.21336324" },
+    { title: "Paper VI: The Primitive Ontology — Why the Postulates Are Necessary", doi: "10.5281/zenodo.21343004" },
+    { title: "Paper VII: The Genesis of the Canvas Model — How the Twelve Postulates Were Discovered", doi: "10.5281/zenodo.21364134" }
+];
+
+const supportingPapers = [
+    { title: "The Black Box Paradox: On the Necessity of Fitting in Foundational Physics", doi: "10.5281/zenodo.21250511" },
+    { title: "The Tensor-to-Scalar Ratio: Why r ≪ 0.01", doi: "10.5281/zenodo.20546653" },
+    { title: "Catalog of Canvas Model Predictions", doi: "10.5281/zenodo.20364753" }
+];
+
 const physicsBranch = {
-	core: [
-		{ 
-			title: "❶ Emergence: Genesis — A Unified Field Theory from Wave Intersections on a Pre-Geometric Canvas", 
-			doi: "10.5281/zenodo.21025040",
-			caption: "For an introductory journey of how the theory was developed, read this."
-		},
-		{ 
-			title: "❷ Emergence: HEP — A Unified Framework for Fundamental Physics from Eight Primitives", 
-			doi: "10.5281/zenodo.21061365",
-			caption: "For a scientific paper presentation of this theory with a Standard Model and particle physics focus, read this."
-		},
-		{ 
-			title: "❸ Emergence: Cosmology — A Unified Framework of Fundamental Physics", 
-			doi: "10.5281/zenodo.20392265",
-			caption: "For a scientific paper presentation with a cosmology and unified predictions focus, read this."
-		},
-		{ 
-			title: "❹ Emergence: Technical Manual — The Machine and the State", 
-			doi: "10.5281/zenodo.20795774",
-			caption: "For a complete encyclopedic technical reference manual, read this."
-		},
-		{ 
-			title: "Position Paper: A Unified Framework for Fundamental Physics", 
-			doi: "10.5281/zenodo.19928415",
-			caption: "For a high-level overview of where the framework stands in fundamental physics."
-		},
-		{ 
-			title: "Constructive Frameworks in Fundamental Physics (Dependencies Notation)", 
-			doi: "10.5281/zenodo.20512324",
-			caption: "For the dependency tagging system that makes every result traceable to its axioms."
-		}
-	],
+    core: [
+        { title: "Emergence: Genesis — A Unified Field Theory from Wave Intersections on a Pre-Geometric Canvas", doi: "10.5281/zenodo.21025040" },
+        { title: "Emergence: HEP — A Unified Framework for Fundamental Physics from Eight Primitives", doi: "10.5281/zenodo.21061365" },
+        { title: "Emergence: COSMO — A Unified Framework of Fundamental Physics", doi: "10.5281/zenodo.20392265" },
+        { title: "Emergence: Technical Manual — The Machine and the State", doi: "10.5281/zenodo.20795774" },
+        { title: "Position Paper: A Unified Framework for Fundamental Physics", doi: "10.5281/zenodo.19928415" },
+        { title: "Constructive Frameworks in Fundamental Physics (Dependencies Notation)", doi: "10.5281/zenodo.20512324" }
+    ],
     primitivesAndWaves: [
         { title: "The Primitives of the Canvas Model (Compilation)", doi: "10.5281/zenodo.20061105" },
         { title: "Acceleration as Primitive", doi: "10.5281/zenodo.19810849" },
@@ -257,8 +254,7 @@ function renderBranchSection(title, papers) {
     let html = `<h3 style="margin: 1.5rem 0 0.5rem 0; font-size: 1.7rem;">${crt ? title.toUpperCase() : title}</h3><div class="volume-block"><div class="paper-list">`;
     papers.forEach(p => {
         const doiUrl = `https://doi.org/${p.doi}`;
-        const captionHTML = p.caption ? `<span style="display:block;font-size:0.78rem;color:${crt ? '#00cc33' : '#8888aa'};margin-top:0.15rem;font-style:italic;">${crt ? p.caption.toUpperCase() : p.caption}</span>` : '';
-        html += `<div><a href="${doiUrl}" class="paper-link" target="_blank" rel="noopener noreferrer">${crt ? '> ' + p.title.toUpperCase() : '✅ ' + p.title}</a>${captionHTML}</div>`;
+        html += `<div><a href="${doiUrl}" class="paper-link" target="_blank" rel="noopener noreferrer">${crt ? '> ' + p.title.toUpperCase() : '✅ ' + p.title}</a></div>`;
     });
     html += `</div></div>`;
     return html;
@@ -300,10 +296,25 @@ function renderVolume(title, papers, showNumbers = true) {
 function generateSeriesPage() {
     const crt = document.body.classList.contains('crt-mode');
     return `<h2>${crt ? 'THE EMERGENCE SERIES' : 'The Emergence Series'}</h2>
-    <p>${crt ? 'Complete collection of all published papers, organized by branch.' : 'Complete collection of all published papers, organized by branch.'}</p>
+    <p>${crt ? 'Complete collection of all published papers, organized by status and branch.' : 'Complete collection of all published papers, organized by status and branch.'}</p>
+    
+    <h3 style="margin: 2rem 0 1rem 0; font-size: 2rem; color: ${crt ? '#00ff41' : 'var(--text-light)'};">${crt ? 'MAIN PAPER' : 'Main Paper'}</h3>
+    ${renderBranchSection("", mainPaper)}
+    
+    <h3 style="margin: 2rem 0 1rem 0; font-size: 2rem; color: ${crt ? '#00ff41' : 'var(--text-light)'};">${crt ? 'CANVAS MODEL SERIES' : 'Canvas Model Series'}</h3>
+    <p>${crt ? 'The core derivations of the framework.' : 'The core derivations of the framework.'}</p>
+    ${renderBranchSection("", canvasModelSeries)}
+    
+    <h3 style="margin: 2rem 0 1rem 0; font-size: 2rem; color: ${crt ? '#00ff41' : 'var(--text-light)'};">${crt ? 'SUPPORTING PAPERS' : 'Supporting Papers'}</h3>
+    ${renderBranchSection("", supportingPapers)}
+    
+    <div style="margin: 3rem 0 2rem; border-top: 2px solid ${crt ? '#00cc33' : 'rgba(136,204,255,0.4)'}; padding-top: 2rem;">
+        <h3 style="font-size: 2rem; color: ${crt ? '#ffaa00' : 'var(--accent-cyan)'};">${crt ? 'WORKING PAPERS (EARLIER FORMULATIONS)' : 'Working Papers (Earlier Formulations)'}</h3>
+        <p>${crt ? 'These papers represent earlier stages of the research program. They are preserved as part of the historical record. The current formulation of the theory is presented in the Main Paper and Canvas Model Series above.' : 'These papers represent earlier stages of the research program. They are preserved as part of the historical record. The current formulation of the theory is presented in the Main Paper and Canvas Model Series above.'}</p>
+    </div>
     
     <h3 style="margin: 2rem 0 1rem 0; font-size: 2rem; color: ${crt ? '#00ff41' : 'var(--text-light)'};">${crt ? 'PHYSICS BRANCH' : 'Physics Branch'}</h3>
-    <p>${crt ? 'These papers derive, extend, or document physics results that flow from the main paper.' : 'These papers derive, extend, or document physics results that flow from the main paper.'}</p>
+    <p>${crt ? 'Earlier physics papers that led to the current formulation.' : 'Earlier physics papers that led to the current formulation.'}</p>
     ${renderBranchSection("Core", physicsBranch.core)}
     ${renderSubSection("Primitives and Waves", physicsBranch.primitivesAndWaves)}
     ${renderSubSection("Quantum Mechanics", physicsBranch.quantumMechanics)}
@@ -315,7 +326,7 @@ function generateSeriesPage() {
     ${renderSubSection("Historical Records", physicsBranch.historical)}
     
     <h3 style="margin: 2rem 0 1rem 0; font-size: 2rem; color: ${crt ? '#00ff41' : 'var(--text-light)'};">${crt ? 'MATHEMATICS BRANCH' : 'Mathematics Branch'}</h3>
-    <p>${crt ? 'These papers build the number theory foundations and establish the connection between physics and mathematics.' : 'These papers build the number theory foundations and establish the connection between physics and mathematics.'}</p>
+    <p>${crt ? 'Earlier mathematics papers.' : 'Earlier mathematics papers.'}</p>
     ${renderSubSection("Foundations", mathematicsBranch.foundations)}
     ${renderSubSection("Classification Systems", mathematicsBranch.classification)}
     ${renderSubSection("Number Theory and Spectral Theory", mathematicsBranch.numberTheory)}

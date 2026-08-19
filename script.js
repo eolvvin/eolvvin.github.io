@@ -1,46 +1,8 @@
 // script.js
-// Main controller - navigation, rendering, and canvas animation
-
-const unifiedWaveLatex = "\\Phi(v) = a v + b \\Phi_0 + c \\frac{d^2\\Phi}{dv^2} + d \\pi(v)";
-const thresholdEq = "|\\Phi_i \\Phi_j| > T_{ij}";
-const eigenvalueEq = "\\hat{T}_{ij} c^j = \\lambda c_i";
-const steeringEq = "\\frac{dT_{ij}}{d\\tau} = -\\mu \\nabla_{T} \\mathcal{E}[T]";
-
-function renderLatexInElement(el, latex, display = true) {
-    if (window.katex) {
-        el.innerHTML = '';
-        window.katex.render(latex, el, { displayMode: display, throwOnError: false });
-    } else {
-        el.innerText = latex;
-    }
-}
-
-const pageGenerators = {
-    home: generateHome,
-    millennium: generateMillenniumPage,
-    derivations: generateDerivationsPage,
-	problems: generatePhysicsPage,
-	paradoxes: generateParadoxesPage,
-    predictions: generatePredictionsPage,
-	tables: generateTablesPage,
-    series: generateSeriesPage,
-    framework: generateFrameworkPage,
-	comparison: generateComparisonPage,
-    about: generateAboutPage
-};
+// Minimal controller for the Emergence Canvas Framework — Audit 176
 
 function renderLatexOnPage() {
-    // Small delay to ensure DOM is fully updated
     setTimeout(() => {
-        const fw = document.getElementById('framework-equation');
-        if (fw) renderLatexInElement(fw, unifiedWaveLatex, true);
-        const th = document.getElementById('threshold-equation');
-        if (th) renderLatexInElement(th, thresholdEq, true);
-        const eig = document.getElementById('eigenvalue-equation');
-        if (eig) renderLatexInElement(eig, eigenvalueEq, true);
-        const st = document.getElementById('steering-equation');
-        if (st) renderLatexInElement(st, steeringEq, true);
-        
         if (window.renderMathInElement) {
             const app = document.getElementById('app');
             if (app) {
@@ -58,9 +20,7 @@ function renderLatexOnPage() {
 
 let current = 'home';
 function render(pageId) {
-    if (pageGenerators[pageId]) {
-        window.location.hash = pageId;
-        
+    if (pageId === 'home') {
         const app = document.getElementById('app');
         
         if (document.body.classList.contains('crt-mode')) {
@@ -69,54 +29,34 @@ function render(pageId) {
             app.style.animation = '';
         }
         
-        app.innerHTML = pageGenerators[pageId]();
+        app.innerHTML = window.generateHome();
         current = pageId;
         renderLatexOnPage();
         
-        if (pageId === 'about') {
-            const bookSpread = document.getElementById('bookSpread');
-            if (bookSpread) {
-                bookSpread.addEventListener('click', window.handleBookClick);
+        document.querySelectorAll('nav a[data-page]').forEach(link => {
+            const linkPage = link.getAttribute('data-page');
+            if (!linkPage) return;
+            if (!link.getAttribute('data-original')) {
+                link.setAttribute('data-original', link.textContent.replace(/^> \s*/, ''));
             }
-        }
-        
-		document.querySelectorAll('nav a').forEach(link => {
-			const linkPage = link.getAttribute('data-page');
-			if (!linkPage) return;
-			
-			// Save original text on first encounter
-			if (!link.getAttribute('data-original')) {
-				link.setAttribute('data-original', link.textContent.replace(/^> \s*/, ''));
-			}
-			
-			if (linkPage === pageId) {
-				link.classList.add('active');
-				if (document.body.classList.contains('crt-mode')) {
-					link.textContent = '>  ' + link.getAttribute('data-original');
-				}
-			} else {
-				link.classList.remove('active');
-				// Always restore original text for inactive items in CRT mode
-				if (document.body.classList.contains('crt-mode')) {
-					link.textContent = link.getAttribute('data-original');
-				}
-			}
-		});
+            if (linkPage === pageId) {
+                link.classList.add('active');
+                if (document.body.classList.contains('crt-mode')) {
+                    link.textContent = '>  ' + link.getAttribute('data-original');
+                }
+            } else {
+                link.classList.remove('active');
+                if (document.body.classList.contains('crt-mode')) {
+                    link.textContent = link.getAttribute('data-original');
+                }
+            }
+        });
         
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 }
 
-function handleHashChange() {
-    const hash = window.location.hash.replace('#', '');
-    if (hash && pageGenerators[hash] && hash !== current) {
-        render(hash);
-    }
-}
-
-window.addEventListener('hashchange', handleHashChange);
-
-// Canvas animation
+// Canvas animation — unchanged from existing site
 (function() {
     const canvas = document.getElementById('latticeCanvas');
     if (!canvas) return;
@@ -292,10 +232,10 @@ if (localStorage.getItem('theme-mode') === 'discreet') {
     crtBtn.textContent = 'Continuum';
 }
 
-document.querySelectorAll('nav a:not(#toggle-crt)').forEach(link => link.addEventListener('click', (e) => {
+document.querySelectorAll('nav a[data-page]').forEach(link => link.addEventListener('click', (e) => {
     e.preventDefault();
     const pg = link.getAttribute('data-page');
-    if (pg && pageGenerators[pg]) render(pg);
+    if (pg) render(pg);
 }));
 
 document.getElementById('backToTop').addEventListener('click', (e) => {
@@ -303,10 +243,5 @@ document.getElementById('backToTop').addEventListener('click', (e) => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// Initial load - check hash or default to home
-const initialHash = window.location.hash.replace('#', '');
-if (initialHash && pageGenerators[initialHash]) {
-    render(initialHash);
-} else {
-    render('home');
-}
+// Initial load
+render('home');

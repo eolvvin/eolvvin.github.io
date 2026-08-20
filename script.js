@@ -1,8 +1,41 @@
 // script.js
-// Minimal controller for the Emergence Canvas Framework — Audit 176
+// Main controller - navigation, rendering, and canvas animation
+
+function renderLatexInElement(el, latex, display = true) {
+    if (window.katex) {
+        el.innerHTML = '';
+        window.katex.render(latex, el, { displayMode: display, throwOnError: false });
+    } else {
+        el.innerText = latex;
+    }
+}
+
+const pageGenerators = {
+    home: generateHome,
+    papers: generatePapersPage,
+    derivations: generateDerivationsPage,
+    predictions: generatePredictionsPage,
+    framework: generateFrameworkPage,
+    comparison: generateComparisonPage,
+    about: generateAboutPage
+};
+
+const unifiedWaveLatex = "\\Phi(v) = a v + b \\Phi_0 + c \\frac{d^2\\Phi}{dv^2} + d \\pi(v)";
+const thresholdEq = "|\\Phi_i \\Phi_j| > T_{ij}";
+const eigenvalueEq = "\\hat{T}_{ij} c^j = \\lambda c_i";
+const steeringEq = "\\frac{dR_{ij}}{d\\tau} = \\kappa \\nabla_{\\mathcal{E}} \\mathbb{E}";
 
 function renderLatexOnPage() {
     setTimeout(() => {
+        const fw = document.getElementById('framework-equation');
+        if (fw) renderLatexInElement(fw, unifiedWaveLatex, true);
+        const th = document.getElementById('threshold-equation');
+        if (th) renderLatexInElement(th, thresholdEq, true);
+        const eig = document.getElementById('eigenvalue-equation');
+        if (eig) renderLatexInElement(eig, eigenvalueEq, true);
+        const st = document.getElementById('steering-equation');
+        if (st) renderLatexInElement(st, steeringEq, true);
+        
         if (window.renderMathInElement) {
             const app = document.getElementById('app');
             if (app) {
@@ -19,8 +52,11 @@ function renderLatexOnPage() {
 }
 
 let current = 'home';
+
 function render(pageId) {
-    if (pageId === 'home') {
+    if (pageGenerators[pageId]) {
+        window.location.hash = pageId;
+        
         const app = document.getElementById('app');
         
         if (document.body.classList.contains('crt-mode')) {
@@ -29,16 +65,23 @@ function render(pageId) {
             app.style.animation = '';
         }
         
-        app.innerHTML = window.generateHome();
+        try {
+            app.innerHTML = pageGenerators[pageId]();
+        } catch (err) {
+            app.innerHTML = `<p style="text-align:center;padding:2rem;color:red;">Error rendering page: ${err.message}</p>`;
+        }
+        
         current = pageId;
         renderLatexOnPage();
         
-        document.querySelectorAll('nav a[data-page]').forEach(link => {
+        document.querySelectorAll('nav a').forEach(link => {
             const linkPage = link.getAttribute('data-page');
             if (!linkPage) return;
+            
             if (!link.getAttribute('data-original')) {
                 link.setAttribute('data-original', link.textContent.replace(/^> \s*/, ''));
             }
+            
             if (linkPage === pageId) {
                 link.classList.add('active');
                 if (document.body.classList.contains('crt-mode')) {
@@ -56,7 +99,16 @@ function render(pageId) {
     }
 }
 
-// Canvas animation — unchanged from existing site
+function handleHashChange() {
+    const hash = window.location.hash.replace('#', '');
+    if (hash && pageGenerators[hash] && hash !== current) {
+        render(hash);
+    }
+}
+
+window.addEventListener('hashchange', handleHashChange);
+
+// Canvas animation
 (function() {
     const canvas = document.getElementById('latticeCanvas');
     if (!canvas) return;
@@ -232,10 +284,10 @@ if (localStorage.getItem('theme-mode') === 'discreet') {
     crtBtn.textContent = 'Continuum';
 }
 
-document.querySelectorAll('nav a[data-page]').forEach(link => link.addEventListener('click', (e) => {
+document.querySelectorAll('nav a:not(#toggle-crt)').forEach(link => link.addEventListener('click', (e) => {
     e.preventDefault();
     const pg = link.getAttribute('data-page');
-    if (pg) render(pg);
+    if (pg && pageGenerators[pg]) render(pg);
 }));
 
 document.getElementById('backToTop').addEventListener('click', (e) => {
@@ -243,5 +295,14 @@ document.getElementById('backToTop').addEventListener('click', (e) => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// Initial load
-render('home');
+// Initial load - check hash or default to home
+if (typeof generateHome !== 'undefined') {
+    const initialHash = window.location.hash.replace('#', '');
+    if (initialHash && pageGenerators[initialHash]) {
+        render(initialHash);
+    } else {
+        render('home');
+    }
+} else {
+    document.getElementById('app').innerHTML = '<p style="text-align:center;padding:3rem;color:red;">Error: data files not loaded correctly. Check the browser console (F12) for details.</p>';
+}

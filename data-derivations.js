@@ -1,265 +1,251 @@
 // data-derivations.js
-// Derivations page content
+// Derivations page content — current programme state
 
 const derivationCategories = [
     {
-        category: "Spacetime and Gravity",
+        category: "Finite Recurrence Geometry",
         items: [
-            { name: "General Relativity (Einstein field equations)", status: "Derived" },
-            { name: "Regge Calculus (Discrete GR, O(L²) convergence)", status: "Derived" },
-            { name: "Newton's law of gravitation (inverse-square)", status: "Derived" },
-            { name: "Friedmann equations", status: "Derived" },
-            { name: "de Sitter space (asymptotic attractor)", status: "Derived" },
-            { name: "Number of spatial dimensions (d=3)", status: "Derived" },
-            { name: "Axis orthogonality (θ = π/2)", status: "Derived" },
-            { name: "Spacetime threshold (R_ST = 4)", status: "Derived" },
-            { name: "Horizon information bound (I_max = A_horizon/ℓ_P²)", status: "Derived" },
-            { name: "Spatial flatness (Ω_k = 0, information-theoretic)", status: "Derived" },
-            { name: "Initial entropy (S_max(t_P) ∼ 10 k_B)", status: "Derived" },
-            { name: "Arrow of time (from waveform asymmetry)", status: "Derived" },
-            { name: "Loop Quantum Gravity (discrete spacetime)", status: "Derived" },
-            { name: "String Theory (emergent)", status: "Derived" },
-            { name: "Causal Set Theory (discrete structure)", status: "Derived" }
+            { name: "CRT factorization of Z₂₁₀", status: "Derived" },
+            { name: "Canonical CRT idempotents", status: "Derived" },
+            { name: "Exact order and CRT support", status: "Derived" },
+            { name: "Atomicity of singleton recurrence updates", status: "Derived" },
+            { name: "Hilbert space factorization C²¹⁰ ≅ C² ⊗ C³ ⊗ C⁵ ⊗ C⁷", status: "Derived" },
+            { name: "Matrix algebra factorization M₂₁₀ ≅ M₂ ⊗ M₃ ⊗ M₅ ⊗ M₇", status: "Derived" },
+            { name: "Weyl pairs generate full matrix algebra on each prime factor", status: "Derived" },
+            { name: "Weyl basis orthonormality", status: "Derived" },
+            { name: "Weyl quantization as Dirichlet intertwiner", status: "Derived" },
+            { name: "Weyl twirl as conditional expectation", status: "Derived" },
+            { name: "Traceless projector from Weyl twirl", status: "Derived" },
+            { name: "Weyl–Dirichlet energy identity", status: "Derived" },
+            { name: "Directional uniqueness of Weyl weights under SL(2,p)", status: "Derived" },
+            { name: "Global twirl versus factor-local geometry separation", status: "Derived" },
+            { name: "Atomic first-order differential calculus", status: "Derived" },
+            { name: "Exterior algebra and nilpotency d² = 0", status: "Derived" },
+            { name: "Gauge connection and discrete curvature", status: "Derived" },
+            { name: "Discrete Bianchi identity DF = 0", status: "Derived" },
+            { name: "Positive Yang–Mills-type action", status: "Derived" },
+            { name: "Dirichlet pullback metric isotropy within class", status: "Derived (with constitutive metric rule)" },
+            { name: "Hodge star on four-direction internal calculus", status: "Derived" },
+            { name: "Exact-order decomposition with Euler totient multiplicities", status: "Derived" },
+            { name: "Synchronous versus coordinatewise dynamics separation", status: "No-Go" }
         ]
     },
     {
-        category: "Quantum Mechanics",
+        category: "Chiral Matter Capacity",
         items: [
-            { name: "Quantum Mechanics (full framework)", status: "Derived" },
-            { name: "Schrödinger equation", status: "Derived" },
-            { name: "Klein-Gordon equation", status: "Derived" },
-            { name: "Dirac equation", status: "Derived" },
-            { name: "Uncertainty principle", status: "Derived" },
-            { name: "Born rule (origin of probability)", status: "Derived" },
-            { name: "Quantum tunneling", status: "Derived" },
-            { name: "Quantum decoherence", status: "Derived" },
-            { name: "Quantum Zeno effect", status: "Derived" },
-            { name: "Quantum teleportation", status: "Derived" },
-            { name: "Bell inequality violation", status: "Derived" },
-            { name: "EPR paradox resolution", status: "Derived" },
-            { name: "Wigner's Friend resolution", status: "Derived" },
-            { name: "Two-slit problem", status: "Derived" },
-            { name: "Which-way problem", status: "Derived" },
-            { name: "Entanglement", status: "Derived" },
-            { name: "Hong-Ou-Mandel effect", status: "Derived" },
-            { name: "Spontaneous parametric down-conversion", status: "Derived" },
-            { name: "Bell state measurement", status: "Derived" },
-            { name: "Hardy paradox", status: "Derived" },
-            { name: "GHZ paradox", status: "Derived" },
-            { name: "Elitzur-Vaidman bomb tester", status: "Derived" },
-            { name: "Quantum eraser", status: "Derived" },
-            { name: "Delayed choice quantum eraser", status: "Derived" },
-            { name: "Qubit", status: "Derived" }
+            { name: "Exterior/Fock space from C⁵ via CAR", status: "Derived" },
+            { name: "CAR realization of Clifford algebra Cl₁₀", status: "Derived" },
+            { name: "Spin(10) representation from ten Clifford generators", status: "Derived" },
+            { name: "Fermion parity as internal chirality", status: "Derived" },
+            { name: "Chiral spinor split 32 → 16 + 16", status: "Derived" },
+            { name: "SU(5) exterior-power branching 1 ⊕ 10 ⊕ 5̄", status: "Derived" },
+            { name: "Standard Model quantum-number slots from one family", status: "Derived (given V₅ and hypercharge embedding)" },
+            { name: "Z₆ gauge-center compatibility condition", status: "Derived" },
+            { name: "Minimal faithful nonabelian representations", status: "Conditional (minimality principle input)" },
+            { name: "Analytic solution of anomaly hypercharge ratios", status: "Derived within five-multiplet ansatz" },
+            { name: "Standard Model hypercharges from anomalies + center", status: "Conditional (low-charge selection input)" },
+            { name: "S(U(3)×U(2)) stabilizer of 3+2 vacuum", status: "Derived (given V₅)" },
+            { name: "Relative hypercharge from tracelessness", status: "Derived (given V₅)" },
+            { name: "Minimal closure dimension N = 5", status: "Closure theorem (physical criterion input)" },
+            { name: "Anomaly safety does not select physical chirality", status: "No-Go" },
+            { name: "Singlet-scalar localizer is vectorlike", status: "No-Go" },
+            { name: "One family does not imply three generations", status: "No-Go" },
+            { name: "Single common tensor cannot produce realistic mixing", status: "No-Go" },
+            { name: "Full M₃(C) flavor algebra is nonpredictive without coefficient rules", status: "No-Go" }
         ]
     },
     {
-        category: "Quantum Field Theory and Particle Physics",
+        category: "Spacetime Bridge",
         items: [
-            { name: "Quantum Field Theory", status: "Derived" },
-            { name: "Quantum Electrodynamics", status: "Derived" },
-            { name: "Quantum Chromodynamics", status: "Derived" },
-            { name: "Electroweak Theory", status: "Derived" },
-            { name: "The Standard Model (full gauge group)", status: "Derived" },
-            { name: "Gauge group U(1)×SU(2)×SU(3)", status: "Derived" },
-            { name: "Yang-Mills equations", status: "Derived" },
-            { name: "Gauge coupling non-unification (1 : 2/3 : 2/π)", status: "Derived" },
-            { name: "Gauge threshold hierarchy", status: "Derived" },
-            { name: "Three fermion generations", status: "Derived" },
-            { name: "CKM matrix", status: "Derived" },
-            { name: "CKM Wolfenstein parameter (λ = 1/5 = 0.2)", status: "Derived" },
-            { name: "CKM full diagonalization (λ_eff = 0.225)", status: "Derived" },
-            { name: "CKM Wolfenstein hierarchy (λ : λ² : λ³)", status: "Derived" },
-            { name: "Jarlskog invariant (J ∼ α⁷ ≈ 2.67 × 10⁻⁵)", status: "Derived" },
-            { name: "CP violation (CKM and PMNS)", status: "Derived" },
-            { name: "PMNS matrix", status: "Derived" },
-            { name: "PMNS θ₁₂ = 1/√3 ≈ 33.1°", status: "Derived" },
-            { name: "PMNS θ₂₃ = π/4 = 45°", status: "Derived" },
-            { name: "PMNS θ₁₃ = arcsin(1/(3√5)) ≈ 8.57°", status: "Derived" },
-            { name: "Neutrino oscillations", status: "Derived" },
-            { name: "Neutrino mass hierarchy (inverted, m₁ > m₃ > m₂)", status: "Derived" },
-            { name: "Fundamental coupling (α₀ = 1/ln(R_H/ℓ_P) ≈ 1/140)", status: "Derived" },
-            { name: "Fine-structure constant (α_EM⁻¹ ≈ 137)", status: "Derived" },
-            { name: "Strong CP resolution (θ_QCD = 0, discrete topology)", status: "Derived" },
-            { name: "Proton stability", status: "Derived" },
-            { name: "No magnetic monopoles", status: "Derived" },
-            { name: "No fourth generation", status: "Derived" },
-            { name: "Automatic anomaly cancellation", status: "Derived" },
-            { name: "Exact CKM unitarity", status: "Derived" },
-            { name: "Flavor encoding (minimal, 13 from 7)", status: "Derived" },
-            { name: "Right-handed neutrinos (completely sterile)", status: "Derived" },
-            { name: "Feynman diagrams", status: "Derived" },
-            { name: "Fermi's golden rule", status: "Derived" },
-            { name: "Casimir effect", status: "Derived" },
-            { name: "Unruh effect", status: "Derived" },
-            { name: "Aharonov-Bohm effect", status: "Derived" },
-            { name: "Berry phase", status: "Derived" },
-            { name: "Lamb shift", status: "Derived" },
-            { name: "Zeeman effect", status: "Derived" },
-            { name: "Stark effect", status: "Derived" },
-            { name: "Einstein A and B coefficients", status: "Derived" },
-            { name: "Rabi oscillations", status: "Derived" }
+            { name: "Finite recurrence is not unbounded physical time", status: "No-Go" },
+            { name: "Stone generator from strongly continuous unitary evolution", status: "Derived (given unbounded Order)" },
+            { name: "First-order Schrödinger evolution i∂ₜψ = Hψ", status: "Derived" },
+            { name: "Infrared dimension criterion d_IR = rank A", status: "Derived" },
+            { name: "Spectral dimension from heat-kernel return probability", status: "Derived" },
+            { name: "Nearest-neighbour Laplacian continuum limit illustration", status: "Derived (illustrative)" },
+            { name: "Hyperbolicity and Lorentz cone from universal limiting speed", status: "Conditional (requires rank-3 quadratic symbol)" },
+            { name: "Dirac factorization forces Clifford algebra", status: "Derived (conditional on Lorentz cone)" },
+            { name: "Lorentz generators from Clifford algebra", status: "Derived" },
+            { name: "γ₅ chirality operator from Lorentzian Clifford algebra", status: "Derived" },
+            { name: "Voxel support does not imply spin geometry", status: "No-Go" },
+            { name: "Naive lattice fermion doubling obstruction", status: "No-Go" },
+            { name: "Nielsen–Ninomiya obstruction for chiral lattice fermions", status: "No-Go" },
+            { name: "Relativistic collective-coordinate mass M_i = E₀/c²", status: "Derived" },
+            { name: "Band-curvature mass is insufficient for equivalence principle", status: "No-Go" },
+            { name: "Universal metric coupling gives M_g = M_i", status: "Derived (conditional on universal coupling)" },
+            { name: "Universal coupling does not imply pure GR", status: "No-Go" },
+            { name: "Graph relabeling is not diffeomorphism invariance", status: "No-Go" },
+            { name: "Finite voxels do not imply finite information capacity", status: "No-Go" },
+            { name: "Fierz–Pauli gauge redundancy not implied by event-network locality", status: "No-Go" },
+            { name: "Lorentzian inertia from traceless 3+1 vacuum", status: "Derived (post-binder)" },
+            { name: "Lorentzian propagation from vacuum order parameter", status: "Conditional (propagation rule input)" }
         ]
     },
     {
-        category: "Cosmology",
+        category: "Relativistic Localization and Stability",
         items: [
-            { name: "Cosmological constant (Λ = 3Ω_Λ/R_H²)", status: "Derived" },
-            { name: "Cosmological constant coefficient (Ω_Λ = 3/(3+√2)(1+α₀) ≈ 0.685)", status: "Derived" },
-            { name: "Inflation duration (N = e⁴ ≈ 55 e-folds)", status: "Derived" },
-            { name: "Baryon asymmetry (η ∼ 10⁻⁹)", status: "Derived" },
-            { name: "Baryogenesis threshold ratio (T₀/T_rh = 12)", status: "Derived" },
-            { name: "Dark matter candidate (Planck-mass black hole remnants)", status: "Derived" },
-            { name: "Dark matter abundance (Ω_DM ∼ 0.26, boundary condition)", status: "Derived" },
-            { name: "Primordial black hole formation fraction (β ∼ 0.085)", status: "Derived" },
-            { name: "Black hole remnant mass (M_rem ≈ M_P)", status: "Derived" },
-            { name: "Scalar spectral index (n_s ≈ 0.964)", status: "Derived" },
-            { name: "Spectral index running (α_s ≈ -6.6 × 10⁻⁴)", status: "Derived" },
-            { name: "Tensor-to-scalar ratio (r ≪ 0.01)", status: "Derived" },
-            { name: "Non-Gaussianity (f_NL^local ∼ 0.02)", status: "Derived" },
-            { name: "Dark energy equation of state (w(z))", status: "Derived" },
-            { name: "Time evolution of Λ (dΛ/dt ∝ -3H)", status: "Derived" },
-            { name: "Time variation of α (α̇/α ∼ 10⁻¹⁷ yr⁻¹)", status: "Derived" },
-            { name: "Reheating temperature (T_reh ∼ T_P)", status: "Derived" },
-            { name: "Baryon acoustic oscillations", status: "Derived" },
-            { name: "Primordial gravitational waves", status: "Derived" },
-            { name: "Stochastic GW background (h²Ω_GW ∼ α₀)", status: "Derived" },
-            { name: "CMB power spectrum", status: "Derived" },
-            { name: "Hawking radiation", status: "Derived" },
-            { name: "Black hole entropy (Bekenstein-Hawking)", status: "Derived" },
-            { name: "Page curve", status: "Derived" },
-            { name: "Hubble tension (partial resolution)", status: "Derived" }
+            { name: "Physical mass definition M = E_rest/c²", status: "Derived" },
+            { name: "Band-curvature mass obstruction", status: "No-Go" },
+            { name: "Collective-coordinate relativistic mass theorem", status: "Derived" },
+            { name: "Massless exterior tail obstruction", status: "No-Go" },
+            { name: "Contact nonlinear-Dirac dilation instability E″(1) < 0", status: "Derived (no-go)" },
+            { name: "Propagating mediator positive dilation curvature", status: "Derived" },
+            { name: "Broken-vacuum Dirac–scalar asymptotic gap m∞ = yv", status: "Derived (conditional on model)" },
+            { name: "Spherical Dirac–scalar boundary-value system", status: "Derived" },
+            { name: "Bound-state gap condition |ω| < m∞", status: "Derived" },
+            { name: "Energy functional and RMS radius", status: "Derived" },
+            { name: "Numerical bound-state branch N = 8–15", status: "Computed" },
+            { name: "Energetic binding E/(Nm∞) < 1 for N ≥ 9", status: "Computed" },
+            { name: "Thermodynamic identity dE/dN = ω", status: "Derived + Computed" },
+            { name: "Turning-point diagnostic dN/dω < 0", status: "Computed" },
+            { name: "Radial L=0 stability", status: "Computed" },
+            { name: "Translation zero mode in L=1", status: "Derived + Computed" },
+            { name: "Static nonradial shape spectra positive through L=6", status: "Computed" },
+            { name: "Antiparticle-inclusive signed-energy RPA", status: "Computed" },
+            { name: "Spectral pollution discrimination for continuum-edge quartets", status: "Computed" },
+            { name: "Localized stability through L=6 for N=10, N=14", status: "Computed" },
+            { name: "Mass-sign-inverted core for high N", status: "Computed (not claimed as topological mode)" },
+            { name: "Literal loop closure required", status: "Superseded — nonlinear localization suffices" },
+            { name: "Vectorlike localization mass = chiral SM Yukawa mass", status: "No-Go — distinct mechanisms required" }
         ]
     },
     {
-        category: "Wave Dynamics (Canvas-Specific)",
+        category: "Covariant Cosmology",
         items: [
-            { name: "Unified Wave Equation (UWE)", status: "Postulated" },
-            { name: "UWE weights (a=1, b=1/3, c=d=1/[137(1+π/2)])", status: "Derived" },
-            { name: "Waveform asymmetry (T_rise/T_fall = π/2)", status: "Derived" },
-            { name: "Asymmetry parameter (α = (π-2)/(π+2))", status: "Derived" },
-            { name: "First harmonic phase shift (φ₁ = απ)", status: "Derived" },
-            { name: "Second harmonic suppression (|ψ̂₂|/|ψ̂₁|)", status: "Derived" },
-            { name: "Direct weight ratio (c_eff/d_eff = π/2)", status: "Derived" },
-            { name: "Internal lattice parameter (β = 0.167 ± 0.005)", status: "Derived" },
-            { name: "Threshold tensor (T̂_ij)", status: "Derived" },
-            { name: "Feed equation (Pillar IV attractor dynamics)", status: "Postulated" }
+            { name: "Frozen covariant scalar–tensor action", status: "Constitutive (action input)" },
+            { name: "Jordan-frame FLRW equations", status: "Derived" },
+            { name: "Einstein-frame transformation and ghost conditions", status: "Derived" },
+            { name: "Tensor speed c_T² = 1", status: "Derived" },
+            { name: "Minkowski vacuum at φ = 0", status: "Derived" },
+            { name: "Constant-field de Sitter condition d(V/F²)/dφ = 0", status: "Derived" },
+            { name: "Exact parameter compression to (κ,u,δ)", status: "Derived" },
+            { name: "de Sitter fixed-point cubic polynomial", status: "Derived" },
+            { name: "Minimal-coupling phase boundary 1/4 < κ < 1/3", status: "Derived" },
+            { name: "Cosmological curvature scale relation H²/m² = δv/(3f)", status: "Derived" },
+            { name: "Cross-domain scale tension", status: "Conditional (same scalar normalization assumed)" },
+            { name: "Einstein-frame local gravitational coupling", status: "Derived" },
+            { name: "Planck-mass running parameter α_M", status: "Derived" },
+            { name: "Exact Horndeski representation", status: "Derived" },
+            { name: "Cross-code validation at sub-percent level", status: "Computed" },
+            { name: "Stable cosmological islands", status: "Computed" },
+            { name: "Planck + DESI DR2 + Pantheon+ likelihood evaluation", status: "Computed (calibrated)" },
+            { name: "Best raw likelihood tie Δχ² = −0.077", status: "Computed (calibrated)" },
+            { name: "AIC/BIC favor GR/ΛCDM", status: "Computed" },
+            { name: "Growth amplitude S₈ nearly unchanged", status: "Computed" },
+            { name: "Bayesian evidence with stable-manifold prior", status: "Open" },
+            { name: "Primitive derivation of cosmological parameters", status: "Open" },
+            { name: "Phenomenological EFT extrapolation represents exact cosmology", status: "No-Go" }
         ]
     },
     {
-        category: "Classical Physics",
+        category: "Post-Binder Common-Vacuum Architecture",
         items: [
-            { name: "Classical Mechanics", status: "Derived" },
-            { name: "Newton's laws of motion", status: "Derived" },
-            { name: "Hooke's law", status: "Derived" },
-            { name: "Work-energy theorem", status: "Derived" },
-            { name: "Principle of least action", status: "Derived" },
-            { name: "Fluid Dynamics (Navier-Stokes)", status: "Derived" },
-            { name: "Electromagnetism (Maxwell's equations)", status: "Derived" },
-            { name: "Coulomb's law", status: "Derived" },
-            { name: "Ohm's law", status: "Derived" },
-            { name: "Kirchhoff's laws", status: "Derived" },
-            { name: "Optics (Snell's law, etc.)", status: "Derived" },
-            { name: "Speed of sound", status: "Derived" },
-            { name: "E = mc²", status: "Derived" },
-            { name: "Sagnac effect", status: "Derived" },
-            { name: "Faraday effect", status: "Derived" },
-            { name: "Larmor precession", status: "Derived" }
+            { name: "Generic quartic invariant potential for traceless Hermitian order parameter", status: "Derived (invariant theory)" },
+            { name: "Dimensionless reduction to two shape parameters (r,s)", status: "Derived" },
+            { name: "Two-block stationary vacuum equations", status: "Derived" },
+            { name: "Stable 4 → 3+1 vacuum phase", status: "Computed (post-binder)" },
+            { name: "Stable 5 → 3+2 vacuum phase", status: "Computed (post-binder)" },
+            { name: "Common open region supporting both vacuum patterns", status: "Computed (post-binder)" },
+            { name: "Lorentzian inertia from tracelessness", status: "Derived (post-binder)" },
+            { name: "Propagation identification G_phys ∝ Q₃₊₁", status: "Constitutive (propagation rule input)" },
+            { name: "Rank-three isotropic spatial kernel from propagation rule", status: "Conditional derived" },
+            { name: "Spectral dimension three from propagation rule", status: "Conditional derived" },
+            { name: "S(U(3)×U(2)) gauge stabilizer from 3+2 vacuum", status: "Derived (given V₅)" },
+            { name: "Relative hypercharge from tracelessness of 3+2 vacuum", status: "Derived (given V₅)" },
+            { name: "CAR exterior algebra on C⁵", status: "Derived" },
+            { name: "One-family 16 from even Fock-parity sector", status: "Derived (given V₅)" },
+            { name: "Independent anomaly check of derived hypercharges", status: "Derived" },
+            { name: "Direct order-parameter fluctuation gives graviton", status: "No-Go — Goldstones are vector triplet, spin-2 has positive curvature" },
+            { name: "Event-network locality gives Fierz–Pauli gauge redundancy", status: "No-Go" },
+            { name: "Spatial triplet or color triplet derives generation number", status: "No-Go" },
+            { name: "Native CRT gives C² ⊕ C³", status: "No-Go — native composition is tensorial" },
+            { name: "Shared functional form equals single master object", status: "Not yet established — master-object gate open" },
+            { name: "Minimal closure dimension N = 5", status: "Closure theorem (physical criterion input)" },
+            { name: "Primitive derivation of C⁵", status: "Open" }
         ]
     },
     {
-        category: "Thermodynamics and Statistical Mechanics",
+        category: "No-Go Results Compilation",
         items: [
-            { name: "Thermodynamics (laws)", status: "Derived" },
-            { name: "Second law of thermodynamics", status: "Derived" },
-            { name: "Boltzmann entropy formula", status: "Derived" },
-            { name: "Boltzmann distribution", status: "Derived" },
-            { name: "Statistical Mechanics", status: "Derived" },
-            { name: "Ideal gas law", status: "Derived" },
-            { name: "Bernoulli's principle", status: "Derived" },
-            { name: "Gibbs paradox resolution", status: "Derived" },
-            { name: "Loschmidt paradox resolution", status: "Derived" },
-            { name: "Maxwell demon resolution", status: "Derived" }
-        ]
-    },
-    {
-        category: "Condensed Matter and Nuclear Physics",
-        items: [
-            { name: "BCS gap equation", status: "Derived" },
-            { name: "London equations", status: "Derived" },
-            { name: "Meissner effect", status: "Derived" },
-            { name: "Josephson effect", status: "Derived" },
-            { name: "Landau critical velocity", status: "Derived" },
-            { name: "Gross-Pitaevskii equation", status: "Derived" },
-            { name: "BEC critical temperature", status: "Derived" },
-            { name: "Kondo effect", status: "Derived" },
-            { name: "Thouless formula (Anderson localization)", status: "Derived" },
-            { name: "Nuclear shell model", status: "Derived" },
-            { name: "Nuclear magic numbers", status: "Derived" },
-            { name: "Alpha decay (Geiger-Nuttall law)", status: "Derived" },
-            { name: "Beta decay", status: "Derived" },
-            { name: "Gamma decay", status: "Derived" },
-            { name: "Nuclear fission", status: "Derived" },
-            { name: "Nuclear fusion (Gamow peak)", status: "Derived" },
-            { name: "Nuclear magnetic resonance", status: "Derived" },
-            { name: "Fermi contact interaction", status: "Derived" },
-            { name: "Landé g-factor", status: "Derived" },
-            { name: "WKB approximation", status: "Derived" },
-            { name: "Weisskopf estimates", status: "Derived" }
-        ]
-    },
-    {
-        category: "Atomic and Optical Physics",
-        items: [
-            { name: "Hydrogen energy levels", status: "Derived" },
-            { name: "Rydberg constant", status: "Derived" },
-            { name: "Bohr radius", status: "Derived" },
-            { name: "Compton wavelength", status: "Derived" },
-            { name: "Thomson cross section", status: "Derived" },
-            { name: "Lamb shift (Bethe formula)", status: "Derived" },
-            { name: "Hyperfine splitting (21 cm line)", status: "Derived" },
-            { name: "Rabi oscillations", status: "Derived" },
-            { name: "Optical coherence", status: "Derived" }
-        ]
-    },
-    {
-        category: "Mathematics (CTM)",
-        items: [
-            { name: "Riemann Hypothesis (resolved in CTM)", status: "Derived" },
-            { name: "Prime Wave Operator", status: "Derived" },
-            { name: "Spectral gap of prime lattice (λ₁ ≥ 1/8)", status: "Derived" },
-            { name: "Cheeger constant of prime lattice (h = 1/2)", status: "Derived" },
-            { name: "Plank threshold equals Cheeger constant", status: "Derived" },
-            { name: "Threshold Trace Formula", status: "Derived" },
-            { name: "Threshold Index Theorem", status: "Derived" },
-            { name: "Primitive Spectral Transform", status: "Derived" },
-            { name: "Tensor Adele Class", status: "Derived" },
-            { name: "Harmonicity of the algebraicity field", status: "Derived" },
-            { name: "Three-body problem (escape time, critical exponents)", status: "Derived" },
-            { name: "Sitnikov problem", status: "Derived" },
-            { name: "Cycloid ratio (γ/(h²/2) ≈ 50)", status: "Derived" },
-            { name: "Lyapunov exponent scaling (λ ∝ √(e-e_c))", status: "Derived" },
-            { name: "Critical exponent for three-body escape (ν = 1/2)", status: "Derived" },
-            { name: "Cheeger constant of three-body phase space", status: "Derived" },
-            { name: "Spectral gap closing at chaos threshold", status: "Derived" },
-            { name: "1/ln universality (physics and number theory)", status: "Derived" },
-            { name: "Impossibility of actual infinity", status: "Derived" },
-            { name: "Instantaneous vs. infinite speed (distinguished)", status: "Derived" }
+            { name: "Finite recurrence as physical time", status: "No-Go" },
+            { name: "Voxel support implies spin geometry", status: "No-Go" },
+            { name: "Naive lattice fermions without doubling", status: "No-Go" },
+            { name: "Band curvature as fundamental mass", status: "No-Go" },
+            { name: "Massless exterior Dirac localization", status: "No-Go" },
+            { name: "Contact nonlinear Dirac stabilization", status: "No-Go" },
+            { name: "Anomalies determine generation number", status: "No-Go" },
+            { name: "One common Yukawa tensor gives realistic mixing", status: "No-Go" },
+            { name: "Finite square operator gives nonzero chiral index", status: "No-Go" },
+            { name: "Voxel thresholding implies finite information capacity", status: "No-Go" },
+            { name: "Universal coupling implies pure GR", status: "No-Go" },
+            { name: "Graph relabeling implies diffeomorphism invariance", status: "No-Go" },
+            { name: "Finite voxels imply finite local Hilbert dimension", status: "No-Go" },
+            { name: "Direct order-parameter fluctuation gives graviton", status: "No-Go" },
+            { name: "C² ⊗ C³ implies C² ⊕ C³", status: "No-Go" },
+            { name: "Shared functional form implies single master object", status: "No-Go" },
+            { name: "Present-day EFT extrapolation represents exact cosmology", status: "No-Go" },
+            { name: "Matched-GR spectral closeness implies observational fit", status: "No-Go" }
         ]
     }
 ];
 
+const statusColors = {
+    "Derived": "status-solved",
+    "Computed": "status-solved",
+    "Conditional": "question-mark",
+    "Constitutive": "question-mark",
+    "Open": "question-mark",
+    "No-Go": "cross-mark",
+    "Not yet established": "question-mark",
+    "Superseded": "question-mark",
+    "Derived (given V₅)": "status-solved",
+    "Derived (given V₅ and hypercharge embedding)": "status-solved",
+    "Derived (given unbounded Order)": "status-solved",
+    "Derived (conditional on Lorentz cone)": "status-solved",
+    "Derived (conditional on universal coupling)": "status-solved",
+    "Derived (conditional on model)": "status-solved",
+    "Derived (invariant theory)": "status-solved",
+    "Derived (post-binder)": "status-solved",
+    "Computed (post-binder)": "status-solved",
+    "Computed (calibrated)": "status-solved",
+    "Conditional (minimality principle input)": "question-mark",
+    "Conditional (low-charge selection input)": "question-mark",
+    "Conditional (requires rank-3 quadratic symbol)": "question-mark",
+    "Conditional (propagation rule input)": "question-mark",
+    "Conditional (same scalar normalization assumed)": "question-mark",
+    "Closure theorem (physical criterion input)": "status-solved",
+    "Constitutive (action input)": "question-mark",
+    "Constitutive (propagation rule input)": "question-mark",
+    "Derived + Computed": "status-solved",
+    "Derived (illustrative)": "status-solved",
+    "Derived (with constitutive metric rule)": "status-solved",
+    "Derived within five-multiplet ansatz": "status-solved",
+    "Derived (no-go)": "cross-mark"
+};
+
+function getStatusDisplay(status, crt) {
+    const colorClass = statusColors[status] || 'status-solved';
+    const text = crt ? '[' + status.toUpperCase() + ']' : status;
+    return `<td class="derivation-status ${colorClass}">${text}</td>`;
+}
+
 function generateDerivationsPage() {
     const crt = document.body.classList.contains('crt-mode');
     let totalCount = 0;
-    let html = `<h2>${crt ? 'DERIVATIONS FROM FIRST PRINCIPLES' : 'Derivations from First Principles'}</h2>
-    <p>${crt ? 'Status definitions and complete list of derived frameworks.' : 'Status definitions and complete list of derived frameworks.'}</p>
+    let html = `<h2>${crt ? 'DERIVATIONS :: CURRENT STATUS' : 'Derivations :: Current Status'}</h2>
+    <p>${crt ? 'Every result is classified by its logical status. Derived means follows mathematically from stated assumptions. Computed means obtained numerically from frozen equations. Conditional means follows only after an explicit structural bridge is assumed. Constitutive means introduced as part of the theory definition. No-Go means a stronger claim has been ruled out.' : 'Every result is classified by its logical status. Derived means follows mathematically from stated assumptions. Computed means obtained numerically from frozen equations. Conditional means follows only after an explicit structural bridge is assumed. Constitutive means introduced as part of the theory definition. No-Go means a stronger claim has been ruled out.'}</p>
     
     <h3>${crt ? 'STATUS DEFINITIONS' : 'Status Definitions'}</h3>
     <table class="data-table">
-        <thead><tr><th style="text-align:left;">${crt ? 'STATUS' : 'Status'}</th><th>${crt ? 'MEANING' : 'Meaning'}</th></tr></thead>
+        <thead><tr><th style="text-align:left;">${crt ? 'STATUS' : 'Status'}</th><th style="text-align:left;">${crt ? 'MEANING' : 'Meaning'}</th></tr></thead>
         <tbody>
-            <tr><td class="derivation-status" style="text-align:left;">${crt ? '[DERIVED]' : '✅ Derived'}</td><td>${crt ? 'THE THEORY, EQUATION, OR PHENOMENON FOLLOWS DIRECTLY FROM CANVAS MODEL AXIOMS WITH NO FREE PARAMETERS.' : 'The theory, equation, or phenomenon follows directly from Canvas Model axioms with no free parameters.'}</td></tr>
-            <tr><td class="derivation-status" style="color:#ffaa00;text-align:left;">${crt ? '[POSTULATED]' : '📌 Postulated'}</td><td>${crt ? 'FOUNDATIONAL EQUATION OF THE CANVAS MODEL — THE STARTING POINT FROM WHICH ALL ELSE IS DERIVED.' : 'Foundational equation of the Canvas Model — the starting point from which all else is derived.'}</td></tr>
+            <tr><td class="status-solved" style="text-align:left;">${crt ? '[DERIVED]' : '✅ Derived'}</td><td style="text-align:left;">${crt ? 'FOLLOWS MATHEMATICALLY FROM STATED ASSUMPTIONS.' : 'Follows mathematically from stated assumptions.'}</td></tr>
+            <tr><td class="status-solved" style="text-align:left;">${crt ? '[COMPUTED]' : '✅ Computed'}</td><td style="text-align:left;">${crt ? 'OBTAINED NUMERICALLY FROM FROZEN EQUATIONS AND PARAMETERS.' : 'Obtained numerically from frozen equations and parameters.'}</td></tr>
+            <tr><td class="question-mark" style="text-align:left;">${crt ? '[CONDITIONAL]' : '🟡 Conditional'}</td><td style="text-align:left;">${crt ? 'FOLLOWS ONLY AFTER AN EXPLICIT STRUCTURAL BRIDGE IS ASSUMED.' : 'Follows only after an explicit structural bridge is assumed.'}</td></tr>
+            <tr><td class="question-mark" style="text-align:left;">${crt ? '[CONSTITUTIVE]' : '🟡 Constitutive'}</td><td style="text-align:left;">${crt ? 'INTRODUCED AS PART OF THE CURRENT THEORY DEFINITION, NOT DERIVED.' : 'Introduced as part of the current theory definition, not derived.'}</td></tr>
+            <tr><td class="cross-mark" style="text-align:left;">${crt ? '[NO-GO]' : '🔴 No-Go'}</td><td style="text-align:left;">${crt ? 'A STRONGER CLAIM HAS BEEN RULED OUT UNDER CURRENT ASSUMPTIONS.' : 'A stronger claim has been ruled out under current assumptions.'}</td></tr>
+            <tr><td class="question-mark" style="text-align:left;">${crt ? '[OPEN]' : '🟡 Open'}</td><td style="text-align:left;">${crt ? 'NO VALID DERIVATION OR DECISIVE NO-GO RESULT IS CURRENTLY KNOWN.' : 'No valid derivation or decisive no-go result is currently known.'}</td></tr>
+            <tr><td class="question-mark" style="text-align:left;">${crt ? '[SUPERSEDED]' : '🟡 Superseded'}</td><td style="text-align:left;">${crt ? 'A PREVIOUS MECHANISM HAS BEEN REPLACED BY A MORE COMPLETE ONE.' : 'A previous mechanism has been replaced by a more complete one.'}</td></tr>
         </tbody>
     </table>`;
     
@@ -272,25 +258,34 @@ function generateDerivationsPage() {
         
         cat.items.forEach((item, index) => {
             const num = crt ? String(index + 1).padStart(2, '0') : index + 1;
-            const statusClass = item.status === 'Postulated' ? 'style="color:#ffaa00;"' : '';
-            const statusText = crt ? '[' + item.status.toUpperCase() + ']' : (item.status === 'Postulated' ? '📌 ' : '✅ ') + item.status;
             html += `<tr>
                 <td style="${crt ? 'color:#00cc33;font-size:0.78rem;' : ''}">${num}</td>
                 <td>${item.name}</td>
-                <td class="derivation-status" ${statusClass}>${statusText}</td>
+                ${getStatusDisplay(item.status, crt)}
             </tr>`;
         });
         
         html += `</tbody></table>`;
     });
     
-    html += `<h3>${crt ? 'SUMMARY' : 'Summary'}</h3>
+    // Summary by status
+    const statusCounts = {};
+    derivationCategories.forEach(cat => {
+        cat.items.forEach(item => {
+            const key = item.status;
+            if (!statusCounts[key]) statusCounts[key] = 0;
+            statusCounts[key]++;
+        });
+    });
+    
+    html += `<h3>${crt ? 'SUMMARY BY STATUS' : 'Summary by Status'}</h3>
     <table class="data-table">
-        <thead><tr><th style="text-align:left;">${crt ? 'CATEGORY' : 'Category'}</th><th>${crt ? 'COUNT' : 'Count'}</th></tr></thead>
+        <thead><tr><th style="text-align:left;">${crt ? 'STATUS' : 'Status'}</th><th>${crt ? 'COUNT' : 'Count'}</th></tr></thead>
         <tbody>`;
     
-    derivationCategories.forEach(cat => {
-        html += `<tr><td style="text-align:left;">${crt ? cat.category.toUpperCase() : cat.category}</td><td>${cat.items.length}</td></tr>`;
+    Object.keys(statusCounts).sort().forEach(status => {
+        const colorClass = statusColors[status] || 'status-solved';
+        html += `<tr><td class="${colorClass}" style="text-align:left;">${crt ? '[' + status.toUpperCase() + ']' : status}</td><td>${statusCounts[status]}</td></tr>`;
     });
     
     html += `<tr style="font-weight:bold;border-top:2px solid ${crt ? '#00ff41' : 'var(--accent-cyan)'};"><td style="text-align:left;">${crt ? 'TOTAL' : 'Total'}</td><td>${totalCount}</td></tr></tbody></table>`;
